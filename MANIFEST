@@ -1,0 +1,42 @@
+# Top-level files
+Changes
+Dockerfile
+ignore.txt
+Makefile.PL
+MANIFEST
+MYMETA.json
+MYMETA.yml
+README
+requirements.txt
+
+# bin directory
+bin/4.driver.pl
+bin/call_download.py
+bin/call_watermark.py
+
+
+
+# conf directory
+conf/app_config.json
+
+
+
+# lib directory
+lib/Acme/
+lib/Acme/Frobnitz.pm
+lib/python_utils/downloader5.py
+lib/python_utils/utilities1.py
+lib/python_utils/watermark2.py
+
+
+
+# t directory (tests)
+t/00-load.t
+t/13.download.t
+t/manifest.t
+t/pod.t
+t/pod-coverage.t
+
+# xt directory (extra tests)
+xt/boilerplate.t
+

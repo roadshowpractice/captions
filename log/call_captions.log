@@ -1,0 +1,1032 @@
+2024-12-22 01:15:03,500 - __main__ - INFO - Logging setup complete.
+2024-12-22 01:15:03,501 - __main__ - INFO - Added library path: /home/fritz/Desktop/frobnitz-main/lib/python_utils
+2024-12-22 01:15:03,515 - __main__ - INFO - Captioning script started.
+2024-12-22 01:15:03,515 - __main__ - INFO - Processing video file: /media/fritz/E4B0-3FC2/2024-12-21/Tim_Ballard_20241211_watermarked.mp4
+2024-12-22 01:15:03,531 - __main__ - INFO - Starting captioning process...
+2024-12-22 01:15:03,531 - __main__ - INFO - Captioned video created successfully: /media/fritz/E4B0-3FC2/2024-12-21/output_video.mp4
+2024-12-25 22:24:05,845 - __main__ - INFO - Logging setup complete.
+2024-12-25 22:24:05,856 - __main__ - INFO - Added library path: /home/fritz/Desktop/frobnitz-main/lib/python_utils
+2024-12-25 22:24:05,884 - __main__ - INFO - Captioning script started.
+2024-12-25 22:24:05,885 - __main__ - INFO - Processing video file: /media/fritz/E4B0-3FC2/2024-12-22/Fun_Follow_Me_20241209.mkv
+2024-12-25 22:24:08,614 - __main__ - DEBUG - Video analysis complete: {'duration': 209.71, 'fps': 30.0, 'resolution': (1920, 1080), 'audio': True, 'bitrate': '473784'}
+2024-12-25 22:24:08,614 - __main__ - INFO - Matching JSON file found: /media/fritz/E4B0-3FC2/2024-12-22/Fun_Follow_Me_20241209.json
+2024-12-25 22:24:08,620 - __main__ - DEBUG - JSON data parsed successfully: {'download_path': '/media/fritz/E4B0-3FC2/2024-12-22', 'cookie_path': None, 'url': 'https://www.youtube.com/watch?v=AsnoKLFYYr8', 'font': 'Arial Bold', 'font_size': 64, 'username_color': 'yellow', 'date_color': 'cyan', 'timestamp_color': 'red', 'username_position': ['left', 'top'], 'date_position': ['left', 'bottom'], 'timestamp_position': ['right', 'bottom'], 'overall_start': 2, 'caption_top': '15%', 'caption_bottom': '75%', 'line_width': '8%', 'hor_offset': '4%', 'cap_length': 5, 'max_number': 60, 'max_char_width': 65, 'next_line': 1.7, 'pause_between_para': 2, 'source_path': '/app/data/4.source.txt', 'shadow': {'color': 'black', 'offset': 5, 'opacity': 0.6}, 'video_title': 'Estrella_de_luz_Himno_#1204(con_letras)_Star_Bright_Hymn_#1204_In_spanish_(with_lyrics)', 'video_date': '20241209', 'uploader': 'Fun Follow Me', 'duration': 210, 'width': 1920, 'height': 1080, 'id': 'AsnoKLFYYr8', 'ext': 'mkv', 'resolution': '1920x1080', 'fps': 30, 'tbr': 475.183, 'protocol': 'https+https', 'vcodec': 'avc1.640028', 'vbr': 334.522, 'acodec': 'opus', 'abr': 140.661, 'asr': 48000, 'original_filename': '/media/fritz/E4B0-3FC2/2024-12-22/Fun_Follow_Me_20241209.mkv', 'to_process': '/media/fritz/E4B0-3FC2/2024-12-22/Fun_Follow_Me_20241209.mkv'}
+2024-12-25 22:24:08,621 - __main__ - INFO - Starting captioning process...
+2024-12-25 22:24:08,621 - __main__ - INFO - Captioned video created successfully: /media/fritz/E4B0-3FC2/2024-12-22/output_video.mp4
+2024-12-25 22:31:50,232 - __main__ - INFO - Logging setup complete.
+2024-12-25 22:31:50,232 - __main__ - INFO - Added library path: /home/fritz/Desktop/frobnitz-main/lib/python_utils
+2024-12-25 22:31:50,233 - __main__ - INFO - Captioning script started.
+2024-12-25 22:31:50,233 - __main__ - INFO - Processing video file: /media/fritz/E4B0-3FC2/2024-12-22/Fun_Follow_Me_20241209.mkv
+2024-12-25 22:31:50,518 - __main__ - DEBUG - Video analysis complete: {'duration': 209.71, 'fps': 30.0, 'resolution': (1920, 1080), 'audio': True, 'bitrate': '473784'}
+2024-12-25 22:31:50,518 - __main__ - INFO - Matching JSON file found: /media/fritz/E4B0-3FC2/2024-12-22/Fun_Follow_Me_20241209.json
+2024-12-25 22:31:50,519 - __main__ - INFO - Parsed JSON data for /media/fritz/E4B0-3FC2/2024-12-22/Fun_Follow_Me_20241209.json: {
+  "download_path": "/media/fritz/E4B0-3FC2/2024-12-22",
+  "cookie_path": null,
+  "url": "https://www.youtube.com/watch?v=AsnoKLFYYr8",
+  "font": "Arial Bold",
+  "font_size": 64,
+  "username_color": "yellow",
+  "date_color": "cyan",
+  "timestamp_color": "red",
+  "username_position": [
+    "left",
+    "top"
+  ],
+  "date_position": [
+    "left",
+    "bottom"
+  ],
+  "timestamp_position": [
+    "right",
+    "bottom"
+  ],
+  "overall_start": 2,
+  "caption_top": "15%",
+  "caption_bottom": "75%",
+  "line_width": "8%",
+  "hor_offset": "4%",
+  "cap_length": 5,
+  "max_number": 60,
+  "max_char_width": 65,
+  "next_line": 1.7,
+  "pause_between_para": 2,
+  "source_path": "/app/data/4.source.txt",
+  "shadow": {
+    "color": "black",
+    "offset": 5,
+    "opacity": 0.6
+  },
+  "video_title": "Estrella_de_luz_Himno_#1204(con_letras)_Star_Bright_Hymn_#1204_In_spanish_(with_lyrics)",
+  "video_date": "20241209",
+  "uploader": "Fun Follow Me",
+  "duration": 210,
+  "width": 1920,
+  "height": 1080,
+  "id": "AsnoKLFYYr8",
+  "ext": "mkv",
+  "resolution": "1920x1080",
+  "fps": 30,
+  "tbr": 475.183,
+  "protocol": "https+https",
+  "vcodec": "avc1.640028",
+  "vbr": 334.522,
+  "acodec": "opus",
+  "abr": 140.661,
+  "asr": 48000,
+  "original_filename": "/media/fritz/E4B0-3FC2/2024-12-22/Fun_Follow_Me_20241209.mkv",
+  "to_process": "/media/fritz/E4B0-3FC2/2024-12-22/Fun_Follow_Me_20241209.mkv"
+}
+2024-12-25 22:31:50,519 - __main__ - INFO - Starting captioning process...
+2024-12-25 22:31:50,519 - __main__ - INFO - Captioned video created successfully: /media/fritz/E4B0-3FC2/2024-12-22/output_video.mp4
+2024-12-25 22:42:19,158 - __main__ - INFO - Logging setup complete.
+2024-12-25 22:42:19,158 - __main__ - INFO - Processing video file: /media/fritz/E4B0-3FC2/2024-12-22/Fun_Follow_Me_20241209.mkv
+2024-12-25 22:42:19,158 - __main__ - INFO - Using image directory: /home/fritz/Pictures
+2024-12-25 22:42:19,355 - __main__ - DEBUG - Video analysis complete: {'duration': 209.71, 'fps': 30.0, 'resolution': (1920, 1080), 'audio': True}
+2024-12-25 22:42:19,355 - __main__ - INFO - Matching JSON file found: /media/fritz/E4B0-3FC2/2024-12-22/Fun_Follow_Me_20241209.json
+2024-12-25 22:42:19,355 - __main__ - INFO - Parsed JSON data for /media/fritz/E4B0-3FC2/2024-12-22/Fun_Follow_Me_20241209.json: {
+  "download_path": "/media/fritz/E4B0-3FC2/2024-12-22",
+  "cookie_path": null,
+  "url": "https://www.youtube.com/watch?v=AsnoKLFYYr8",
+  "font": "Arial Bold",
+  "font_size": 64,
+  "username_color": "yellow",
+  "date_color": "cyan",
+  "timestamp_color": "red",
+  "username_position": [
+    "left",
+    "top"
+  ],
+  "date_position": [
+    "left",
+    "bottom"
+  ],
+  "timestamp_position": [
+    "right",
+    "bottom"
+  ],
+  "overall_start": 2,
+  "caption_top": "15%",
+  "caption_bottom": "75%",
+  "line_width": "8%",
+  "hor_offset": "4%",
+  "cap_length": 5,
+  "max_number": 60,
+  "max_char_width": 65,
+  "next_line": 1.7,
+  "pause_between_para": 2,
+  "source_path": "/app/data/4.source.txt",
+  "shadow": {
+    "color": "black",
+    "offset": 5,
+    "opacity": 0.6
+  },
+  "video_title": "Estrella_de_luz_Himno_#1204(con_letras)_Star_Bright_Hymn_#1204_In_spanish_(with_lyrics)",
+  "video_date": "20241209",
+  "uploader": "Fun Follow Me",
+  "duration": 210,
+  "width": 1920,
+  "height": 1080,
+  "id": "AsnoKLFYYr8",
+  "ext": "mkv",
+  "resolution": "1920x1080",
+  "fps": 30,
+  "tbr": 475.183,
+  "protocol": "https+https",
+  "vcodec": "avc1.640028",
+  "vbr": 334.522,
+  "acodec": "opus",
+  "abr": 140.661,
+  "asr": 48000,
+  "original_filename": "/media/fritz/E4B0-3FC2/2024-12-22/Fun_Follow_Me_20241209.mkv",
+  "to_process": "/media/fritz/E4B0-3FC2/2024-12-22/Fun_Follow_Me_20241209.mkv"
+}
+2024-12-25 22:42:19,544 - __main__ - INFO - Sequencing images: ['/home/fritz/Pictures/Screenshot from 2024-10-25 02-05-50.png', '/home/fritz/Pictures/Screenshot from 2024-10-25 02-21-56.png', '/home/fritz/Pictures/Screenshot from 2024-10-25 02-22-09.png', '/home/fritz/Pictures/Screenshot from 2024-10-25 02-45-20.png', '/home/fritz/Pictures/Screenshot from 2024-10-25 04-10-45.png', '/home/fritz/Pictures/Screenshot from 2024-10-25 05-44-37.png', '/home/fritz/Pictures/Screenshot from 2024-10-25 05-45-00.png', '/home/fritz/Pictures/Screenshot from 2024-10-25 05-49-57.png', '/home/fritz/Pictures/Screenshot from 2024-10-25 05-50-32.png', '/home/fritz/Pictures/Screenshot from 2024-10-25 06-11-10.png', '/home/fritz/Pictures/Screenshot from 2024-10-26 00-36-46.png', '/home/fritz/Pictures/Screenshot from 2024-12-19 16-52-23.png', '/home/fritz/Pictures/Screenshot from 2024-12-21 18-28-19.png', '/home/fritz/Pictures/Screenshot from 2024-12-23 20-16-28.png']
+2024-12-25 22:42:19,795 - __main__ - ERROR - Error creating image sequence: Moviepy: ImageSequenceClip requires all images to be the same size
+2024-12-25 22:42:19,795 - __main__ - ERROR - Failed to create image sequence. Exiting overlay process.
+2024-12-25 22:42:19,795 - __main__ - ERROR - Overlay process failed.
+2024-12-25 22:45:10,717 - __main__ - INFO - Logging setup complete.
+2024-12-25 22:45:10,718 - __main__ - INFO - Processing video file: /media/fritz/E4B0-3FC2/2024-12-22/Fun_Follow_Me_20241209.mkv
+2024-12-25 22:45:10,718 - __main__ - INFO - Using image directory: /home/fritz/Pictures
+2024-12-25 22:45:10,919 - __main__ - DEBUG - Video analysis complete: {'duration': 209.71, 'fps': 30.0, 'resolution': (1920, 1080), 'audio': True}
+2024-12-25 22:45:10,919 - __main__ - INFO - Matching JSON file found: /media/fritz/E4B0-3FC2/2024-12-22/Fun_Follow_Me_20241209.json
+2024-12-25 22:45:10,920 - __main__ - INFO - Parsed JSON data for /media/fritz/E4B0-3FC2/2024-12-22/Fun_Follow_Me_20241209.json: {
+  "download_path": "/media/fritz/E4B0-3FC2/2024-12-22",
+  "cookie_path": null,
+  "url": "https://www.youtube.com/watch?v=AsnoKLFYYr8",
+  "font": "Arial Bold",
+  "font_size": 64,
+  "username_color": "yellow",
+  "date_color": "cyan",
+  "timestamp_color": "red",
+  "username_position": [
+    "left",
+    "top"
+  ],
+  "date_position": [
+    "left",
+    "bottom"
+  ],
+  "timestamp_position": [
+    "right",
+    "bottom"
+  ],
+  "overall_start": 2,
+  "caption_top": "15%",
+  "caption_bottom": "75%",
+  "line_width": "8%",
+  "hor_offset": "4%",
+  "cap_length": 5,
+  "max_number": 60,
+  "max_char_width": 65,
+  "next_line": 1.7,
+  "pause_between_para": 2,
+  "source_path": "/app/data/4.source.txt",
+  "shadow": {
+    "color": "black",
+    "offset": 5,
+    "opacity": 0.6
+  },
+  "video_title": "Estrella_de_luz_Himno_#1204(con_letras)_Star_Bright_Hymn_#1204_In_spanish_(with_lyrics)",
+  "video_date": "20241209",
+  "uploader": "Fun Follow Me",
+  "duration": 210,
+  "width": 1920,
+  "height": 1080,
+  "id": "AsnoKLFYYr8",
+  "ext": "mkv",
+  "resolution": "1920x1080",
+  "fps": 30,
+  "tbr": 475.183,
+  "protocol": "https+https",
+  "vcodec": "avc1.640028",
+  "vbr": 334.522,
+  "acodec": "opus",
+  "abr": 140.661,
+  "asr": 48000,
+  "original_filename": "/media/fritz/E4B0-3FC2/2024-12-22/Fun_Follow_Me_20241209.mkv",
+  "to_process": "/media/fritz/E4B0-3FC2/2024-12-22/Fun_Follow_Me_20241209.mkv"
+}
+2024-12-25 22:45:11,106 - __main__ - INFO - Sequencing images: ['/home/fritz/Pictures/Screenshot from 2024-10-25 02-05-50.png', '/home/fritz/Pictures/Screenshot from 2024-10-25 02-21-56.png', '/home/fritz/Pictures/Screenshot from 2024-10-25 02-22-09.png', '/home/fritz/Pictures/Screenshot from 2024-10-25 02-45-20.png', '/home/fritz/Pictures/Screenshot from 2024-10-25 04-10-45.png', '/home/fritz/Pictures/Screenshot from 2024-10-25 05-44-37.png', '/home/fritz/Pictures/Screenshot from 2024-10-25 05-45-00.png', '/home/fritz/Pictures/Screenshot from 2024-10-25 05-49-57.png', '/home/fritz/Pictures/Screenshot from 2024-10-25 05-50-32.png', '/home/fritz/Pictures/Screenshot from 2024-10-25 06-11-10.png', '/home/fritz/Pictures/Screenshot from 2024-10-26 00-36-46.png', '/home/fritz/Pictures/Screenshot from 2024-12-19 16-52-23.png', '/home/fritz/Pictures/Screenshot from 2024-12-21 18-28-19.png', '/home/fritz/Pictures/Screenshot from 2024-12-23 20-16-28.png']
+2024-12-25 22:45:11,288 - __main__ - ERROR - Error creating image sequence: Moviepy: ImageSequenceClip requires all images to be the same size
+2024-12-25 22:45:11,288 - __main__ - ERROR - Failed to create image sequence. Exiting overlay process.
+2024-12-25 22:45:11,288 - __main__ - ERROR - Overlay process failed.
+2024-12-25 22:47:56,104 - __main__ - INFO - Logging setup complete.
+2024-12-25 22:47:56,105 - __main__ - INFO - Processing video file: /media/fritz/E4B0-3FC2/2024-12-22/Fun_Follow_Me_20241209.mkv
+2024-12-25 22:47:56,105 - __main__ - INFO - Using image directory: /home/fritz/Pictures
+2024-12-25 22:47:56,305 - __main__ - DEBUG - Video analysis complete: {'duration': 209.71, 'fps': 30.0, 'resolution': (1920, 1080), 'audio': True}
+2024-12-25 22:47:56,305 - __main__ - INFO - Matching JSON file found: /media/fritz/E4B0-3FC2/2024-12-22/Fun_Follow_Me_20241209.json
+2024-12-25 22:47:56,306 - __main__ - INFO - Parsed JSON data for /media/fritz/E4B0-3FC2/2024-12-22/Fun_Follow_Me_20241209.json: {
+  "download_path": "/media/fritz/E4B0-3FC2/2024-12-22",
+  "cookie_path": null,
+  "url": "https://www.youtube.com/watch?v=AsnoKLFYYr8",
+  "font": "Arial Bold",
+  "font_size": 64,
+  "username_color": "yellow",
+  "date_color": "cyan",
+  "timestamp_color": "red",
+  "username_position": [
+    "left",
+    "top"
+  ],
+  "date_position": [
+    "left",
+    "bottom"
+  ],
+  "timestamp_position": [
+    "right",
+    "bottom"
+  ],
+  "overall_start": 2,
+  "caption_top": "15%",
+  "caption_bottom": "75%",
+  "line_width": "8%",
+  "hor_offset": "4%",
+  "cap_length": 5,
+  "max_number": 60,
+  "max_char_width": 65,
+  "next_line": 1.7,
+  "pause_between_para": 2,
+  "source_path": "/app/data/4.source.txt",
+  "shadow": {
+    "color": "black",
+    "offset": 5,
+    "opacity": 0.6
+  },
+  "video_title": "Estrella_de_luz_Himno_#1204(con_letras)_Star_Bright_Hymn_#1204_In_spanish_(with_lyrics)",
+  "video_date": "20241209",
+  "uploader": "Fun Follow Me",
+  "duration": 210,
+  "width": 1920,
+  "height": 1080,
+  "id": "AsnoKLFYYr8",
+  "ext": "mkv",
+  "resolution": "1920x1080",
+  "fps": 30,
+  "tbr": 475.183,
+  "protocol": "https+https",
+  "vcodec": "avc1.640028",
+  "vbr": 334.522,
+  "acodec": "opus",
+  "abr": 140.661,
+  "asr": 48000,
+  "original_filename": "/media/fritz/E4B0-3FC2/2024-12-22/Fun_Follow_Me_20241209.mkv",
+  "to_process": "/media/fritz/E4B0-3FC2/2024-12-22/Fun_Follow_Me_20241209.mkv"
+}
+2024-12-25 22:47:56,498 - __main__ - INFO - Sequencing images: ['/home/fritz/Pictures/Screenshot from 2024-10-25 02-05-50.png', '/home/fritz/Pictures/Screenshot from 2024-10-25 02-21-56.png', '/home/fritz/Pictures/Screenshot from 2024-10-25 02-22-09.png', '/home/fritz/Pictures/Screenshot from 2024-10-25 02-45-20.png', '/home/fritz/Pictures/Screenshot from 2024-10-25 04-10-45.png', '/home/fritz/Pictures/Screenshot from 2024-10-25 05-44-37.png', '/home/fritz/Pictures/Screenshot from 2024-10-25 05-45-00.png', '/home/fritz/Pictures/Screenshot from 2024-10-25 05-49-57.png', '/home/fritz/Pictures/Screenshot from 2024-10-25 05-50-32.png', '/home/fritz/Pictures/Screenshot from 2024-10-25 06-11-10.png', '/home/fritz/Pictures/Screenshot from 2024-10-26 00-36-46.png', '/home/fritz/Pictures/Screenshot from 2024-12-19 16-52-23.png', '/home/fritz/Pictures/Screenshot from 2024-12-21 18-28-19.png', '/home/fritz/Pictures/Screenshot from 2024-12-23 20-16-28.png']
+2024-12-25 23:42:21,211 - __main__ - INFO - Logging setup complete.
+2024-12-25 23:42:21,212 - __main__ - ERROR - Input video file does not exist: /Volumes/NO
+2024-12-25 23:43:28,782 - __main__ - INFO - Logging setup complete.
+2024-12-25 23:43:28,783 - __main__ - INFO - Processing video file: /Volumes/NO NAME/2024-12-22/Fun_Follow_Me_20241209.mkv
+2024-12-25 23:43:28,783 - __main__ - INFO - Using image directory: /Users/mymac/Desktop/xmas/post
+2024-12-25 23:43:29,109 - __main__ - DEBUG - Video analysis complete: {'duration': 209.71, 'fps': 30.0, 'resolution': (1920, 1080), 'audio': True}
+2024-12-25 23:43:29,110 - __main__ - INFO - Matching JSON file found: /Volumes/NO NAME/2024-12-22/Fun_Follow_Me_20241209.json
+2024-12-25 23:43:29,112 - __main__ - INFO - Parsed JSON data for /Volumes/NO NAME/2024-12-22/Fun_Follow_Me_20241209.json: {
+  "download_path": "/media/fritz/E4B0-3FC2/2024-12-22",
+  "cookie_path": null,
+  "url": "https://www.youtube.com/watch?v=AsnoKLFYYr8",
+  "font": "Arial Bold",
+  "font_size": 64,
+  "username_color": "yellow",
+  "date_color": "cyan",
+  "timestamp_color": "red",
+  "username_position": [
+    "left",
+    "top"
+  ],
+  "date_position": [
+    "left",
+    "bottom"
+  ],
+  "timestamp_position": [
+    "right",
+    "bottom"
+  ],
+  "overall_start": 2,
+  "caption_top": "15%",
+  "caption_bottom": "75%",
+  "line_width": "8%",
+  "hor_offset": "4%",
+  "cap_length": 5,
+  "max_number": 60,
+  "max_char_width": 65,
+  "next_line": 1.7,
+  "pause_between_para": 2,
+  "source_path": "/app/data/4.source.txt",
+  "shadow": {
+    "color": "black",
+    "offset": 5,
+    "opacity": 0.6
+  },
+  "video_title": "Estrella_de_luz_Himno_#1204(con_letras)_Star_Bright_Hymn_#1204_In_spanish_(with_lyrics)",
+  "video_date": "20241209",
+  "uploader": "Fun Follow Me",
+  "duration": 210,
+  "width": 1920,
+  "height": 1080,
+  "id": "AsnoKLFYYr8",
+  "ext": "mkv",
+  "resolution": "1920x1080",
+  "fps": 30,
+  "tbr": 475.183,
+  "protocol": "https+https",
+  "vcodec": "avc1.640028",
+  "vbr": 334.522,
+  "acodec": "opus",
+  "abr": 140.661,
+  "asr": 48000,
+  "original_filename": "/media/fritz/E4B0-3FC2/2024-12-22/Fun_Follow_Me_20241209.mkv",
+  "to_process": "/media/fritz/E4B0-3FC2/2024-12-22/Fun_Follow_Me_20241209.mkv"
+}
+2024-12-25 23:43:29,333 - __main__ - INFO - Sequencing images: ['/Users/mymac/Desktop/xmas/post/Scan 1_0.jpeg', '/Users/mymac/Desktop/xmas/post/Scan 1_1.jpeg', '/Users/mymac/Desktop/xmas/post/Scan 1_2.jpeg', '/Users/mymac/Desktop/xmas/post/Scan 2_0.jpeg', '/Users/mymac/Desktop/xmas/post/Scan 2_1.jpeg', '/Users/mymac/Desktop/xmas/post/Scan 2_2.jpeg', '/Users/mymac/Desktop/xmas/post/Scan 3_0.jpeg', '/Users/mymac/Desktop/xmas/post/Scan 3_1.jpeg', '/Users/mymac/Desktop/xmas/post/Scan 3_2.jpeg', '/Users/mymac/Desktop/xmas/post/Scan 4_0.jpeg', '/Users/mymac/Desktop/xmas/post/Scan 4_1.jpeg', '/Users/mymac/Desktop/xmas/post/Scan 4_2.jpeg', '/Users/mymac/Desktop/xmas/post/Scan 5_0.jpeg', '/Users/mymac/Desktop/xmas/post/Scan 5_1.jpeg', '/Users/mymac/Desktop/xmas/post/Scan 5_2.jpeg', '/Users/mymac/Desktop/xmas/post/Scan_0.jpeg', '/Users/mymac/Desktop/xmas/post/Scan_1.jpeg', '/Users/mymac/Desktop/xmas/post/Scan_2.jpeg']
+2024-12-25 23:55:45,702 - __main__ - INFO - Overlay process complete. Output saved to: /Volumes/NO NAME/2024-12-22/output_video.mp4
+2024-12-25 23:55:45,703 - __main__ - INFO - Process completed successfully. Output video: /Volumes/NO NAME/2024-12-22/output_video.mp4
+2024-12-26 00:09:16,096 - __main__ - INFO - Logging setup complete.
+2024-12-26 00:09:16,098 - __main__ - INFO - Processing video file: /Volumes/NO NAME/2024-12-22/Fun_Follow_Me_20241209.mkv
+2024-12-26 00:09:16,098 - __main__ - INFO - Using image directory: /Users/mymac/Desktop/xmas/post
+2024-12-26 00:09:16,393 - __main__ - DEBUG - Video analysis complete: {'duration': 209.71, 'fps': 30.0, 'resolution': (1920, 1080), 'audio': True}
+2024-12-26 00:09:16,394 - __main__ - INFO - Matching JSON file found: /Volumes/NO NAME/2024-12-22/Fun_Follow_Me_20241209.json
+2024-12-26 00:09:16,395 - __main__ - INFO - Parsed JSON data for /Volumes/NO NAME/2024-12-22/Fun_Follow_Me_20241209.json: {
+  "download_path": "/media/fritz/E4B0-3FC2/2024-12-22",
+  "cookie_path": null,
+  "url": "https://www.youtube.com/watch?v=AsnoKLFYYr8",
+  "font": "Arial Bold",
+  "font_size": 64,
+  "username_color": "yellow",
+  "date_color": "cyan",
+  "timestamp_color": "red",
+  "username_position": [
+    "left",
+    "top"
+  ],
+  "date_position": [
+    "left",
+    "bottom"
+  ],
+  "timestamp_position": [
+    "right",
+    "bottom"
+  ],
+  "overall_start": 2,
+  "caption_top": "15%",
+  "caption_bottom": "75%",
+  "line_width": "8%",
+  "hor_offset": "4%",
+  "cap_length": 5,
+  "max_number": 60,
+  "max_char_width": 65,
+  "next_line": 1.7,
+  "pause_between_para": 2,
+  "source_path": "/app/data/4.source.txt",
+  "shadow": {
+    "color": "black",
+    "offset": 5,
+    "opacity": 0.6
+  },
+  "video_title": "Estrella_de_luz_Himno_#1204(con_letras)_Star_Bright_Hymn_#1204_In_spanish_(with_lyrics)",
+  "video_date": "20241209",
+  "uploader": "Fun Follow Me",
+  "duration": 210,
+  "width": 1920,
+  "height": 1080,
+  "id": "AsnoKLFYYr8",
+  "ext": "mkv",
+  "resolution": "1920x1080",
+  "fps": 30,
+  "tbr": 475.183,
+  "protocol": "https+https",
+  "vcodec": "avc1.640028",
+  "vbr": 334.522,
+  "acodec": "opus",
+  "abr": 140.661,
+  "asr": 48000,
+  "original_filename": "/media/fritz/E4B0-3FC2/2024-12-22/Fun_Follow_Me_20241209.mkv",
+  "to_process": "/media/fritz/E4B0-3FC2/2024-12-22/Fun_Follow_Me_20241209.mkv"
+}
+2024-12-26 00:09:16,616 - __main__ - INFO - Sequencing images: ['/Users/mymac/Desktop/xmas/post/1.jpeg', '/Users/mymac/Desktop/xmas/post/10.jpeg', '/Users/mymac/Desktop/xmas/post/11.jpeg', '/Users/mymac/Desktop/xmas/post/12.jpeg', '/Users/mymac/Desktop/xmas/post/13.jpeg', '/Users/mymac/Desktop/xmas/post/14.jpeg', '/Users/mymac/Desktop/xmas/post/15.jpeg', '/Users/mymac/Desktop/xmas/post/2.jpeg', '/Users/mymac/Desktop/xmas/post/3.jpeg', '/Users/mymac/Desktop/xmas/post/4.jpeg', '/Users/mymac/Desktop/xmas/post/5.jpeg', '/Users/mymac/Desktop/xmas/post/6.jpeg', '/Users/mymac/Desktop/xmas/post/7.jpeg', '/Users/mymac/Desktop/xmas/post/8.jpeg', '/Users/mymac/Desktop/xmas/post/9.jpeg']
+2024-12-26 00:09:16,670 - __main__ - ERROR - Error creating image sequence: module 'PIL.Image' has no attribute 'ANTIALIAS'
+2024-12-26 00:09:16,670 - __main__ - ERROR - Failed to create image sequence. Exiting overlay process.
+2024-12-26 00:09:16,670 - __main__ - ERROR - Overlay process failed.
+2024-12-26 00:10:35,320 - __main__ - INFO - Logging setup complete.
+2024-12-26 00:10:35,322 - __main__ - INFO - Processing video file: /Volumes/NO NAME/2024-12-22/Fun_Follow_Me_20241209.mkv
+2024-12-26 00:10:35,322 - __main__ - INFO - Using image directory: /Users/mymac/Desktop/xmas/post
+2024-12-26 00:10:35,606 - __main__ - DEBUG - Video analysis complete: {'duration': 209.71, 'fps': 30.0, 'resolution': (1920, 1080), 'audio': True}
+2024-12-26 00:10:35,607 - __main__ - INFO - Matching JSON file found: /Volumes/NO NAME/2024-12-22/Fun_Follow_Me_20241209.json
+2024-12-26 00:10:35,608 - __main__ - INFO - Parsed JSON data for /Volumes/NO NAME/2024-12-22/Fun_Follow_Me_20241209.json: {
+  "download_path": "/media/fritz/E4B0-3FC2/2024-12-22",
+  "cookie_path": null,
+  "url": "https://www.youtube.com/watch?v=AsnoKLFYYr8",
+  "font": "Arial Bold",
+  "font_size": 64,
+  "username_color": "yellow",
+  "date_color": "cyan",
+  "timestamp_color": "red",
+  "username_position": [
+    "left",
+    "top"
+  ],
+  "date_position": [
+    "left",
+    "bottom"
+  ],
+  "timestamp_position": [
+    "right",
+    "bottom"
+  ],
+  "overall_start": 2,
+  "caption_top": "15%",
+  "caption_bottom": "75%",
+  "line_width": "8%",
+  "hor_offset": "4%",
+  "cap_length": 5,
+  "max_number": 60,
+  "max_char_width": 65,
+  "next_line": 1.7,
+  "pause_between_para": 2,
+  "source_path": "/app/data/4.source.txt",
+  "shadow": {
+    "color": "black",
+    "offset": 5,
+    "opacity": 0.6
+  },
+  "video_title": "Estrella_de_luz_Himno_#1204(con_letras)_Star_Bright_Hymn_#1204_In_spanish_(with_lyrics)",
+  "video_date": "20241209",
+  "uploader": "Fun Follow Me",
+  "duration": 210,
+  "width": 1920,
+  "height": 1080,
+  "id": "AsnoKLFYYr8",
+  "ext": "mkv",
+  "resolution": "1920x1080",
+  "fps": 30,
+  "tbr": 475.183,
+  "protocol": "https+https",
+  "vcodec": "avc1.640028",
+  "vbr": 334.522,
+  "acodec": "opus",
+  "abr": 140.661,
+  "asr": 48000,
+  "original_filename": "/media/fritz/E4B0-3FC2/2024-12-22/Fun_Follow_Me_20241209.mkv",
+  "to_process": "/media/fritz/E4B0-3FC2/2024-12-22/Fun_Follow_Me_20241209.mkv"
+}
+2024-12-26 00:10:35,826 - __main__ - INFO - Sequencing images: ['/Users/mymac/Desktop/xmas/post/1.jpeg', '/Users/mymac/Desktop/xmas/post/10.jpeg', '/Users/mymac/Desktop/xmas/post/11.jpeg', '/Users/mymac/Desktop/xmas/post/12.jpeg', '/Users/mymac/Desktop/xmas/post/13.jpeg', '/Users/mymac/Desktop/xmas/post/14.jpeg', '/Users/mymac/Desktop/xmas/post/15.jpeg', '/Users/mymac/Desktop/xmas/post/2.jpeg', '/Users/mymac/Desktop/xmas/post/3.jpeg', '/Users/mymac/Desktop/xmas/post/4.jpeg', '/Users/mymac/Desktop/xmas/post/5.jpeg', '/Users/mymac/Desktop/xmas/post/6.jpeg', '/Users/mymac/Desktop/xmas/post/7.jpeg', '/Users/mymac/Desktop/xmas/post/8.jpeg', '/Users/mymac/Desktop/xmas/post/9.jpeg']
+2024-12-26 00:10:35,872 - __main__ - ERROR - Error creating image sequence: name 'Image' is not defined
+2024-12-26 00:10:35,872 - __main__ - ERROR - Failed to create image sequence. Exiting overlay process.
+2024-12-26 00:10:35,872 - __main__ - ERROR - Overlay process failed.
+2024-12-26 00:11:02,676 - __main__ - INFO - Logging setup complete.
+2024-12-26 00:11:02,677 - __main__ - INFO - Processing video file: /Volumes/NO NAME/2024-12-22/Fun_Follow_Me_20241209.mkv
+2024-12-26 00:11:02,677 - __main__ - INFO - Using image directory: /Users/mymac/Desktop/xmas/post
+2024-12-26 00:11:02,924 - __main__ - DEBUG - Video analysis complete: {'duration': 209.71, 'fps': 30.0, 'resolution': (1920, 1080), 'audio': True}
+2024-12-26 00:11:02,925 - __main__ - INFO - Matching JSON file found: /Volumes/NO NAME/2024-12-22/Fun_Follow_Me_20241209.json
+2024-12-26 00:11:02,926 - __main__ - INFO - Parsed JSON data for /Volumes/NO NAME/2024-12-22/Fun_Follow_Me_20241209.json: {
+  "download_path": "/media/fritz/E4B0-3FC2/2024-12-22",
+  "cookie_path": null,
+  "url": "https://www.youtube.com/watch?v=AsnoKLFYYr8",
+  "font": "Arial Bold",
+  "font_size": 64,
+  "username_color": "yellow",
+  "date_color": "cyan",
+  "timestamp_color": "red",
+  "username_position": [
+    "left",
+    "top"
+  ],
+  "date_position": [
+    "left",
+    "bottom"
+  ],
+  "timestamp_position": [
+    "right",
+    "bottom"
+  ],
+  "overall_start": 2,
+  "caption_top": "15%",
+  "caption_bottom": "75%",
+  "line_width": "8%",
+  "hor_offset": "4%",
+  "cap_length": 5,
+  "max_number": 60,
+  "max_char_width": 65,
+  "next_line": 1.7,
+  "pause_between_para": 2,
+  "source_path": "/app/data/4.source.txt",
+  "shadow": {
+    "color": "black",
+    "offset": 5,
+    "opacity": 0.6
+  },
+  "video_title": "Estrella_de_luz_Himno_#1204(con_letras)_Star_Bright_Hymn_#1204_In_spanish_(with_lyrics)",
+  "video_date": "20241209",
+  "uploader": "Fun Follow Me",
+  "duration": 210,
+  "width": 1920,
+  "height": 1080,
+  "id": "AsnoKLFYYr8",
+  "ext": "mkv",
+  "resolution": "1920x1080",
+  "fps": 30,
+  "tbr": 475.183,
+  "protocol": "https+https",
+  "vcodec": "avc1.640028",
+  "vbr": 334.522,
+  "acodec": "opus",
+  "abr": 140.661,
+  "asr": 48000,
+  "original_filename": "/media/fritz/E4B0-3FC2/2024-12-22/Fun_Follow_Me_20241209.mkv",
+  "to_process": "/media/fritz/E4B0-3FC2/2024-12-22/Fun_Follow_Me_20241209.mkv"
+}
+2024-12-26 00:11:03,154 - __main__ - INFO - Sequencing images: ['/Users/mymac/Desktop/xmas/post/1.jpeg', '/Users/mymac/Desktop/xmas/post/10.jpeg', '/Users/mymac/Desktop/xmas/post/11.jpeg', '/Users/mymac/Desktop/xmas/post/12.jpeg', '/Users/mymac/Desktop/xmas/post/13.jpeg', '/Users/mymac/Desktop/xmas/post/14.jpeg', '/Users/mymac/Desktop/xmas/post/15.jpeg', '/Users/mymac/Desktop/xmas/post/2.jpeg', '/Users/mymac/Desktop/xmas/post/3.jpeg', '/Users/mymac/Desktop/xmas/post/4.jpeg', '/Users/mymac/Desktop/xmas/post/5.jpeg', '/Users/mymac/Desktop/xmas/post/6.jpeg', '/Users/mymac/Desktop/xmas/post/7.jpeg', '/Users/mymac/Desktop/xmas/post/8.jpeg', '/Users/mymac/Desktop/xmas/post/9.jpeg']
+2024-12-26 00:11:03,205 - __main__ - ERROR - Error creating image sequence: name 'Image' is not defined
+2024-12-26 00:11:03,205 - __main__ - ERROR - Failed to create image sequence. Exiting overlay process.
+2024-12-26 00:11:03,205 - __main__ - ERROR - Overlay process failed.
+2024-12-26 00:12:07,128 - __main__ - INFO - Logging setup complete.
+2024-12-26 00:12:07,129 - __main__ - INFO - Processing video file: /Volumes/NO NAME/2024-12-22/Fun_Follow_Me_20241209.mkv
+2024-12-26 00:12:07,129 - __main__ - INFO - Using image directory: /Users/mymac/Desktop/xmas/post
+2024-12-26 00:12:07,401 - __main__ - DEBUG - Video analysis complete: {'duration': 209.71, 'fps': 30.0, 'resolution': (1920, 1080), 'audio': True}
+2024-12-26 00:12:07,402 - __main__ - INFO - Matching JSON file found: /Volumes/NO NAME/2024-12-22/Fun_Follow_Me_20241209.json
+2024-12-26 00:12:07,403 - __main__ - INFO - Parsed JSON data for /Volumes/NO NAME/2024-12-22/Fun_Follow_Me_20241209.json: {
+  "download_path": "/media/fritz/E4B0-3FC2/2024-12-22",
+  "cookie_path": null,
+  "url": "https://www.youtube.com/watch?v=AsnoKLFYYr8",
+  "font": "Arial Bold",
+  "font_size": 64,
+  "username_color": "yellow",
+  "date_color": "cyan",
+  "timestamp_color": "red",
+  "username_position": [
+    "left",
+    "top"
+  ],
+  "date_position": [
+    "left",
+    "bottom"
+  ],
+  "timestamp_position": [
+    "right",
+    "bottom"
+  ],
+  "overall_start": 2,
+  "caption_top": "15%",
+  "caption_bottom": "75%",
+  "line_width": "8%",
+  "hor_offset": "4%",
+  "cap_length": 5,
+  "max_number": 60,
+  "max_char_width": 65,
+  "next_line": 1.7,
+  "pause_between_para": 2,
+  "source_path": "/app/data/4.source.txt",
+  "shadow": {
+    "color": "black",
+    "offset": 5,
+    "opacity": 0.6
+  },
+  "video_title": "Estrella_de_luz_Himno_#1204(con_letras)_Star_Bright_Hymn_#1204_In_spanish_(with_lyrics)",
+  "video_date": "20241209",
+  "uploader": "Fun Follow Me",
+  "duration": 210,
+  "width": 1920,
+  "height": 1080,
+  "id": "AsnoKLFYYr8",
+  "ext": "mkv",
+  "resolution": "1920x1080",
+  "fps": 30,
+  "tbr": 475.183,
+  "protocol": "https+https",
+  "vcodec": "avc1.640028",
+  "vbr": 334.522,
+  "acodec": "opus",
+  "abr": 140.661,
+  "asr": 48000,
+  "original_filename": "/media/fritz/E4B0-3FC2/2024-12-22/Fun_Follow_Me_20241209.mkv",
+  "to_process": "/media/fritz/E4B0-3FC2/2024-12-22/Fun_Follow_Me_20241209.mkv"
+}
+2024-12-26 00:12:07,624 - __main__ - INFO - Sequencing images: ['/Users/mymac/Desktop/xmas/post/1.jpeg', '/Users/mymac/Desktop/xmas/post/10.jpeg', '/Users/mymac/Desktop/xmas/post/11.jpeg', '/Users/mymac/Desktop/xmas/post/12.jpeg', '/Users/mymac/Desktop/xmas/post/13.jpeg', '/Users/mymac/Desktop/xmas/post/14.jpeg', '/Users/mymac/Desktop/xmas/post/15.jpeg', '/Users/mymac/Desktop/xmas/post/2.jpeg', '/Users/mymac/Desktop/xmas/post/3.jpeg', '/Users/mymac/Desktop/xmas/post/4.jpeg', '/Users/mymac/Desktop/xmas/post/5.jpeg', '/Users/mymac/Desktop/xmas/post/6.jpeg', '/Users/mymac/Desktop/xmas/post/7.jpeg', '/Users/mymac/Desktop/xmas/post/8.jpeg', '/Users/mymac/Desktop/xmas/post/9.jpeg']
+2024-12-26 00:12:07,668 - __main__ - ERROR - Error creating image sequence: resize() got an unexpected keyword argument 'resample'
+2024-12-26 00:12:07,668 - __main__ - ERROR - Failed to create image sequence. Exiting overlay process.
+2024-12-26 00:12:07,668 - __main__ - ERROR - Overlay process failed.
+2024-12-26 00:14:12,784 - __main__ - INFO - Logging setup complete.
+2024-12-26 00:14:12,786 - __main__ - INFO - Processing video file: /Volumes/NO NAME/2024-12-22/Fun_Follow_Me_20241209.mkv
+2024-12-26 00:14:12,786 - __main__ - INFO - Using image directory: /Users/mymac/Desktop/xmas/post
+2024-12-26 00:14:13,051 - __main__ - DEBUG - Video analysis complete: {'duration': 209.71, 'fps': 30.0, 'resolution': (1920, 1080), 'audio': True}
+2024-12-26 00:14:13,052 - __main__ - INFO - Matching JSON file found: /Volumes/NO NAME/2024-12-22/Fun_Follow_Me_20241209.json
+2024-12-26 00:14:13,053 - __main__ - INFO - Parsed JSON data for /Volumes/NO NAME/2024-12-22/Fun_Follow_Me_20241209.json: {
+  "download_path": "/media/fritz/E4B0-3FC2/2024-12-22",
+  "cookie_path": null,
+  "url": "https://www.youtube.com/watch?v=AsnoKLFYYr8",
+  "font": "Arial Bold",
+  "font_size": 64,
+  "username_color": "yellow",
+  "date_color": "cyan",
+  "timestamp_color": "red",
+  "username_position": [
+    "left",
+    "top"
+  ],
+  "date_position": [
+    "left",
+    "bottom"
+  ],
+  "timestamp_position": [
+    "right",
+    "bottom"
+  ],
+  "overall_start": 2,
+  "caption_top": "15%",
+  "caption_bottom": "75%",
+  "line_width": "8%",
+  "hor_offset": "4%",
+  "cap_length": 5,
+  "max_number": 60,
+  "max_char_width": 65,
+  "next_line": 1.7,
+  "pause_between_para": 2,
+  "source_path": "/app/data/4.source.txt",
+  "shadow": {
+    "color": "black",
+    "offset": 5,
+    "opacity": 0.6
+  },
+  "video_title": "Estrella_de_luz_Himno_#1204(con_letras)_Star_Bright_Hymn_#1204_In_spanish_(with_lyrics)",
+  "video_date": "20241209",
+  "uploader": "Fun Follow Me",
+  "duration": 210,
+  "width": 1920,
+  "height": 1080,
+  "id": "AsnoKLFYYr8",
+  "ext": "mkv",
+  "resolution": "1920x1080",
+  "fps": 30,
+  "tbr": 475.183,
+  "protocol": "https+https",
+  "vcodec": "avc1.640028",
+  "vbr": 334.522,
+  "acodec": "opus",
+  "abr": 140.661,
+  "asr": 48000,
+  "original_filename": "/media/fritz/E4B0-3FC2/2024-12-22/Fun_Follow_Me_20241209.mkv",
+  "to_process": "/media/fritz/E4B0-3FC2/2024-12-22/Fun_Follow_Me_20241209.mkv"
+}
+2024-12-26 00:14:13,274 - __main__ - INFO - Sequencing images: ['/Users/mymac/Desktop/xmas/post/1.jpeg', '/Users/mymac/Desktop/xmas/post/10.jpeg', '/Users/mymac/Desktop/xmas/post/11.jpeg', '/Users/mymac/Desktop/xmas/post/12.jpeg', '/Users/mymac/Desktop/xmas/post/13.jpeg', '/Users/mymac/Desktop/xmas/post/14.jpeg', '/Users/mymac/Desktop/xmas/post/15.jpeg', '/Users/mymac/Desktop/xmas/post/2.jpeg', '/Users/mymac/Desktop/xmas/post/3.jpeg', '/Users/mymac/Desktop/xmas/post/4.jpeg', '/Users/mymac/Desktop/xmas/post/5.jpeg', '/Users/mymac/Desktop/xmas/post/6.jpeg', '/Users/mymac/Desktop/xmas/post/7.jpeg', '/Users/mymac/Desktop/xmas/post/8.jpeg', '/Users/mymac/Desktop/xmas/post/9.jpeg']
+2024-12-26 00:14:13,326 - __main__ - ERROR - Error creating image sequence: module 'PIL.Image' has no attribute 'ANTIALIAS'
+2024-12-26 00:14:13,327 - __main__ - ERROR - Failed to create image sequence. Exiting overlay process.
+2024-12-26 00:14:13,327 - __main__ - ERROR - Overlay process failed.
+2024-12-26 00:18:00,048 - __main__ - INFO - Logging setup complete.
+2024-12-26 00:18:00,049 - __main__ - INFO - Processing video file: /Volumes/NO NAME/2024-12-22/Fun_Follow_Me_20241209.mkv
+2024-12-26 00:18:00,049 - __main__ - INFO - Using image directory: /Users/mymac/Desktop/xmas/post
+2024-12-26 00:18:00,357 - __main__ - DEBUG - Video analysis complete: {'duration': 209.71, 'fps': 30.0, 'resolution': (1920, 1080), 'audio': True}
+2024-12-26 00:18:00,358 - __main__ - INFO - Matching JSON file found: /Volumes/NO NAME/2024-12-22/Fun_Follow_Me_20241209.json
+2024-12-26 00:18:00,359 - __main__ - INFO - Parsed JSON data for /Volumes/NO NAME/2024-12-22/Fun_Follow_Me_20241209.json: {
+  "download_path": "/media/fritz/E4B0-3FC2/2024-12-22",
+  "cookie_path": null,
+  "url": "https://www.youtube.com/watch?v=AsnoKLFYYr8",
+  "font": "Arial Bold",
+  "font_size": 64,
+  "username_color": "yellow",
+  "date_color": "cyan",
+  "timestamp_color": "red",
+  "username_position": [
+    "left",
+    "top"
+  ],
+  "date_position": [
+    "left",
+    "bottom"
+  ],
+  "timestamp_position": [
+    "right",
+    "bottom"
+  ],
+  "overall_start": 2,
+  "caption_top": "15%",
+  "caption_bottom": "75%",
+  "line_width": "8%",
+  "hor_offset": "4%",
+  "cap_length": 5,
+  "max_number": 60,
+  "max_char_width": 65,
+  "next_line": 1.7,
+  "pause_between_para": 2,
+  "source_path": "/app/data/4.source.txt",
+  "shadow": {
+    "color": "black",
+    "offset": 5,
+    "opacity": 0.6
+  },
+  "video_title": "Estrella_de_luz_Himno_#1204(con_letras)_Star_Bright_Hymn_#1204_In_spanish_(with_lyrics)",
+  "video_date": "20241209",
+  "uploader": "Fun Follow Me",
+  "duration": 210,
+  "width": 1920,
+  "height": 1080,
+  "id": "AsnoKLFYYr8",
+  "ext": "mkv",
+  "resolution": "1920x1080",
+  "fps": 30,
+  "tbr": 475.183,
+  "protocol": "https+https",
+  "vcodec": "avc1.640028",
+  "vbr": 334.522,
+  "acodec": "opus",
+  "abr": 140.661,
+  "asr": 48000,
+  "original_filename": "/media/fritz/E4B0-3FC2/2024-12-22/Fun_Follow_Me_20241209.mkv",
+  "to_process": "/media/fritz/E4B0-3FC2/2024-12-22/Fun_Follow_Me_20241209.mkv"
+}
+2024-12-26 00:18:00,581 - __main__ - INFO - Resizing images: ['/Users/mymac/Desktop/xmas/post/1.jpeg', '/Users/mymac/Desktop/xmas/post/10.jpeg', '/Users/mymac/Desktop/xmas/post/11.jpeg', '/Users/mymac/Desktop/xmas/post/12.jpeg', '/Users/mymac/Desktop/xmas/post/13.jpeg', '/Users/mymac/Desktop/xmas/post/14.jpeg', '/Users/mymac/Desktop/xmas/post/15.jpeg', '/Users/mymac/Desktop/xmas/post/2.jpeg', '/Users/mymac/Desktop/xmas/post/3.jpeg', '/Users/mymac/Desktop/xmas/post/4.jpeg', '/Users/mymac/Desktop/xmas/post/5.jpeg', '/Users/mymac/Desktop/xmas/post/6.jpeg', '/Users/mymac/Desktop/xmas/post/7.jpeg', '/Users/mymac/Desktop/xmas/post/8.jpeg', '/Users/mymac/Desktop/xmas/post/9.jpeg']
+2024-12-26 00:27:04,632 - __main__ - INFO - Overlay process complete. Output saved to: /Volumes/NO NAME/2024-12-22/output_video.mp4
+2024-12-26 00:27:04,636 - __main__ - INFO - Temporary files deleted from: /var/folders/qt/fsqb5h6s2l99qxg6mm2xlqv80000gn/T/tmplmpy23ea
+2024-12-26 00:27:04,636 - __main__ - INFO - Process completed successfully. Output video: /Volumes/NO NAME/2024-12-22/output_video.mp4
+2024-12-27 21:16:29,767 - __main__ - INFO - Logging setup complete.
+2024-12-27 21:16:29,768 - __main__ - ERROR - Usage: python call_captions.py <video_file_path> <image_directory>
+2024-12-27 21:23:59,681 - __main__ - INFO - Logging setup complete.
+2024-12-27 21:23:59,682 - __main__ - ERROR - Usage: python call_captions.py <video_file_path> <image_directory>
+2024-12-27 21:42:13,799 - __main__ - INFO - Logging setup complete.
+2024-12-27 21:42:13,799 - __main__ - ERROR - Usage: python call_captions.py <video_file_path> <image_directory>
+2024-12-27 21:49:48,220 - __main__ - INFO - Logging setup complete.
+2024-12-27 21:49:48,220 - __main__ - INFO - Processing video file: /Volumes/BallardT1/2024-12-27/Kemper_Crabb_-_Topic_20150530_6_watermarked.webm
+2024-12-27 21:49:48,220 - __main__ - INFO - Using image directory: /Users/mymac/Desktop/2024-12-22/post
+2024-12-27 21:49:48,427 - __main__ - DEBUG - Video analysis complete: {'duration': 144.2, 'fps': 25.0, 'resolution': (1080, 1080), 'audio': True}
+2024-12-27 21:49:48,428 - __main__ - WARNING - No matching JSON file found for: /Volumes/BallardT1/2024-12-27/Kemper_Crabb_-_Topic_20150530_6_watermarked.webm
+2024-12-27 21:49:48,608 - __main__ - INFO - Resizing images: ['/Users/mymac/Desktop/2024-12-22/post/1.png', '/Users/mymac/Desktop/2024-12-22/post/10.png', '/Users/mymac/Desktop/2024-12-22/post/11.png', '/Users/mymac/Desktop/2024-12-22/post/12.png', '/Users/mymac/Desktop/2024-12-22/post/13.png', '/Users/mymac/Desktop/2024-12-22/post/14.png', '/Users/mymac/Desktop/2024-12-22/post/15.png', '/Users/mymac/Desktop/2024-12-22/post/2.png', '/Users/mymac/Desktop/2024-12-22/post/3.png', '/Users/mymac/Desktop/2024-12-22/post/4.png', '/Users/mymac/Desktop/2024-12-22/post/5.png', '/Users/mymac/Desktop/2024-12-22/post/6.png', '/Users/mymac/Desktop/2024-12-22/post/7.png', '/Users/mymac/Desktop/2024-12-22/post/8.png', '/Users/mymac/Desktop/2024-12-22/post/9.png']
+2024-12-27 21:52:41,147 - __main__ - INFO - Overlay process complete. Output saved to: /Volumes/BallardT1/2024-12-27/output_video.mp4
+2024-12-27 21:52:41,151 - __main__ - INFO - Temporary files deleted from: /var/folders/qt/fsqb5h6s2l99qxg6mm2xlqv80000gn/T/tmp4kut7g8a
+2024-12-27 21:52:41,151 - __main__ - INFO - Process completed successfully. Output video: /Volumes/BallardT1/2024-12-27/output_video.mp4
+2024-12-27 22:58:21,122 - __main__ - INFO - Logging setup complete.
+2024-12-27 22:58:21,327 - __main__ - INFO - Using image directory: /Users/mymac/Desktop/2024-12-22/post
+2024-12-27 22:58:21,328 - __main__ - INFO - Cleared all files in the resize directory: /tmp/resized_images
+2024-12-27 23:00:15,669 - __main__ - INFO - Overlay process complete. Output saved to: 1.output_video.mp4
+2024-12-27 23:10:33,033 - __main__ - INFO - Logging setup complete.
+2024-12-27 23:10:33,237 - __main__ - INFO - Using image directory: /Users/mymac/Desktop/2024-12-22/post
+2024-12-27 23:10:33,238 - __main__ - INFO - Removed file: /tmp/resized_images/001.jpeg
+2024-12-27 23:10:33,238 - __main__ - INFO - Removed file: /tmp/resized_images/007.jpeg
+2024-12-27 23:10:33,238 - __main__ - INFO - Removed file: /tmp/resized_images/011.jpeg
+2024-12-27 23:10:33,238 - __main__ - INFO - Removed file: /tmp/resized_images/010.jpeg
+2024-12-27 23:10:33,238 - __main__ - INFO - Removed file: /tmp/resized_images/006.jpeg
+2024-12-27 23:10:33,238 - __main__ - INFO - Removed file: /tmp/resized_images/013.jpeg
+2024-12-27 23:10:33,238 - __main__ - INFO - Removed file: /tmp/resized_images/005.jpeg
+2024-12-27 23:10:33,238 - __main__ - INFO - Removed file: /tmp/resized_images/009.jpeg
+2024-12-27 23:10:33,238 - __main__ - INFO - Removed file: /tmp/resized_images/008.jpeg
+2024-12-27 23:10:33,238 - __main__ - INFO - Removed file: /tmp/resized_images/004.jpeg
+2024-12-27 23:10:33,238 - __main__ - INFO - Removed file: /tmp/resized_images/012.jpeg
+2024-12-27 23:10:33,239 - __main__ - INFO - Removed file: /tmp/resized_images/015.jpeg
+2024-12-27 23:10:33,239 - __main__ - INFO - Removed file: /tmp/resized_images/003.jpeg
+2024-12-27 23:10:33,239 - __main__ - INFO - Removed file: /tmp/resized_images/002.jpeg
+2024-12-27 23:10:33,239 - __main__ - INFO - Removed file: /tmp/resized_images/014.jpeg
+2024-12-27 23:10:33,239 - __main__ - INFO - Cleared all files in the resize directory: /tmp/resized_images
+2024-12-27 23:12:27,956 - __main__ - INFO - Overlay process complete. Output saved to: 1.output_video.mp4
+2024-12-27 23:29:33,742 - __main__ - INFO - Logging setup complete.
+2024-12-27 23:29:33,984 - __main__ - INFO - Using image directory: /Users/mymac/Desktop/2024-12-22/post
+2024-12-27 23:29:33,984 - __main__ - INFO - Removed file: /tmp/resized_images/10.jpeg
+2024-12-27 23:29:33,985 - __main__ - INFO - Removed file: /tmp/resized_images/06.jpeg
+2024-12-27 23:29:33,985 - __main__ - INFO - Removed file: /tmp/resized_images/07.jpeg
+2024-12-27 23:29:33,985 - __main__ - INFO - Removed file: /tmp/resized_images/11.jpeg
+2024-12-27 23:29:33,986 - __main__ - INFO - Removed file: /tmp/resized_images/01.jpeg
+2024-12-27 23:29:33,986 - __main__ - INFO - Removed file: /tmp/resized_images/02.jpeg
+2024-12-27 23:29:33,986 - __main__ - INFO - Removed file: /tmp/resized_images/14.jpeg
+2024-12-27 23:29:33,986 - __main__ - INFO - Removed file: /tmp/resized_images/15.jpeg
+2024-12-27 23:29:33,986 - __main__ - INFO - Removed file: /tmp/resized_images/03.jpeg
+2024-12-27 23:29:33,986 - __main__ - INFO - Removed file: /tmp/resized_images/04.jpeg
+2024-12-27 23:29:33,986 - __main__ - INFO - Removed file: /tmp/resized_images/12.jpeg
+2024-12-27 23:29:33,986 - __main__ - INFO - Removed file: /tmp/resized_images/08.jpeg
+2024-12-27 23:29:33,987 - __main__ - INFO - Removed file: /tmp/resized_images/09.jpeg
+2024-12-27 23:29:33,987 - __main__ - INFO - Removed file: /tmp/resized_images/13.jpeg
+2024-12-27 23:29:33,987 - __main__ - INFO - Removed file: /tmp/resized_images/05.jpeg
+2024-12-27 23:29:33,987 - __main__ - INFO - Cleared all files in the resize directory: /tmp/resized_images
+2024-12-27 23:31:27,615 - __main__ - INFO - Overlay process complete. Output saved to: 1.output_video.mp4
+2024-12-27 23:49:45,415 - __main__ - INFO - Logging setup complete.
+2024-12-27 23:49:45,415 - __main__ - INFO - Resize directory does not exist. Creating: resized_images
+2024-12-27 23:49:49,425 - __main__ - INFO - Starting slideshow creation...
+2024-12-27 23:49:49,721 - __main__ - INFO - Overlaying slideshow on video...
+2024-12-27 23:49:49,722 - __main__ - INFO - Removed file: /tmp/resized_images/10.jpeg
+2024-12-27 23:49:49,722 - __main__ - INFO - Removed file: /tmp/resized_images/06.jpeg
+2024-12-27 23:49:49,723 - __main__ - INFO - Removed file: /tmp/resized_images/07.jpeg
+2024-12-27 23:49:49,723 - __main__ - INFO - Removed file: /tmp/resized_images/11.jpeg
+2024-12-27 23:49:49,723 - __main__ - INFO - Removed file: /tmp/resized_images/01.jpeg
+2024-12-27 23:49:49,723 - __main__ - INFO - Removed file: /tmp/resized_images/02.jpeg
+2024-12-27 23:49:49,723 - __main__ - INFO - Removed file: /tmp/resized_images/14.jpeg
+2024-12-27 23:49:49,723 - __main__ - INFO - Removed file: /tmp/resized_images/15.jpeg
+2024-12-27 23:49:49,723 - __main__ - INFO - Removed file: /tmp/resized_images/03.jpeg
+2024-12-27 23:49:49,723 - __main__ - INFO - Removed file: /tmp/resized_images/04.jpeg
+2024-12-27 23:49:49,724 - __main__ - INFO - Removed file: /tmp/resized_images/12.jpeg
+2024-12-27 23:49:49,724 - __main__ - INFO - Removed file: /tmp/resized_images/08.jpeg
+2024-12-27 23:49:49,724 - __main__ - INFO - Removed file: /tmp/resized_images/09.jpeg
+2024-12-27 23:49:49,724 - __main__ - INFO - Removed file: /tmp/resized_images/13.jpeg
+2024-12-27 23:49:49,724 - __main__ - INFO - Removed file: /tmp/resized_images/05.jpeg
+2024-12-27 23:49:49,724 - __main__ - INFO - Cleared all files in the resize directory: /tmp/resized_images
+2024-12-27 23:49:52,275 - __main__ - ERROR - Error overlaying images on video: [Errno 32] Broken pipe
+
+MoviePy error: FFMPEG encountered the following error while writing file ~/Desktop/1.output_video.webm:
+
+ b'[out#0/webm @ 0x60000331c3c0] Error opening output ~/Desktop/1.output_video.webm: No such file or directory\nError opening output file ~/Desktop/1.output_video.webm.\nError opening output files: No such file or directory\n'
+2024-12-27 23:50:53,038 - __main__ - INFO - Logging setup complete.
+2024-12-27 23:50:53,038 - __main__ - INFO - Removed file: resized_images/10.jpeg
+2024-12-27 23:50:53,039 - __main__ - INFO - Removed file: resized_images/06.jpeg
+2024-12-27 23:50:53,039 - __main__ - INFO - Removed file: resized_images/07.jpeg
+2024-12-27 23:50:53,039 - __main__ - INFO - Removed file: resized_images/11.jpeg
+2024-12-27 23:50:53,039 - __main__ - INFO - Removed file: resized_images/01.jpeg
+2024-12-27 23:50:53,039 - __main__ - INFO - Removed file: resized_images/02.jpeg
+2024-12-27 23:50:53,039 - __main__ - INFO - Removed file: resized_images/14.jpeg
+2024-12-27 23:50:53,039 - __main__ - INFO - Removed file: resized_images/15.jpeg
+2024-12-27 23:50:53,039 - __main__ - INFO - Removed file: resized_images/03.jpeg
+2024-12-27 23:50:53,039 - __main__ - INFO - Removed file: resized_images/04.jpeg
+2024-12-27 23:50:53,039 - __main__ - INFO - Removed file: resized_images/12.jpeg
+2024-12-27 23:50:53,039 - __main__ - INFO - Removed file: resized_images/08.jpeg
+2024-12-27 23:50:53,040 - __main__ - INFO - Removed file: resized_images/09.jpeg
+2024-12-27 23:50:53,040 - __main__ - INFO - Removed file: resized_images/13.jpeg
+2024-12-27 23:50:53,040 - __main__ - INFO - Removed file: resized_images/05.jpeg
+2024-12-27 23:50:53,040 - __main__ - INFO - Cleared all files in the resize directory: resized_images
+2024-12-27 23:50:56,968 - __main__ - INFO - Starting slideshow creation...
+2024-12-27 23:50:57,215 - __main__ - INFO - Overlaying slideshow on video...
+2024-12-27 23:50:57,215 - __main__ - INFO - Removed file: /tmp/resized_images/10.jpeg
+2024-12-27 23:50:57,216 - __main__ - INFO - Removed file: /tmp/resized_images/06.jpeg
+2024-12-27 23:50:57,216 - __main__ - INFO - Removed file: /tmp/resized_images/07.jpeg
+2024-12-27 23:50:57,216 - __main__ - INFO - Removed file: /tmp/resized_images/11.jpeg
+2024-12-27 23:50:57,216 - __main__ - INFO - Removed file: /tmp/resized_images/01.jpeg
+2024-12-27 23:50:57,216 - __main__ - INFO - Removed file: /tmp/resized_images/02.jpeg
+2024-12-27 23:50:57,216 - __main__ - INFO - Removed file: /tmp/resized_images/14.jpeg
+2024-12-27 23:50:57,216 - __main__ - INFO - Removed file: /tmp/resized_images/15.jpeg
+2024-12-27 23:50:57,216 - __main__ - INFO - Removed file: /tmp/resized_images/03.jpeg
+2024-12-27 23:50:57,216 - __main__ - INFO - Removed file: /tmp/resized_images/04.jpeg
+2024-12-27 23:50:57,216 - __main__ - INFO - Removed file: /tmp/resized_images/12.jpeg
+2024-12-27 23:50:57,216 - __main__ - INFO - Removed file: /tmp/resized_images/08.jpeg
+2024-12-27 23:50:57,216 - __main__ - INFO - Removed file: /tmp/resized_images/09.jpeg
+2024-12-27 23:50:57,216 - __main__ - INFO - Removed file: /tmp/resized_images/13.jpeg
+2024-12-27 23:50:57,216 - __main__ - INFO - Removed file: /tmp/resized_images/05.jpeg
+2024-12-27 23:50:57,217 - __main__ - INFO - Cleared all files in the resize directory: /tmp/resized_images
+2024-12-27 23:51:00,201 - __main__ - ERROR - Error overlaying images on video: [Errno 32] Broken pipe
+
+MoviePy error: FFMPEG encountered the following error while writing file /Users/mymac/Desktop/1.output_video.webm:
+
+ b'[webm @ 0x146607490] Only VP8 or VP9 or AV1 video and Vorbis or Opus audio and WebVTT subtitles are supported for WebM.\n[out#0/webm @ 0x6000018ac3c0] Could not write header (incorrect codec parameters ?): Invalid argument\n[vf#0:0 @ 0x600001cb4b40] Error sending frames to consumers: Invalid argument\n[vf#0:0 @ 0x600001cb4b40] Task finished with error code: -22 (Invalid argument)\n[vf#0:0 @ 0x600001cb4b40] Terminating thread with return code -22 (Invalid argument)\n[out#0/webm @ 0x6000018ac3c0] Nothing was written into output file, because at least one of its streams received no packets.\n'
+
+The video export failed, possibly because the codec specified for the video (libx264) is not compatible with the given extension (webm). Please specify a valid 'codec' argument in write_videofile. This would be 'libx264' or 'mpeg4' for mp4, 'libtheora' for ogv, 'libvpx for webm. Another possible reason is that the audio codec was not compatible with the video codec. For instance the video extensions 'ogv' and 'webm' only allow 'libvorbis' (default) as avideo codec.
+2024-12-27 23:54:44,818 - __main__ - INFO - Logging setup complete.
+2024-12-27 23:54:44,819 - __main__ - INFO - Removed file: resized_images/10.jpeg
+2024-12-27 23:54:44,819 - __main__ - INFO - Removed file: resized_images/06.jpeg
+2024-12-27 23:54:44,819 - __main__ - INFO - Removed file: resized_images/07.jpeg
+2024-12-27 23:54:44,819 - __main__ - INFO - Removed file: resized_images/11.jpeg
+2024-12-27 23:54:44,819 - __main__ - INFO - Removed file: resized_images/01.jpeg
+2024-12-27 23:54:44,819 - __main__ - INFO - Removed file: resized_images/02.jpeg
+2024-12-27 23:54:44,819 - __main__ - INFO - Removed file: resized_images/14.jpeg
+2024-12-27 23:54:44,819 - __main__ - INFO - Removed file: resized_images/15.jpeg
+2024-12-27 23:54:44,819 - __main__ - INFO - Removed file: resized_images/03.jpeg
+2024-12-27 23:54:44,819 - __main__ - INFO - Removed file: resized_images/04.jpeg
+2024-12-27 23:54:44,819 - __main__ - INFO - Removed file: resized_images/12.jpeg
+2024-12-27 23:54:44,819 - __main__ - INFO - Removed file: resized_images/08.jpeg
+2024-12-27 23:54:44,819 - __main__ - INFO - Removed file: resized_images/09.jpeg
+2024-12-27 23:54:44,819 - __main__ - INFO - Removed file: resized_images/13.jpeg
+2024-12-27 23:54:44,820 - __main__ - INFO - Removed file: resized_images/05.jpeg
+2024-12-27 23:54:44,820 - __main__ - INFO - Cleared all files in the resize directory: resized_images
+2024-12-27 23:54:48,761 - __main__ - INFO - Starting slideshow creation...
+2024-12-27 23:54:49,015 - __main__ - INFO - Overlaying slideshow on video...
+2024-12-27 23:54:49,015 - __main__ - INFO - Removed file: /tmp/resized_images/10.jpeg
+2024-12-27 23:54:49,016 - __main__ - INFO - Removed file: /tmp/resized_images/06.jpeg
+2024-12-27 23:54:49,016 - __main__ - INFO - Removed file: /tmp/resized_images/07.jpeg
+2024-12-27 23:54:49,016 - __main__ - INFO - Removed file: /tmp/resized_images/11.jpeg
+2024-12-27 23:54:49,016 - __main__ - INFO - Removed file: /tmp/resized_images/01.jpeg
+2024-12-27 23:54:49,016 - __main__ - INFO - Removed file: /tmp/resized_images/02.jpeg
+2024-12-27 23:54:49,016 - __main__ - INFO - Removed file: /tmp/resized_images/14.jpeg
+2024-12-27 23:54:49,016 - __main__ - INFO - Removed file: /tmp/resized_images/15.jpeg
+2024-12-27 23:54:49,016 - __main__ - INFO - Removed file: /tmp/resized_images/03.jpeg
+2024-12-27 23:54:49,016 - __main__ - INFO - Removed file: /tmp/resized_images/04.jpeg
+2024-12-27 23:54:49,016 - __main__ - INFO - Removed file: /tmp/resized_images/12.jpeg
+2024-12-27 23:54:49,016 - __main__ - INFO - Removed file: /tmp/resized_images/08.jpeg
+2024-12-27 23:54:49,016 - __main__ - INFO - Removed file: /tmp/resized_images/09.jpeg
+2024-12-27 23:54:49,016 - __main__ - INFO - Removed file: /tmp/resized_images/13.jpeg
+2024-12-27 23:54:49,017 - __main__ - INFO - Removed file: /tmp/resized_images/05.jpeg
+2024-12-27 23:54:49,017 - __main__ - INFO - Cleared all files in the resize directory: /tmp/resized_images
+2024-12-27 23:56:39,649 - __main__ - INFO - Overlay process complete. Output saved to: /Users/mymac/Desktop/1.output_video.mp4
+2024-12-27 23:59:15,061 - __main__ - INFO - Logging setup complete.
+2024-12-27 23:59:15,062 - __main__ - INFO - Removed file: resized_images/10.jpeg
+2024-12-27 23:59:15,062 - __main__ - INFO - Removed file: resized_images/06.jpeg
+2024-12-27 23:59:15,062 - __main__ - INFO - Removed file: resized_images/07.jpeg
+2024-12-27 23:59:15,062 - __main__ - INFO - Removed file: resized_images/11.jpeg
+2024-12-27 23:59:15,062 - __main__ - INFO - Removed file: resized_images/01.jpeg
+2024-12-27 23:59:15,062 - __main__ - INFO - Removed file: resized_images/02.jpeg
+2024-12-27 23:59:15,062 - __main__ - INFO - Removed file: resized_images/14.jpeg
+2024-12-27 23:59:15,062 - __main__ - INFO - Removed file: resized_images/15.jpeg
+2024-12-27 23:59:15,062 - __main__ - INFO - Removed file: resized_images/03.jpeg
+2024-12-27 23:59:15,062 - __main__ - INFO - Removed file: resized_images/04.jpeg
+2024-12-27 23:59:15,062 - __main__ - INFO - Removed file: resized_images/12.jpeg
+2024-12-27 23:59:15,062 - __main__ - INFO - Removed file: resized_images/08.jpeg
+2024-12-27 23:59:15,063 - __main__ - INFO - Removed file: resized_images/09.jpeg
+2024-12-27 23:59:15,063 - __main__ - INFO - Removed file: resized_images/13.jpeg
+2024-12-27 23:59:15,063 - __main__ - INFO - Removed file: resized_images/05.jpeg
+2024-12-27 23:59:15,063 - __main__ - INFO - Cleared all files in the resize directory: resized_images
+2024-12-27 23:59:19,009 - __main__ - INFO - Starting slideshow creation...
+2024-12-27 23:59:19,265 - __main__ - INFO - Overlaying slideshow on video...
+2024-12-27 23:59:19,266 - __main__ - INFO - Removed file: /tmp/resized_images/10.jpeg
+2024-12-27 23:59:19,266 - __main__ - INFO - Removed file: /tmp/resized_images/06.jpeg
+2024-12-27 23:59:19,266 - __main__ - INFO - Removed file: /tmp/resized_images/07.jpeg
+2024-12-27 23:59:19,266 - __main__ - INFO - Removed file: /tmp/resized_images/11.jpeg
+2024-12-27 23:59:19,266 - __main__ - INFO - Removed file: /tmp/resized_images/01.jpeg
+2024-12-27 23:59:19,266 - __main__ - INFO - Removed file: /tmp/resized_images/02.jpeg
+2024-12-27 23:59:19,266 - __main__ - INFO - Removed file: /tmp/resized_images/14.jpeg
+2024-12-27 23:59:19,266 - __main__ - INFO - Removed file: /tmp/resized_images/15.jpeg
+2024-12-27 23:59:19,266 - __main__ - INFO - Removed file: /tmp/resized_images/03.jpeg
+2024-12-27 23:59:19,266 - __main__ - INFO - Removed file: /tmp/resized_images/04.jpeg
+2024-12-27 23:59:19,266 - __main__ - INFO - Removed file: /tmp/resized_images/12.jpeg
+2024-12-27 23:59:19,266 - __main__ - INFO - Removed file: /tmp/resized_images/08.jpeg
+2024-12-27 23:59:19,266 - __main__ - INFO - Removed file: /tmp/resized_images/09.jpeg
+2024-12-27 23:59:19,267 - __main__ - INFO - Removed file: /tmp/resized_images/13.jpeg
+2024-12-27 23:59:19,267 - __main__ - INFO - Removed file: /tmp/resized_images/05.jpeg
+2024-12-27 23:59:19,267 - __main__ - INFO - Cleared all files in the resize directory: /tmp/resized_images
+2024-12-28 00:01:09,771 - __main__ - INFO - Overlay process complete. Output saved to: /Users/mymac/Desktop/1.output_video.mp4
+2024-12-28 00:03:40,391 - __main__ - INFO - Logging setup complete.
+2024-12-28 00:03:40,392 - __main__ - INFO - Removed file: resized_images/10.jpeg
+2024-12-28 00:03:40,392 - __main__ - INFO - Removed file: resized_images/06.jpeg
+2024-12-28 00:03:40,392 - __main__ - INFO - Removed file: resized_images/07.jpeg
+2024-12-28 00:03:40,392 - __main__ - INFO - Removed file: resized_images/11.jpeg
+2024-12-28 00:03:40,392 - __main__ - INFO - Removed file: resized_images/01.jpeg
+2024-12-28 00:03:40,392 - __main__ - INFO - Removed file: resized_images/02.jpeg
+2024-12-28 00:03:40,392 - __main__ - INFO - Removed file: resized_images/14.jpeg
+2024-12-28 00:03:40,392 - __main__ - INFO - Removed file: resized_images/15.jpeg
+2024-12-28 00:03:40,392 - __main__ - INFO - Removed file: resized_images/03.jpeg
+2024-12-28 00:03:40,392 - __main__ - INFO - Removed file: resized_images/04.jpeg
+2024-12-28 00:03:40,392 - __main__ - INFO - Removed file: resized_images/12.jpeg
+2024-12-28 00:03:40,392 - __main__ - INFO - Removed file: resized_images/08.jpeg
+2024-12-28 00:03:40,392 - __main__ - INFO - Removed file: resized_images/09.jpeg
+2024-12-28 00:03:40,393 - __main__ - INFO - Removed file: resized_images/13.jpeg
+2024-12-28 00:03:40,393 - __main__ - INFO - Removed file: resized_images/05.jpeg
+2024-12-28 00:03:40,393 - __main__ - INFO - Cleared all files in the resize directory: resized_images
+2024-12-28 00:03:44,350 - __main__ - INFO - Starting slideshow creation...
+2024-12-28 00:03:44,596 - __main__ - INFO - Overlaying slideshow on video...
+2024-12-28 00:03:44,596 - __main__ - INFO - Removed file: /tmp/resized_images/10.jpeg
+2024-12-28 00:03:44,596 - __main__ - INFO - Removed file: /tmp/resized_images/06.jpeg
+2024-12-28 00:03:44,596 - __main__ - INFO - Removed file: /tmp/resized_images/07.jpeg
+2024-12-28 00:03:44,596 - __main__ - INFO - Removed file: /tmp/resized_images/11.jpeg
+2024-12-28 00:03:44,596 - __main__ - INFO - Removed file: /tmp/resized_images/01.jpeg
+2024-12-28 00:03:44,597 - __main__ - INFO - Removed file: /tmp/resized_images/02.jpeg
+2024-12-28 00:03:44,597 - __main__ - INFO - Removed file: /tmp/resized_images/14.jpeg
+2024-12-28 00:03:44,597 - __main__ - INFO - Removed file: /tmp/resized_images/15.jpeg
+2024-12-28 00:03:44,597 - __main__ - INFO - Removed file: /tmp/resized_images/03.jpeg
+2024-12-28 00:03:44,597 - __main__ - INFO - Removed file: /tmp/resized_images/04.jpeg
+2024-12-28 00:03:44,597 - __main__ - INFO - Removed file: /tmp/resized_images/12.jpeg
+2024-12-28 00:03:44,597 - __main__ - INFO - Removed file: /tmp/resized_images/08.jpeg
+2024-12-28 00:03:44,597 - __main__ - INFO - Removed file: /tmp/resized_images/09.jpeg
+2024-12-28 00:03:44,597 - __main__ - INFO - Removed file: /tmp/resized_images/13.jpeg
+2024-12-28 00:03:44,597 - __main__ - INFO - Removed file: /tmp/resized_images/05.jpeg
+2024-12-28 00:03:44,597 - __main__ - INFO - Cleared all files in the resize directory: /tmp/resized_images
+2024-12-28 00:06:43,245 - __main__ - INFO - Overlay process complete. Output saved to: /Users/mymac/Desktop/1.output_video.mp4
+2024-12-28 02:53:50,373 - __main__ - INFO - Logging setup complete.
+2024-12-28 02:53:50,382 - __main__ - INFO - Removed file: resized_images/07.jpeg
+2024-12-28 02:53:50,383 - __main__ - INFO - Removed file: resized_images/04.jpeg
+2024-12-28 02:53:50,383 - __main__ - INFO - Removed file: resized_images/13.jpeg
+2024-12-28 02:53:50,384 - __main__ - INFO - Removed file: resized_images/09.jpeg
+2024-12-28 02:53:50,384 - __main__ - INFO - Removed file: resized_images/15.jpeg
+2024-12-28 02:53:50,384 - __main__ - INFO - Removed file: resized_images/14.jpeg
+2024-12-28 02:53:50,385 - __main__ - INFO - Removed file: resized_images/06.jpeg
+2024-12-28 02:53:50,385 - __main__ - INFO - Removed file: resized_images/05.jpeg
+2024-12-28 02:53:50,385 - __main__ - INFO - Removed file: resized_images/10.jpeg
+2024-12-28 02:53:50,385 - __main__ - INFO - Removed file: resized_images/01.jpeg
+2024-12-28 02:53:50,385 - __main__ - INFO - Removed file: resized_images/12.jpeg
+2024-12-28 02:53:50,385 - __main__ - INFO - Removed file: resized_images/08.jpeg
+2024-12-28 02:53:50,385 - __main__ - INFO - Removed file: resized_images/03.jpeg
+2024-12-28 02:53:50,385 - __main__ - INFO - Removed file: resized_images/11.jpeg
+2024-12-28 02:53:50,385 - __main__ - INFO - Removed file: resized_images/02.jpeg
+2024-12-28 02:53:50,385 - __main__ - INFO - Cleared all files in the resize directory: resized_images
+2024-12-28 02:53:50,492 - __main__ - ERROR - Error resizing images: [Errno 2] No such file or directory: '/Users/mymac/Desktop/2024-12-22/post'
+2024-12-28 03:05:00,653 - __main__ - INFO - Logging setup complete.
+2024-12-28 03:05:00,653 - __main__ - INFO - Cleared all files in the resize directory: resized_images
+2024-12-28 03:05:02,284 - __main__ - INFO - Starting slideshow creation...
+2024-12-28 03:05:04,182 - __main__ - INFO - Overlaying slideshow on video...
+2024-12-28 03:05:05,329 - __main__ - INFO - Resize directory does not exist. Creating: /tmp/resized_images
+2024-12-28 03:07:01,009 - __main__ - ERROR - Error overlaying images on video: [Errno 32] Broken pipe
+
+MoviePy error: FFMPEG encountered the following error while writing file /Users/mymac/Desktop/1.output_video.mp4:
+
+ b'/Users/mymac/Desktop/1.output_video.mp4: No such file or directory\n'
+2024-12-28 03:12:14,486 - __main__ - INFO - Logging setup complete.
+2024-12-28 03:12:14,498 - __main__ - INFO - Removed file: resized_images/07.jpeg
+2024-12-28 03:12:14,499 - __main__ - INFO - Removed file: resized_images/04.jpeg
+2024-12-28 03:12:14,499 - __main__ - INFO - Removed file: resized_images/13.jpeg
+2024-12-28 03:12:14,500 - __main__ - INFO - Removed file: resized_images/09.jpeg
+2024-12-28 03:12:14,500 - __main__ - INFO - Removed file: resized_images/14.jpeg
+2024-12-28 03:12:14,500 - __main__ - INFO - Removed file: resized_images/06.jpeg
+2024-12-28 03:12:14,501 - __main__ - INFO - Removed file: resized_images/05.jpeg
+2024-12-28 03:12:14,501 - __main__ - INFO - Removed file: resized_images/10.jpeg
+2024-12-28 03:12:14,502 - __main__ - INFO - Removed file: resized_images/01.jpeg
+2024-12-28 03:12:14,502 - __main__ - INFO - Removed file: resized_images/12.jpeg
+2024-12-28 03:12:14,503 - __main__ - INFO - Removed file: resized_images/08.jpeg
+2024-12-28 03:12:14,503 - __main__ - INFO - Removed file: resized_images/03.jpeg
+2024-12-28 03:12:14,504 - __main__ - INFO - Removed file: resized_images/11.jpeg
+2024-12-28 03:12:14,504 - __main__ - INFO - Removed file: resized_images/02.jpeg
+2024-12-28 03:12:14,504 - __main__ - INFO - Cleared all files in the resize directory: resized_images
+2024-12-28 03:12:16,581 - __main__ - INFO - Starting slideshow creation...
+2024-12-28 03:12:17,524 - __main__ - INFO - Overlaying slideshow on video...
+2024-12-28 03:12:17,573 - __main__ - INFO - Removed file: /tmp/resized_images/07.jpeg
+2024-12-28 03:12:17,573 - __main__ - INFO - Removed file: /tmp/resized_images/04.jpeg
+2024-12-28 03:12:17,574 - __main__ - INFO - Removed file: /tmp/resized_images/13.jpeg
+2024-12-28 03:12:17,574 - __main__ - INFO - Removed file: /tmp/resized_images/09.jpeg
+2024-12-28 03:12:17,574 - __main__ - INFO - Removed file: /tmp/resized_images/14.jpeg
+2024-12-28 03:12:17,574 - __main__ - INFO - Removed file: /tmp/resized_images/06.jpeg
+2024-12-28 03:12:17,575 - __main__ - INFO - Removed file: /tmp/resized_images/05.jpeg
+2024-12-28 03:12:17,575 - __main__ - INFO - Removed file: /tmp/resized_images/10.jpeg
+2024-12-28 03:12:17,575 - __main__ - INFO - Removed file: /tmp/resized_images/01.jpeg
+2024-12-28 03:12:17,575 - __main__ - INFO - Removed file: /tmp/resized_images/12.jpeg
+2024-12-28 03:12:17,575 - __main__ - INFO - Removed file: /tmp/resized_images/08.jpeg
+2024-12-28 03:12:17,575 - __main__ - INFO - Removed file: /tmp/resized_images/03.jpeg
+2024-12-28 03:12:17,575 - __main__ - INFO - Removed file: /tmp/resized_images/11.jpeg
+2024-12-28 03:12:17,576 - __main__ - INFO - Removed file: /tmp/resized_images/02.jpeg
+2024-12-28 03:12:17,576 - __main__ - INFO - Cleared all files in the resize directory: /tmp/resized_images
+2024-12-28 03:25:49,899 - __main__ - INFO - Overlay process complete. Output saved to: /home/fritz/Desktop/1.output_video.mp4

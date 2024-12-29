@@ -1,0 +1,71 @@
+package Acme::Frobnitz;
+
+use strict;
+use warnings;
+use IPC::System::Simple qw(capturex);
+use Cwd 'abs_path';
+use File::Spec;
+use FindBin;
+
+our $VERSION = '0.03';
+
+sub new {
+    my ($class) = @_;
+    return bless {}, $class;
+}
+
+sub _get_script_path {
+    my ($class, $script_name) = @_;
+
+    # Resolve base directory dynamically
+    my $base_dir = abs_path("$FindBin::Bin/..");  # One level up from bin
+    my $script_path = File::Spec->catfile($base_dir, 'bin', $script_name);
+
+    # Check if the script exists and is executable
+    unless (-x $script_path) {
+        die "Script $script_path does not exist or is not executable.\n";
+    }
+
+    return $script_path;
+}
+
+sub download {
+    my ($class, $hyperlink) = @_;
+
+    die "No hyperlink provided.\n" unless $hyperlink;
+
+    # Dynamically locate the download script
+    my $script_path = $class->_get_script_path("call_download.sh");
+
+    # Call the script
+    my $output;
+    eval {
+        $output = capturex("bash", $script_path, $hyperlink);
+    };
+    if ($@) {
+        die "Error executing $script_path with hyperlink $hyperlink: $@\n";
+    }
+
+    return $output;
+}
+
+sub add_watermark {
+    my ($class, $input_video) = @_;
+    die "Input video file not provided.\n" unless $input_video;
+
+    # Dynamically locate the watermark script
+    my $script_path = $class->_get_script_path("call_watermark.py");
+
+    # Call the script with just the input video filename
+    my $output;
+    eval {
+        $output = capturex("python3", $script_path, $input_video);
+    };
+    if ($@) {
+        die "Error adding watermark with $script_path: $@\n";
+    }
+
+    return $output;
+}
+
+1; # End of Acme::Frobnitz

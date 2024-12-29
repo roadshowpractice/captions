@@ -1,0 +1,42 @@
+{
+    "video_download": {
+        "format": "bestvideo[height<=?1080]+bestaudio/best",
+        "bitrate": "5000k",
+        "noplaylist": true,
+        "cookie_path": "/app/data/cookies.txt"
+    },
+    "logging": {
+        "level": "DEBUG",
+        "log_to_file": true,
+        "log_filename": "./dl.log"
+    },
+    "target_usb_mac": "/Volumes/BallardT1",
+    "target_usb_linux": "/media/fritz/E4B0-3FC21",
+    "watermark_config": {
+        "font": "Arial Bold",
+        "font_size": 64,
+        "username_color": "yellow",
+        "date_color": "cyan",
+        "timestamp_color": "red",
+        "username_position": ["left", "top"],
+        "date_position": ["left", "bottom"],
+        "timestamp_position": ["right", "bottom"],
+        "overall_start": 2,
+        "caption_top": "15%",
+        "caption_bottom": "75%",
+        "line_width": "8%",
+        "hor_offset": "4%",
+        "cap_length": 5,
+        "max_number": 60,
+        "max_char_width": 65,
+        "next_line": 1.7,
+        "pause_between_para": 2,
+        "source_path": "/data/4.source.txt",
+        "shadow": {
+            "color": "black",
+            "offset": 5,
+            "opacity": 0.6
+        }
+    }
+}
+
