@@ -1,3 +1,0 @@
-2024/12/22 01:15:03 [INFO] Captioning script output:
-/media/fritz/E4B0-3FC2/2024-12-21/output_video.mp4
-2024/12/28 21:25:19 [ERROR] Captioning script failed with error: "python3" unexpectedly returned exit value 2 at t/2.caption.t line 53.
