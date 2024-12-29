@@ -33,3 +33,11 @@ Acme-Frobnitz-*.tar.gz
 .*.swp
 .*~
 
+# Ignore all Python bytecode files
+*.pyc
+*.pyo
+
+# Ignore __pycache__ directories
+__pycache__/
+
+

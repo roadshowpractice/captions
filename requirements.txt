@@ -1,6 +1,0 @@
-Requests==2.32.3
-yt_dlp==2024.12.3
-moviepy
-imageio
-imageio-ffmpeg
-
