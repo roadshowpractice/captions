@@ -1,0 +1,35 @@
+# Makefile and build files
+Makefile
+Makefile.old
+Build
+Build.bat
+
+# Metadata and temporary files
+META.*
+MYMETA.*
+.build/
+_build/
+cover_db/
+blib/
+inc/
+.lwpcookies
+.last_cover_stats
+nytprof.out
+pod2htm*.tmp
+pm_to_blib
+
+# Acme Frobnitz build artifacts
+Acme-Frobnitz-*
+Acme-Frobnitz-*.tar.gz
+
+# macOS metadata files
+.DS*
+._*
+
+# Git-related files and directories
+.git/*
+
+# Backup or temporary editor files
+.*.swp
+.*~
+

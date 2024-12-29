@@ -181,9 +181,9 @@ if __name__ == "__main__":
         slide_length = 9  # Example slide duration
         brightness = 1.1  # Brightness adjustment
         border = 0.03  # 3% border
-        image_dir = "/home/fritz/Pictures"
+        image_dir = "/Users/mymac/Desktop/pics"
         resize_dir = "resized_images"  # Output resized images directory
-        output_video_path = "/home/fritz/Desktop/1.output_video.mp4"  # Output video
+        output_video_path = "/Users/mymac/Desktop/1.output_video.mp4"  # Output video
 
         # Clear the resize directory on startup
         clear_resize_directory(resize_dir)

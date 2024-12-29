@@ -1030,3 +1030,75 @@ MoviePy error: FFMPEG encountered the following error while writing file /Users/
 2024-12-28 03:12:17,576 - __main__ - INFO - Removed file: /tmp/resized_images/02.jpeg
 2024-12-28 03:12:17,576 - __main__ - INFO - Cleared all files in the resize directory: /tmp/resized_images
 2024-12-28 03:25:49,899 - __main__ - INFO - Overlay process complete. Output saved to: /home/fritz/Desktop/1.output_video.mp4
+2024-12-28 20:58:56,580 - __main__ - INFO - Logging setup complete.
+2024-12-28 20:58:56,580 - __main__ - INFO - Resize directory does not exist. Creating: resized_images
+2024-12-28 20:58:56,810 - __main__ - ERROR - Error resizing images: [Errno 2] No such file or directory: '/home/fritz/Pictures'
+2024-12-28 21:04:20,690 - __main__ - INFO - Logging setup complete.
+2024-12-28 21:04:20,690 - __main__ - INFO - Cleared all files in the resize directory: resized_images
+2024-12-28 21:04:21,104 - __main__ - INFO - Starting slideshow creation...
+2024-12-28 21:04:21,233 - __main__ - INFO - Overlaying slideshow on video...
+2024-12-28 21:04:21,236 - __main__ - INFO - Removed file: /tmp/resized_images/10.jpeg
+2024-12-28 21:04:21,236 - __main__ - INFO - Removed file: /tmp/resized_images/06.jpeg
+2024-12-28 21:04:21,236 - __main__ - INFO - Removed file: /tmp/resized_images/07.jpeg
+2024-12-28 21:04:21,236 - __main__ - INFO - Removed file: /tmp/resized_images/11.jpeg
+2024-12-28 21:04:21,236 - __main__ - INFO - Removed file: /tmp/resized_images/01.jpeg
+2024-12-28 21:04:21,236 - __main__ - INFO - Removed file: /tmp/resized_images/02.jpeg
+2024-12-28 21:04:21,236 - __main__ - INFO - Removed file: /tmp/resized_images/14.jpeg
+2024-12-28 21:04:21,237 - __main__ - INFO - Removed file: /tmp/resized_images/15.jpeg
+2024-12-28 21:04:21,237 - __main__ - INFO - Removed file: /tmp/resized_images/03.jpeg
+2024-12-28 21:04:21,237 - __main__ - INFO - Removed file: /tmp/resized_images/04.jpeg
+2024-12-28 21:04:21,237 - __main__ - INFO - Removed file: /tmp/resized_images/12.jpeg
+2024-12-28 21:04:21,238 - __main__ - INFO - Removed file: /tmp/resized_images/08.jpeg
+2024-12-28 21:04:21,238 - __main__ - INFO - Removed file: /tmp/resized_images/09.jpeg
+2024-12-28 21:04:21,239 - __main__ - INFO - Removed file: /tmp/resized_images/13.jpeg
+2024-12-28 21:04:21,239 - __main__ - INFO - Removed file: /tmp/resized_images/05.jpeg
+2024-12-28 21:04:21,239 - __main__ - INFO - Cleared all files in the resize directory: /tmp/resized_images
+2024-12-28 21:04:23,534 - __main__ - ERROR - Error overlaying images on video: [Errno 32] Broken pipe
+
+MoviePy error: FFMPEG encountered the following error while writing file /home/fritz/Desktop/1.output_video.mp4:
+
+ b'[out#0/mp4 @ 0x600001da4300] Error opening output /home/fritz/Desktop/1.output_video.mp4: No such file or directory\nError opening output file /home/fritz/Desktop/1.output_video.mp4.\nError opening output files: No such file or directory\n'
+2024-12-28 21:14:33,728 - __main__ - INFO - Logging setup complete.
+2024-12-28 21:14:33,729 - __main__ - INFO - Removed file: resized_images/1.jpeg
+2024-12-28 21:14:33,729 - __main__ - INFO - Removed file: resized_images/6.jpeg
+2024-12-28 21:14:33,729 - __main__ - INFO - Removed file: resized_images/7.jpeg
+2024-12-28 21:14:33,729 - __main__ - INFO - Removed file: resized_images/4.jpeg
+2024-12-28 21:14:33,730 - __main__ - INFO - Removed file: resized_images/5.jpeg
+2024-12-28 21:14:33,730 - __main__ - INFO - Removed file: resized_images/2.jpeg
+2024-12-28 21:14:33,730 - __main__ - INFO - Removed file: resized_images/3.jpeg
+2024-12-28 21:14:33,730 - __main__ - INFO - Cleared all files in the resize directory: resized_images
+2024-12-28 21:14:34,147 - __main__ - INFO - Starting slideshow creation...
+2024-12-28 21:14:34,278 - __main__ - INFO - Overlaying slideshow on video...
+2024-12-28 21:14:34,279 - __main__ - INFO - Removed file: /tmp/resized_images/1.jpeg
+2024-12-28 21:14:34,279 - __main__ - INFO - Removed file: /tmp/resized_images/6.jpeg
+2024-12-28 21:14:34,279 - __main__ - INFO - Removed file: /tmp/resized_images/7.jpeg
+2024-12-28 21:14:34,279 - __main__ - INFO - Removed file: /tmp/resized_images/4.jpeg
+2024-12-28 21:14:34,279 - __main__ - INFO - Removed file: /tmp/resized_images/5.jpeg
+2024-12-28 21:14:34,279 - __main__ - INFO - Removed file: /tmp/resized_images/2.jpeg
+2024-12-28 21:14:34,279 - __main__ - INFO - Removed file: /tmp/resized_images/3.jpeg
+2024-12-28 21:14:34,279 - __main__ - INFO - Cleared all files in the resize directory: /tmp/resized_images
+2024-12-28 21:14:36,583 - __main__ - ERROR - Error overlaying images on video: [Errno 32] Broken pipe
+
+MoviePy error: FFMPEG encountered the following error while writing file Users/mymac/Desktop/1.output_video.mp4:
+
+ b'[out#0/mp4 @ 0x6000036fc000] Error opening output Users/mymac/Desktop/1.output_video.mp4: No such file or directory\nError opening output file Users/mymac/Desktop/1.output_video.mp4.\nError opening output files: No such file or directory\n'
+2024-12-28 21:20:19,756 - __main__ - INFO - Logging setup complete.
+2024-12-28 21:20:19,756 - __main__ - INFO - Removed file: resized_images/1.jpeg
+2024-12-28 21:20:19,757 - __main__ - INFO - Removed file: resized_images/6.jpeg
+2024-12-28 21:20:19,757 - __main__ - INFO - Removed file: resized_images/7.jpeg
+2024-12-28 21:20:19,757 - __main__ - INFO - Removed file: resized_images/4.jpeg
+2024-12-28 21:20:19,757 - __main__ - INFO - Removed file: resized_images/5.jpeg
+2024-12-28 21:20:19,758 - __main__ - INFO - Removed file: resized_images/2.jpeg
+2024-12-28 21:20:19,758 - __main__ - INFO - Removed file: resized_images/3.jpeg
+2024-12-28 21:20:19,758 - __main__ - INFO - Cleared all files in the resize directory: resized_images
+2024-12-28 21:20:20,176 - __main__ - INFO - Starting slideshow creation...
+2024-12-28 21:20:20,306 - __main__ - INFO - Overlaying slideshow on video...
+2024-12-28 21:20:20,306 - __main__ - INFO - Removed file: /tmp/resized_images/1.jpeg
+2024-12-28 21:20:20,306 - __main__ - INFO - Removed file: /tmp/resized_images/6.jpeg
+2024-12-28 21:20:20,307 - __main__ - INFO - Removed file: /tmp/resized_images/7.jpeg
+2024-12-28 21:20:20,307 - __main__ - INFO - Removed file: /tmp/resized_images/4.jpeg
+2024-12-28 21:20:20,307 - __main__ - INFO - Removed file: /tmp/resized_images/5.jpeg
+2024-12-28 21:20:20,307 - __main__ - INFO - Removed file: /tmp/resized_images/2.jpeg
+2024-12-28 21:20:20,307 - __main__ - INFO - Removed file: /tmp/resized_images/3.jpeg
+2024-12-28 21:20:20,307 - __main__ - INFO - Cleared all files in the resize directory: /tmp/resized_images
+2024-12-28 21:21:57,628 - __main__ - INFO - Overlay process complete. Output saved to: /Users/mymac/Desktop/1.output_video.mp4

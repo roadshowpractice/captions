@@ -93,3 +93,31 @@
 2024-12-28 02:57:23,261 - __main__ - INFO - Loaded metadata from: /media/fritz/E4B0-3FC21/2024-12-28/Kemper_Crabb_-_Topic_20150530_1.json
 2024-12-28 02:57:23,262 - __main__ - INFO - Starting watermarking process...
 2024-12-28 03:04:59,684 - __main__ - INFO - Watermarked video created successfully: /media/fritz/E4B0-3FC21/2024-12-28/Kemper_Crabb_-_Topic_20150530_1_watermarked.webm
+2024-12-28 20:56:36,186 - __main__ - INFO - Added library path: /Users/mymac/Desktop/frob/bashful-backup/lib/python_utils
+2024-12-28 20:56:36,480 - __main__ - INFO - Watermarking script started.
+2024-12-28 20:56:36,480 - __main__ - INFO - Processing video file: /Volumes/BallardT1/2024-12-28/Kemper_Crabb_-_Topic_20150530_2.webm
+2024-12-28 20:56:36,480 - __main__ - INFO - Looking for metadata file: /Volumes/BallardT1/2024-12-28/Kemper_Crabb_-_Topic_20150530_2.json
+2024-12-28 20:56:36,480 - __main__ - INFO - Loaded metadata from: /Volumes/BallardT1/2024-12-28/Kemper_Crabb_-_Topic_20150530_2.json
+2024-12-28 20:56:36,480 - __main__ - INFO - Starting watermarking process...
+2024-12-28 20:58:56,267 - __main__ - INFO - Watermarked video created successfully: /Volumes/BallardT1/2024-12-28/Kemper_Crabb_-_Topic_20150530_2_watermarked.webm
+2024-12-28 21:02:05,123 - __main__ - INFO - Added library path: /Users/mymac/Desktop/frob/bashful-backup/lib/python_utils
+2024-12-28 21:02:05,218 - __main__ - INFO - Watermarking script started.
+2024-12-28 21:02:05,219 - __main__ - INFO - Processing video file: /Volumes/BallardT1/2024-12-28/Kemper_Crabb_-_Topic_20150530_3.webm
+2024-12-28 21:02:05,219 - __main__ - INFO - Looking for metadata file: /Volumes/BallardT1/2024-12-28/Kemper_Crabb_-_Topic_20150530_3.json
+2024-12-28 21:02:05,219 - __main__ - INFO - Loaded metadata from: /Volumes/BallardT1/2024-12-28/Kemper_Crabb_-_Topic_20150530_3.json
+2024-12-28 21:02:05,219 - __main__ - INFO - Starting watermarking process...
+2024-12-28 21:04:20,373 - __main__ - INFO - Watermarked video created successfully: /Volumes/BallardT1/2024-12-28/Kemper_Crabb_-_Topic_20150530_3_watermarked.webm
+2024-12-28 21:12:18,666 - __main__ - INFO - Added library path: /Users/mymac/Desktop/frob/bashful-backup/lib/python_utils
+2024-12-28 21:12:18,816 - __main__ - INFO - Watermarking script started.
+2024-12-28 21:12:18,816 - __main__ - INFO - Processing video file: /Volumes/BallardT1/2024-12-28/Kemper_Crabb_-_Topic_20150530_4.webm
+2024-12-28 21:12:18,816 - __main__ - INFO - Looking for metadata file: /Volumes/BallardT1/2024-12-28/Kemper_Crabb_-_Topic_20150530_4.json
+2024-12-28 21:12:18,816 - __main__ - INFO - Loaded metadata from: /Volumes/BallardT1/2024-12-28/Kemper_Crabb_-_Topic_20150530_4.json
+2024-12-28 21:12:18,816 - __main__ - INFO - Starting watermarking process...
+2024-12-28 21:14:33,416 - __main__ - INFO - Watermarked video created successfully: /Volumes/BallardT1/2024-12-28/Kemper_Crabb_-_Topic_20150530_4_watermarked.webm
+2024-12-28 21:18:03,470 - __main__ - INFO - Added library path: /Users/mymac/Desktop/frob/bashful-backup/lib/python_utils
+2024-12-28 21:18:03,618 - __main__ - INFO - Watermarking script started.
+2024-12-28 21:18:03,618 - __main__ - INFO - Processing video file: /Volumes/BallardT1/2024-12-28/Kemper_Crabb_-_Topic_20150530_5.webm
+2024-12-28 21:18:03,619 - __main__ - INFO - Looking for metadata file: /Volumes/BallardT1/2024-12-28/Kemper_Crabb_-_Topic_20150530_5.json
+2024-12-28 21:18:03,619 - __main__ - INFO - Loaded metadata from: /Volumes/BallardT1/2024-12-28/Kemper_Crabb_-_Topic_20150530_5.json
+2024-12-28 21:18:03,619 - __main__ - INFO - Starting watermarking process...
+2024-12-28 21:20:19,447 - __main__ - INFO - Watermarked video created successfully: /Volumes/BallardT1/2024-12-28/Kemper_Crabb_-_Topic_20150530_5_watermarked.webm
