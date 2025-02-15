@@ -4,129 +4,132 @@ import json
 import logging
 import traceback
 import platform
-
 from datetime import datetime
 
-# Logger setup - Single Setup for Console and File Logging
-logger = logging.getLogger(__name__)
-logger.setLevel(logging.DEBUG)  # Set to DEBUG to capture all logs
+# Load Platform-Specific Configuration
+def load_config():
+    """Load configuration based on the operating system."""
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    config_path = os.path.join(current_dir, "../conf/config.json")
 
-# Console handler for logging
-console_handler = logging.StreamHandler(stream=sys.stderr)  # Send logs to stderr
-console_handler.setLevel(logging.INFO)
-formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
-console_handler.setFormatter(formatter)
-logger.addHandler(console_handler)
+    if not os.path.exists(config_path):
+        raise FileNotFoundError(f"Configuration file not found at {config_path}")
 
-# Add `lib/python_utils` directory to Python path with an absolute path
-python_utils_path = "/app/lib/python_utils"
-sys.path.append(python_utils_path)
-
-# Add debugging info
-current_dir = os.path.dirname(os.path.abspath(__file__))
-lib_path = os.path.join(current_dir, "../lib/python_utils")
-print(f"Adding lib_path to sys.path: {lib_path}")
-sys.path.append(lib_path)
-
-# Attempt to import modules
-try:
-    import downloader5
-    import utilities1
-except ImportError as e:
-    logger.error("Error: Required module not found: %s", e)
-    sys.exit(1)
-
-# Load Config
-config_file = "./conf/app_config.json"
-
-try:
-    with open(config_file, "r") as file:
+    with open(config_path, "r") as file:
         config = json.load(file)
-except FileNotFoundError:
-    logger.error(f"Error: Configuration file '{config_file}' not found.")
-    sys.exit(1)
-    
-# Detect operating system and select appropriate target USB mount
-os_name = platform.system()
-if os_name == "Darwin":  # macOS
-    target_usb_mount = config.get("target_usb_mac", "/Volumes/BallardT1")
-elif os_name == "Linux":
-    target_usb_mount = config.get("target_usb_linux", "/media/fritz/E4B0-3FC21")
-else:
-    logger.error(f"Unsupported operating system: {os_name}")
-    sys.exit(1)
 
-# Correctly setting the download path
-download_date = datetime.now().strftime("%Y-%m-%d")
-config["download_path"] = os.path.abspath(os.path.join(target_usb_mount, download_date))
+    os_name = platform.system()
+    if os_name not in config:
+        raise ValueError(f"Unsupported platform: {os_name}")
 
+    return config[os_name]
 
-# Ensure the directory for the log file exists
-log_file = os.path.expanduser(config["logging"]["log_filename"])
-log_dir = os.path.dirname(log_file)
+# Initialize Logging
+def init_logging(logging_config):
+    """Set up logging based on the configuration."""
+    logger = logging.getLogger()
+    logger.setLevel(logging.DEBUG)
 
-if not os.path.exists(log_dir):
-    try:
-        os.makedirs(log_dir, exist_ok=True)
-    except Exception as e:
-        logger.error(f"Error creating log directory '{log_dir}': {e}")
-        sys.exit(1)
+    if logging_config.get("log_to_file"):
+        log_file = os.path.expanduser(logging_config["log_filename"])
+        log_dir = os.path.dirname(log_file)
 
-# Ensure the download directory exists
-try:
-    os.makedirs(config["download_path"], exist_ok=True)
-    logger.info(f"Download directory created or exists: {config['download_path']}")
-except Exception as e:
-    logger.error(f"Failed to create directory: {config['download_path']}, Error: {e}")
-    sys.exit(1)
+        if not os.path.exists(log_dir):
+            os.makedirs(log_dir, exist_ok=True)
+
+        file_handler = logging.FileHandler(log_file)
+        file_handler.setLevel(logging_config.get("level", "DEBUG"))
+        file_formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
+        file_handler.setFormatter(file_formatter)
+        logger.addHandler(file_handler)
+
+    if logging_config.get("log_to_console"):
+        console_handler = logging.StreamHandler(stream=sys.stderr)
+        console_handler.setLevel(logging_config.get("console_level", "INFO"))
+        console_formatter = logging.Formatter("%(asctime)s - %(message)s")
+        console_handler.setFormatter(console_formatter)
+        logger.addHandler(console_handler)
+
+    logger.info("Logging initialized.")
+    return logger
 
 # Main Function
 def main():
-    params = {
-        "download_path": config["download_path"],
-        "cookie_path": (
-            config.get("cookie_path")
-            if os.path.exists(os.path.expanduser(config.get("cookie_path", "")))
-            else None
-        ),
-        "url": None,
-        **config.get("watermark_config", {}),
-    }
+    try:
+        # Load configurations
+        platform_config = load_config()
+        logger = init_logging(platform_config["logging"])
 
-    # Check for URL in command-line arguments
-    if len(sys.argv) < 2:
-        logger.error("The URL is missing. Please provide a valid URL as a command-line argument.")
-        sys.exit(1)
+        # Add the `lib/python_utils` directory to sys.path
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        lib_path = os.path.join(current_dir, "../lib/python_utils")
+        sys.path.append(lib_path)
+        logger.debug(f"Current sys.path: {sys.path}")
 
-    params["url"] = sys.argv[1].strip()
-
-    # Execute functions
-    function_calls = [
-        downloader5.mask_metadata,
-        downloader5.create_original_filename,
-        downloader5.download_video,
-        utilities1.store_params_as_json,
-    ]
-
-    for func in function_calls:
-        logger.info(f"Entering function: {func.__name__}")
+        # Attempt to import downloader5 and utilities1
         try:
-            result = func(params)
-            if result:
-                params.update(result)
-        except Exception as e:
-            logger.error(f"Error executing {func.__name__}: {e}")
-            logger.debug(traceback.format_exc())
+            import downloader5
+            import utilities1
+        except ImportError as e:
+            logger.error(f"Failed to import modules: {e}")
+            sys.exit(1)
 
-    # Return the original filename
-    original_filename = params.get("original_filename", "")
-    if original_filename:
-        logger.info(f"Returning original filename: {original_filename}")
-        print(original_filename)  # Output only the original filename
-        return original_filename
-    else:
-        logger.warning("No original filename to return.")
-        return None
+        # Set up paths
+        target_usb = platform_config["target_usb"]
+        download_date = datetime.now().strftime("%Y-%m-%d")
+        download_path = os.path.join(target_usb, download_date)
+
+        # Ensure directories exist
+        os.makedirs(download_path, exist_ok=True)
+        logger.info(f"Download directory created or exists: {download_path}")
+
+        # Prepare parameters for function calls
+        params = {
+            "download_path": download_path,
+            "cookie_path": platform_config.get("cookie_path"),
+            "url": None,
+            **platform_config.get("watermark_config", {}),
+        }
+
+        # Validate URL input
+        if len(sys.argv) < 2:
+            logger.error("The URL is missing. Please provide a valid URL as a command-line argument.")
+            sys.exit(1)
+
+        params["url"] = sys.argv[1].strip()
+
+        # Execute function calls in sequence
+        function_calls = [
+            downloader5.mask_metadata,
+            downloader5.create_original_filename,
+            downloader5.download_video,
+            utilities1.store_params_as_json,
+        ]
+
+        for func in function_calls:
+            logger.info(f"Entering function: {func.__name__}")
+            try:
+                result = func(params)
+                if result:
+                    params.update(result)
+            except Exception as e:
+                logger.error(f"Error executing {func.__name__}: {e}")
+                logger.debug(traceback.format_exc())
+
+        # Output the original filename
+        original_filename = params.get("original_filename", "")
+        if original_filename:
+            logger.info(f"Returning original filename: {original_filename}")
+            print(original_filename)  # Print filename to stdout
+            return original_filename
+        else:
+            logger.warning("No original filename to return.")
+            return None
+
+    except Exception as e:
+        print(f"Unexpected error: {e}")
+        print(traceback.format_exc())
+        sys.exit(1)
 
 if __name__ == "__main__":
     main()

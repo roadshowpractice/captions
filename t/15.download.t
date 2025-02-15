@@ -8,74 +8,66 @@ use FindBin;
 use Cwd 'abs_path';
 use Log::Log4perl;
 use File::Path 'make_path';
+use Acme::Frobnitz;
 
-# Set log directory and file
+# Set up logging
 my $log_dir = File::Spec->catdir($FindBin::Bin, '..', 'logs');
 my $log_file = File::Spec->catfile($log_dir, 'acme-frobnitz.log');
 
-# Ensure the logs directory exists
 unless (-d $log_dir) {
     eval { make_path($log_dir) };
-    if ($@) {
-        die "Failed to create log directory $log_dir: $@";
-    }
+    die "Failed to create log directory $log_dir: $@" if $@;
 }
 
-# Initialize Log4perl
 my $log_config = qq(
-log4perl.logger                    = INFO, FileAppender
-
-log4perl.appender.FileAppender     = Log::Log4perl::Appender::File
+log4perl.logger = INFO, FileAppender
+log4perl.appender.FileAppender = Log::Log4perl::Appender::File
 log4perl.appender.FileAppender.filename = $log_file
-log4perl.appender.FileAppender.layout   = Log::Log4perl::Layout::PatternLayout
+log4perl.appender.FileAppender.layout = Log::Log4perl::Layout::PatternLayout
 log4perl.appender.FileAppender.layout.ConversionPattern = %d [%p] %m%n
 );
 Log::Log4perl->init(\$log_config);
-
-# Create logger
 my $logger = Log::Log4perl->get_logger();
 
-# Adding the library path relative to this test script
-use lib "$FindBin::Bin/../lib";
-use Acme::Frobnitz;
+# Instantiate Frobnitz object
+my $frobnitz = Acme::Frobnitz->new();
+my $video_url = 'https://www.instagram.com/p/DFy5m4MotA5/';
 
-# URL to test the download functionality
-my $test_url = 'https://www.youtube.com/watch?v=JuMzr1yquaw&list=PLHJ2M-4ldpLRVrOIeCtO7dyudsAPaj3aU&index=2';
+$logger->info("Starting download for URL: $video_url");
+my $download_output = $frobnitz->download($video_url);
+my ($last_line) = (split /\n/, $download_output)[-1];
+chomp($last_line);
 
-# BEGIN TESTS
-$logger->info("Starting test suite for Acme::Frobnitz");
+ok($last_line, "Download completed: $last_line");
+$logger->info("Downloaded video to: $last_line");
 
-# Ensure the module has the download method
-can_ok('Acme::Frobnitz', 'download') or do {
-    $logger->error("download method not found in Acme::Frobnitz");
-    BAIL_OUT("download method not found in Acme::Frobnitz");
-};
-
-$logger->info("Test URL for download: $test_url");
-
-# Attempt to download a YouTube video
-my $output_file;
-
-eval {
-    $output_file = Acme::Frobnitz->download($test_url);
-};
-
-if ($@) {
-    $logger->error("Error during download: $@");
-    fail("Download method threw an exception");
+# Verify download
+if ($frobnitz->verify_file($last_line)) {
+    pass("File verification successful");
+    $logger->info("File verification successful");
 } else {
-    ok($output_file, "Download method completed without errors");
-    $logger->info("Download method completed successfully");
-
-    # Verify the output file has the expected `.webm` extension
-    if ($output_file =~ /\.webm$/) {
-        pass("Output file has the expected .webm extension");
-        $logger->info("Output file has the expected .webm extension: $output_file");
-    } else {
-        fail("Output file does not have the expected .webm extension");
-        $logger->error("Output file does not have the expected .webm extension: $output_file");
-    }
+    fail("File verification failed");
+    $logger->error("File verification failed");
+    BAIL_OUT("Verification failed, stopping test.");
 }
 
+# Add watermark
+$download_output = $frobnitz->add_watermark($last_line);
+($last_line) = (split /\n/, $download_output)[-1];
+chomp($last_line);
+ok($last_line, "Watermark added: $last_line");
+$logger->info("Watermark added to: $last_line");
+
+# Add captions
+$download_output = $frobnitz->add_basic_captions($last_line);
+($last_line) = (split /\n/, $download_output)[-1];
+chomp($last_line);
+ok($last_line, "Captions added: $last_line");
+$logger->info("Captions added to: $last_line");
+
 done_testing();
+
+
+
+
 

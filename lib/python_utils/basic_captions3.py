@@ -1,14 +1,10 @@
 import os
-from moviepy.video.io.VideoFileClip import VideoFileClip
-from moviepy.video.VideoClip import TextClip
-from moviepy.video.compositing.CompositeVideoClip import CompositeVideoClip
-import logging
-import traceback
+import re
+import json
+from moviepy.editor import VideoFileClip, TextClip, CompositeVideoClip
 
-# Use the logger configured in the caller
-logger = logging.getLogger(__name__)
 
-# Function to get codecs based on file extension
+# Helper Function: Get codecs based on file extension
 def get_codecs_by_extension(extension):
     codecs = {
         ".webm": {"video_codec": "libvpx", "audio_codec": "libvorbis"},
@@ -18,112 +14,112 @@ def get_codecs_by_extension(extension):
     }
     return codecs.get(extension, {"video_codec": "libx264", "audio_codec": "aac"})
 
-# Helper function to convert newlines to spaces
+
+# Helper Function: Replace newlines with spaces
 def convert_newlines_to_spaces(text):
     return text.replace("\n", "                      ")
 
-def add_captions(params):
-    """
-    Add captions to a video based on parameters.
 
-    Args:
-        params (dict): Dictionary containing parameters for captioning.
-            Required keys:
-                - input_video_path (str): Path to the input video file.
-                - download_path (str): Path to save the output video.
-                - font (str): Font for captions.
-                - font_size (int): Font size for captions.
-                - caption_top (str): Top position percentage for captions.
-                - caption_bottom (str): Bottom position percentage for captions.
-                - line_width (str): Maximum line width as a percentage.
-                - hor_offset (str): Horizontal offset as a percentage.
-                - cap_length (int): Duration of each caption in seconds.
-                - max_number (int): Maximum number of captions.
-                - max_char_width (int): Maximum character width per line.
-                - next_line (float): Line spacing factor for multi-line captions.
-                - pause_between_para (int): Pause duration between paragraphs.
-                - source_path (str): Path to the captions text file.
-
-    Returns:
-        dict: Result containing the output video path.
-    """
+# Captioning Function
+def add_captions(params, logger=None):
     try:
-        # Extract parameters
-        input_video_path = params.get("input_video_path")
-        download_path = params.get("download_path")
-        font = params.get("font", "Arial-Bold")
-        font_size = params.get("font_size", 48)
-        caption_top = params.get("caption_top", "15%")
-        caption_bottom = params.get("caption_bottom", "75%")
-        line_width = params.get("line_width", "8%")
-        hor_offset = params.get("hor_offset", "4%")
-        cap_length = params.get("cap_length", 5)
-        max_number = params.get("max_number", 60)
+        if logger:
+            logger.info("Initializing captioning process...")
+
+        input_name = params["input_video_path"]
+        download_path = params["download_path"]
+        paragraph = convert_newlines_to_spaces(params["paragraph"])
         max_char_width = params.get("max_char_width", 65)
-        next_line = params.get("next_line", 1.7)
-        pause_between_para = params.get("pause_between_para", 2)
-        
+        next_line_pause = params.get("next_line", 1.7)
+        overall_start = params.get("overall_start", 2)
 
-	logger.debug("Debug log from the library.")
-	logger.info("Info log from the library.")
+        video_clip = VideoFileClip(input_name)
 
+        # Split paragraph into readable lines
+        lines = []
+        words = re.split(r'(\s+)', paragraph)
+        index = 0
+        while index < len(words):
+            line = words[index]
+            next_index = index + 1
+            while next_index < len(words) and len(line) + len(words[next_index]) + 1 <= max_char_width:
+                line += ' ' + words[next_index]
+                next_index += 1
+            lines.append(line)
+            index = next_index
 
-        # Debugging the caller directory and default source path
-        logger.debug("Starting path resolution...")
-        caller_dir = os.path.dirname(os.path.abspath(__file__))
-        logger.debug(f"Caller directory resolved to: {caller_dir}")
+        # Determine video dimensions and orientation
+        video_width, video_height = video_clip.size
+        current_top_position = (
+            float(params.get("caption_top", "15%")[:-1]) / 100 * video_height
+        )
+        current_hor_offset = (
+            float(params.get("hor_offset", "4%")[:-1]) / 100 * video_width
+        )
+        line_height = (
+            float(params.get("line_width", "8%")[:-1]) / 100 * video_height
+        )
 
-        # Determine the project base directory (two levels up from the library)
-        project_base_dir = os.path.abspath(os.path.join(caller_dir, "../.."))
-        logger.debug(f"Project base directory resolved to: {project_base_dir}")
+        # Create caption clips
+        caption_clips = []
+        for line in lines:
+            start_time = overall_start
+            end_time = start_time + params.get("cap_length", 5)
 
-        # Default source path
-        default_source_path = os.path.join(project_base_dir, "data/4.source.txt")
-        logger.debug(f"Default source path: {default_source_path}")
+            if end_time > video_clip.duration:
+                end_time = video_clip.duration
 
-        # Use the provided source path or default
-        provided_source_path = params.get("source_path")
-        if provided_source_path and os.path.isfile(provided_source_path):
-            source_path = os.path.abspath(provided_source_path)
-            logger.debug(f"Using provided source path: {source_path}")
-        else:
-            logger.debug(f"Invalid or missing provided source path: {provided_source_path}, using default.")
-            source_path = os.path.abspath(default_source_path)
+            shadow_clip = (
+                TextClip(
+                    line,
+                    fontsize=params["font_size"],
+                    color=params.get("shadow", {}).get("color", "black"),
+                    font=params["font"],
+                )
+                .set_position((
+                    current_hor_offset + params.get("shadow", {}).get("offset", 5),
+                    current_top_position + params.get("shadow", {}).get("offset", 5),
+                ))
+                .set_start(start_time)
+                .set_duration(end_time - start_time)
+                .set_opacity(params.get("shadow", {}).get("opacity", 0.6))
+            )
+            caption_clips.append(shadow_clip)
 
-        logger.debug(f"Final resolved source path: {source_path}")
+            caption_clip = (
+                TextClip(
+                    line,
+                    fontsize=params["font_size"],
+                    color=params["username_color"],
+                    font=params["font"],
+                )
+                .set_position((current_hor_offset, current_top_position))
+                .set_start(start_time)
+                .set_duration(end_time - start_time)
+            )
+            caption_clips.append(caption_clip)
 
-        # Validate the resolved source path
-        if not os.path.isfile(source_path):
-            logger.debug(f"File does not exist at path: {source_path}")
-            raise FileNotFoundError(f"Captions file not found: {source_path}")
+            overall_start += next_line_pause
+            current_top_position += line_height
 
-        # Log success if file exists
-        logger.debug(f"Captions file exists: {source_path}")
+        final_video = CompositeVideoClip([video_clip] + caption_clips)
+        filename, ext = os.path.splitext(os.path.basename(input_name))
+        output_video_path = os.path.join(download_path, f"{filename}_captioned{ext}")
+        codecs = get_codecs_by_extension(ext)
 
-        # Read captions from the source file
-        with open(source_path, "r") as f:
-            captions = [line.strip() for line in f if line.strip()]
+        final_video.write_videofile(
+            output_video_path,
+            codec=codecs["video_codec"],
+            audio_codec=codecs["audio_codec"],
+            fps=24,
+        )
 
-        if not captions:
-            raise ValueError("No captions found in the source file.")
+        if logger:
+            logger.info(f"Captioning completed successfully. Output video saved at: {output_video_path}")
 
-        # Generate output video path
-        output_video_path = "tja"
-
-        logger.info(f"Captions added successfully. Output saved to {output_video_path}")
-        return {"output_video_path": output_video_path}
+        return {"to_process": output_video_path}
     except Exception as e:
-        logger.error(f"Error adding captions: {e}")
-        logger.debug(traceback.format_exc())
+        if logger:
+            logger.error(f"Error in adding captions: {e}")
         raise
-
-# Function to create a unique output path by appending a counter to the filename
-def unique_output_path(path, filename):
-    base, ext = os.path.splitext(filename)
-    counter = 1
-    unique_filename = filename
-    while os.path.exists(os.path.join(path, unique_filename)):
-        unique_filename = f"{base}_{counter}{ext}"
-        counter += 1
-    return os.path.join(path, unique_filename)
 

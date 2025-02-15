@@ -6,7 +6,7 @@ use Acme::Frobnitz;
 my $frobnitz = Acme::Frobnitz->new();
 
 # URL of the video to download
-my $video_url = "https://www.youtube.com/watch?v=2DpjHCVcbMA&list=PL8yn7qIg4rLJl7vSycVe8FgSAZpc7m1Va&index=21";
+my $video_url = "https://www.instagram.com/p/DFy5m4MotA5/";
 
 # Step 1: Download the video
 print "Starting download for URL: $video_url\n";
