@@ -56,6 +56,12 @@ if __name__ == "__main__":
         app_config = load_app_config()
         captions_config = app_config.get("captions", {})
         logger = initialize_logging(app_config)
+        # Extract clips from the configuration
+        clips = app_config.get("captions", {}).get("clips", [])
+        if not clips:
+            logger.warning("No clips found in the configuration.")
+        else:
+            logger.info(f"Clips extracted from configuration: {clips}")
 
         if len(sys.argv) < 2:
             logger.error("Usage: python caller_script.py <video_file_path>")

@@ -97,7 +97,7 @@ sub add_watermark {
     my $script_path = $class->_get_script_path("call_watermark.py");
     my $python_path = $class->_get_python_path();
     print "Running command: $python_path $script_path $input_video\n";
-
+    $DB::single = 1; 
     my $output;
     eval {
         $output = capturex($python_path, $script_path, $input_video);

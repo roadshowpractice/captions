@@ -94,8 +94,8 @@ if __name__ == "__main__":
             logger.info(f"Loaded metadata from: {json_path}")
             username = data.get("uploader", "UnknownUploader")
             # this field changes insta uses upload_date ; yt uses upload_date
-            #video_date = data.get("video_date", datetime.now().strftime("%Y-%m-%d"))
-            video_date = data.get("upload_date", datetime.now().strftime("%Y-%m-%d"))
+            video_date = data.get("video_date", datetime.now().strftime("%Y-%m-%d"))
+            #video_date = data.get("upload_date", datetime.now().strftime("%Y-%m-%d"))
         except json.JSONDecodeError as e:
             logger.error(f"Failed to parse JSON metadata from {json_path}: {e}")
             sys.exit(1)

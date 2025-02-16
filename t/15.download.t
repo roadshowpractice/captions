@@ -58,12 +58,12 @@ chomp($last_line);
 ok($last_line, "Watermark added: $last_line");
 $logger->info("Watermark added to: $last_line");
 
-# Add captions
-$download_output = $frobnitz->add_basic_captions($last_line);
+# clips
+$download_output = $frobnitz->make_clips($last_line);
 ($last_line) = (split /\n/, $download_output)[-1];
 chomp($last_line);
-ok($last_line, "Captions added: $last_line");
-$logger->info("Captions added to: $last_line");
+ok($last_line, "Clips added: $last_line");
+$logger->info("Clips added to: $last_line");
 
 done_testing();
 
