@@ -1,0 +1,8 @@
+2025-02-20 23:43:38,942 - __main__ - INFO - Logging initialized.
+2025-02-20 23:43:38,942 - __main__ - DEBUG - Current sys.path: ['/Users/mymac/Desktop/bashful-backup/bin', '/Users/mymac/miniconda3/envs/new-env/lib/python313.zip', '/Users/mymac/miniconda3/envs/new-env/lib/python3.13', '/Users/mymac/miniconda3/envs/new-env/lib/python3.13/lib-dynload', '/Users/mymac/miniconda3/envs/new-env/lib/python3.13/site-packages', '/Users/mymac/Desktop/bashful-backup/bin/../lib/python_utils']
+2025-02-20 23:43:38,942 - __main__ - INFO - Using source text from config: ./data/2.caps.txt
+2025-02-20 23:46:51,070 - __main__ - INFO - Captioning completed successfully. Output video: /Volumes/BallardT1/2025-02-20/Liberating_Humanity_Podcast_20230905_4_watermarked_captioned.mkv
+2025-02-21 00:14:50,806 - __main__ - INFO - Logging initialized.
+2025-02-21 00:14:50,807 - __main__ - DEBUG - Current sys.path: ['/Users/mymac/Desktop/bashful-backup/bin', '/Users/mymac/miniconda3/envs/new-env/lib/python313.zip', '/Users/mymac/miniconda3/envs/new-env/lib/python3.13', '/Users/mymac/miniconda3/envs/new-env/lib/python3.13/lib-dynload', '/Users/mymac/miniconda3/envs/new-env/lib/python3.13/site-packages', '/Users/mymac/Desktop/bashful-backup/bin/../lib/python_utils']
+2025-02-21 00:14:50,807 - __main__ - INFO - Using source text from config: ./data/4.source.txt
+2025-02-21 00:18:06,047 - __main__ - INFO - Captioning completed successfully. Output video: /Volumes/BallardT1/2025-02-21/Liberating_Humanity_Podcast_20230905_1_watermarked_captioned.mkv
