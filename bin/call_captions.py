@@ -39,32 +39,36 @@ def load_source_text(source_path):
         logger.error(f"Error loading source text from {source_path}: {e}")
         sys.exit(1)
         
+# Load Application Configuration
 def load_app_config():
-    """Load configuration from app_config.json."""
+    """Load the application configuration from a JSON file."""
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    base_dir = os.path.join(current_dir, "../")
+    
+    if not os.path.exists(base_dir):
+        # Squeaky error message if the base directory doesn't exist
+        raise FileNotFoundError(f"Base directory not found at {base_dir}. Please ensure the directory structure is correct.")
+    
+    config_path = os.path.join(base_dir, "conf/app_config.json")
+
+    if not os.path.exists(config_path):
+        raise FileNotFoundError(f"Configuration file not found at {config_path}")
+    
     try:
-        config_path = "./conf/app_config.json"
-        if not os.path.exists(config_path):
-            raise FileNotFoundError(f"Configuration file not found at {config_path}")
         with open(config_path, "r") as file:
-            return json.load(file)
-    except Exception as e:
-        print(f"Error loading configuration: {e}")
-        sys.exit(1)
+            app_config = json.load(file)
+        return app_config
+    except json.JSONDecodeError as e:
+        raise ValueError(f"Failed to parse JSON configuration at {config_path}: {e}")
 
 if __name__ == "__main__":
     try:
         app_config = load_app_config()
         captions_config = app_config.get("captions", {})
         logger = initialize_logging(app_config)
-        # Extract clips from the configuration
-        clips = app_config.get("captions", {}).get("clips", [])
-        if not clips:
-            logger.warning("No clips found in the configuration.")
-        else:
-            logger.info(f"Clips extracted from configuration: {clips}")
 
         if len(sys.argv) < 2:
-            logger.error("Usage: python caller_script.py <video_file_path>")
+            logger.error("Usage: python caller_script.py <video_file_path> [<source_text_file_path>]")
             sys.exit(1)
 
         input_video_path = sys.argv[1]
@@ -77,13 +81,19 @@ if __name__ == "__main__":
         sys.path.append(lib_path)
         logger.debug(f"Current sys.path: {sys.path}")
 
-        # Load source text from file for captions
-        source_path = captions_config.get("source_path")
-        if source_path:
-            captions_config["paragraph"] = load_source_text(source_path)
+        # Use ARGV2 as source_path if provided, otherwise fallback to config
+        if len(sys.argv) > 2:
+            source_path = sys.argv[2]
+            logger.info(f"Using source text from command line argument: {source_path}")
         else:
-            logger.error("No source_path found in captions configuration.")
-            sys.exit(1)
+            source_path = captions_config.get("source_path")
+            if source_path:
+                logger.info(f"Using source text from config: {source_path}")
+            else:
+                logger.error("No source_path provided in arguments or configuration.")
+                sys.exit(1)
+
+        captions_config["paragraph"] = load_source_text(source_path)
 
         from basic_captions3 import add_captions
         result = add_captions(captions_config)

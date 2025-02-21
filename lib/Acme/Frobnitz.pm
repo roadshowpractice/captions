@@ -11,7 +11,7 @@ use FindBin;
 use POSIX qw(strftime);
 use JSON;
 
-our $VERSION = '0.03';
+our $VERSION = '0.05';
 
 sub new {
     my ($class) = @_;
@@ -76,6 +76,7 @@ sub download {
     my $script_path = $class->_get_script_path("call_download.py");
     my $python_path = $class->_get_python_path();
     print "Running command: $python_path $script_path $hyperlink\n";
+    $DB::single = 1; 
     my $output;
     eval {
         $output = capturex($python_path, $script_path, $hyperlink);
@@ -118,13 +119,35 @@ sub add_basic_captions {
     my $script_path = $class->_get_script_path("call_captions.py");
     my $python_path = $class->_get_python_path();
     print "Running command: $python_path $script_path $input_video \n";
-
+    $DB::single = 1; 
     my $output;
     eval {
         $output = capturex($python_path, $script_path, $input_video);
     };
     if ($@) {
         die "Error adding captions with $script_path: $@\n";
+    }
+
+    chomp($output); # Remove trailing newlines from Python output
+    return $output;
+}
+
+
+# Make clips by invoking the Python make_clips script directly
+sub make_clips {
+    my ($class, $input_video) = @_;
+    die "Input video file not provided.\n" unless $input_video;
+
+    my $script_path = $class->_get_script_path("call_clips.py");  
+    my $python_path = $class->_get_python_path();
+    print "Running command: $python_path $script_path $input_video\n";
+    $DB::single = 1; 
+    my $output;
+    eval {
+        $output = capturex($python_path, $script_path, $input_video);
+    };
+    if ($@) {
+        die "Error making clips with $script_path: $@\n";
     }
 
     chomp($output); # Remove trailing newlines from Python output

@@ -6,17 +6,29 @@ import traceback
 import platform
 from datetime import datetime
 
-# Load App Configuration
+
+## this routine needs to be locked in
+# Load Application Configuration
 def load_app_config():
-    """Load application-wide configuration."""
+    """Load the application configuration from a JSON file."""
     current_dir = os.path.dirname(os.path.abspath(__file__))
-    config_path = os.path.join(current_dir, "../conf/app_config.json")
+    base_dir = os.path.join(current_dir, "../")
+    
+    if not os.path.exists(base_dir):
+        # Squeaky error message if the base directory doesn't exist
+        raise FileNotFoundError(f"Base directory not found at {base_dir}")
+    
+    config_path = os.path.join(base_dir, "conf/app_config.json")
 
     if not os.path.exists(config_path):
         raise FileNotFoundError(f"Configuration file not found at {config_path}")
-
-    with open(config_path, "r") as file:
-        return json.load(file)
+    
+    try:
+        with open(config_path, "r") as file:
+            app_config = json.load(file)
+        return app_config
+    except json.JSONDecodeError as e:
+        raise ValueError(f"Failed to parse JSON configuration at {config_path}: {e}")
 
 # Initialize Logging
 def init_logging(logging_config):

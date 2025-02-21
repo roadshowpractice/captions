@@ -79,9 +79,24 @@ def main():
         download_date = datetime.now().strftime("%Y-%m-%d")
         download_path = os.path.join(target_usb, download_date)
 
-        # Ensure directories exist
-        os.makedirs(download_path, exist_ok=True)
-        logger.info(f"Download directory created or exists: {download_path}")
+        # Check if the USB is mounted and writable
+        if not os.path.exists(target_usb):
+            logger.error(f"Error: USB drive {target_usb} is not mounted.")
+            sys.exit(1)
+        
+        if not os.path.exists(download_path):
+            logger.warning(f"Download path {download_path} does not exist. Creating it now.")
+            try:
+                os.makedirs(download_path, exist_ok=True)
+            except PermissionError:
+                logger.error(f"Permission denied: Unable to create {download_path}")
+                sys.exit(1)
+
+        elif not os.access(download_path, os.W_OK):
+            logger.error(f"Error: No write permission to {download_path}.")
+            sys.exit(1)
+
+        logger.info(f"Download directory confirmed: {download_path}")
 
         # Prepare parameters for function calls
         params = {
@@ -133,4 +148,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

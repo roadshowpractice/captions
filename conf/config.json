@@ -1,7 +1,7 @@
 {
   "Darwin": {
     "python_path": "/Users/mymac/miniconda3/envs/new-env/bin/python",
-    "base_dir": "/Users/mymac/Desktop/captions",
+    "base_dir": "/Users/mymac/Desktop/bashful-backup",
     "log_dir": "/Users/mymac/logs",
     "image_dir": "/Users/mymac/Pictures",
     "resize_dir": "/Users/mymac/Pictures/resize",
