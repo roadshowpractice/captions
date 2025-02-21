@@ -12,6 +12,7 @@ _build/
 cover_db/
 blib/
 inc/
+data/
 .lwpcookies
 .last_cover_stats
 nytprof.out
@@ -32,6 +33,7 @@ Acme-Frobnitz-*.tar.gz
 # Backup or temporary editor files
 .*.swp
 .*~
+.*bak
 
 # Ignore all Python bytecode files
 *.pyc
