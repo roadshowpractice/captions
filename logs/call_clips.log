@@ -1,0 +1,16 @@
+2025-02-27 22:07:21,174 - __main__ - INFO - Logging initialized.
+2025-02-27 22:07:21,174 - __main__ - INFO - Clips found in configuration: [5, 10]
+2025-02-27 22:07:21,174 - __main__ - INFO - Clips extracted from configuration: [5, 10]
+2025-02-27 22:07:21,174 - __main__ - DEBUG - Detailed clips info: [
+  5,
+  10
+]
+2025-02-27 22:07:21,174 - __main__ - DEBUG - Current sys.path: ['/Users/mymac/Desktop/bashful-backup/bin', '/Users/mymac/miniconda3/envs/new-env/lib/python313.zip', '/Users/mymac/miniconda3/envs/new-env/lib/python3.13', '/Users/mymac/miniconda3/envs/new-env/lib/python3.13/lib-dynload', '/Users/mymac/miniconda3/envs/new-env/lib/python3.13/site-packages', '/Users/mymac/Desktop/bashful-backup/bin/../lib/python_utils']
+2025-02-27 22:07:21,179 - __main__ - ERROR - An unexpected error occurred: Input video file not found: /media/fritz/E4B0-3FC21/2025-02-15/Tim_Ballard_20250208_watermarked.mp4
+2025-02-27 22:07:21,179 - __main__ - DEBUG - Traceback (most recent call last):
+  File "/Users/mymac/Desktop/bashful-backup/bin/call_clips.py", line 78, in <module>
+    result = process_clips(clips_config, clips)
+  File "/Users/mymac/Desktop/bashful-backup/bin/../lib/python_utils/make_clips.py", line 31, in process_clips
+    raise FileNotFoundError(f"Input video file not found: {input_video_path}")
+FileNotFoundError: Input video file not found: /media/fritz/E4B0-3FC21/2025-02-15/Tim_Ballard_20250208_watermarked.mp4
+
