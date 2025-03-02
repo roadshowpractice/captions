@@ -50,7 +50,6 @@
             "color": "black",
             "offset": 5,
             "opacity": 0.6
-        },
-        "clips": [  5 , 10 ]
+        }
     }
 }

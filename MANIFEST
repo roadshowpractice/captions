@@ -1,16 +1,10 @@
-./bin/1.clip.py
 ./bin/call_download.py
-./bin/call_joseph.py
-./bin/1.platform.py
 ./bin/1.git.sh
-./bin/1.cametopass.pl
-./bin/bakcall_captions.py
 ./bin/call_watermark.py
-./bin/bakcall_clips.py
 ./bin/call_ken.py
 ./bin/call_clips.py
 ./bin/call_captions.py
-./bin/1.books.pl
+./bin/call_clipped_captions.py
 ./bin/4.driver.pl
 ./Changes
 ./MANIFEST
@@ -22,6 +16,7 @@
 ./t/00-load.t
 ./t/18.download.t
 ./t/15.download.t
+./t/22.t
 ./t/pod-coverage.t
 ./xt/boilerplate.t
 ./README.md
@@ -31,8 +26,5 @@
 ./lib/python_utils/watermarker2.py
 ./lib/python_utils/downloader5.py
 ./lib/python_utils/make_clips.py
-./lib/python_utils/bak2basic_captions3.py
-./lib/python_utils/basic_captions4.py
-./lib/python_utils/bakbasic_captions3.py
 ./conf/config.json
 ./conf/app_config.json
