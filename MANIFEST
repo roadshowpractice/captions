@@ -5,6 +5,7 @@
 ./bin/call_clips.py
 ./bin/call_captions.py
 ./bin/call_clipped_captions.py
+./bin/call_screenshot.py
 ./bin/4.driver.pl
 ./Changes
 ./MANIFEST
