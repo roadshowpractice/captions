@@ -38,18 +38,14 @@ The project uses Perl for some core video processing tasks. You will need to ins
 
    This will compile any necessary dependencies and get everything set up.
 
-3. **Perl Configuration**:
-   Some configurations need to be set in the `conf/` directory:
-   - `config.pl` (Modify paths or settings specific to your environment)
-   - `watermark_config.pl` (Adjust watermark settings)
 
-   Look for sections marked with `# CUSTOMIZE` for where you should input your own values.
 
 #### Running Perl Scripts
 
 To run the Perl scripts, execute:
 
 ```bash
+prove -lv t/17.download.t
 perl bin/4.driver.pl
 ```
 
@@ -134,8 +130,6 @@ This file contains environment-specific settings for different operating systems
 - **base_dir**: Base directory where the project is located.
 - **log_dir**: Directory for log files.
 - **image_dir**: Directory where images are stored (used for watermarks).
-- **resize_dir**: Directory for resized images (if applicable).
-- **cookie_path**: Path to the cookies file for video downloads.
 - **logging**: Log settings, including logging level, log file paths, and console output.
 
 ### Customizable Values
@@ -144,14 +138,6 @@ This file contains environment-specific settings for different operating systems
   - Example: `source_path`, `cookie_path`, `image_dir`.
 - **Logging**: Customize log levels (DEBUG, INFO, etc.) and log file paths for debugging and monitoring.
 - **Watermark Settings**: Adjust watermark options such as `font`, `font_size`, and `position` in `watermark_config`.
-
----
-
-## Troubleshooting
-
-- **Permission errors**: Ensure all files in the project directory are readable and writable by the user executing the scripts.
-- **Missing modules**: If you encounter errors about missing Perl or Python modules, run the installation commands mentioned above for each respective environment.
-- **Git Issues**: Make sure your Git configuration is set up globally (e.g., with `git config --global credential.helper cache`), especially if pushing/pulling from a remote repository.
 
 ---
 

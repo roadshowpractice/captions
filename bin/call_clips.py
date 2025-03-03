@@ -1,28 +1,70 @@
 import os
 import sys
-import json
-import traceback
 import logging
+import subprocess
 
 
+# Set the GST_DEBUG environment variable
+os.environ['GST_DEBUG'] = '4'
 
-def initialize_logging(config):
-    log_dir = config.get("log_dir", "./logs")
-    if not os.path.exists(log_dir):
-        os.makedirs(log_dir)
 
+# ==================================================
+# CLIPS CONFIGURATION 
+# ==================================================
+# This dictionary contains all the necessary configuration.
+# We define the input video, output directory, and clip settings directly.
+# Global configuration for video processing with GStreamer
+gstreamer_config = {
+    "input_video_path": "data/Liberating_Humanity_Podcast_20241004_1_watermarked.mkv",  # Path to the input video
+    "clips_directory": "clips/",  # Directory where clips will be stored
+    "width": 1280,  # Video width
+    "height": 720,  # Video height
+    "font": "Arial",  # Font used for overlay text
+    "font_size": 64,  # Font size for overlay text
+    "alignment": {"horizontal": 1, "vertical": 1},  # Text alignment settings (1 = center)
+    "encoder": "x264enc",  # GStreamer encoder
+    "container_format": "mp4mux",  # Output format (e.g., MP4)
+    "text_halign": "left",  # Horizontal alignment
+    "text_valign": "center",  # Vertical alignment
+}
+
+# Clips: List of clips to process with individual properties
+clips = [
+    {
+        "start": 3,  # Clip start time (in seconds)
+        "end": 10,   # Clip end time (in seconds)
+        "text": "First clip",  # Text to overlay on the video
+        "name": "clip_1"  # Name of the clip file
+    },
+    {
+        "start": 11,
+        "end": 20,
+        "text": "Second clip",
+        "name": "clip_2"
+    }
+]
+
+# ==================================================
+# LOGGING INITIALIZATION
+# ==================================================
+# Sets up logging to both console and a log file.
+# This helps track processing steps and errors.
+def initialize_logging():
+    log_dir = "./logs"
+    os.makedirs(log_dir, exist_ok=True)
     log_file = os.path.join(log_dir, "call_clips.log")
+
     logger = logging.getLogger(__name__)
     logger.setLevel(logging.DEBUG)
 
+    # File logging
     file_handler = logging.FileHandler(log_file)
     file_handler.setLevel(logging.DEBUG)
-    file_formatter = logging.Formatter(
-        "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
-    )
+    file_formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
     file_handler.setFormatter(file_formatter)
     logger.addHandler(file_handler)
 
+    # Console logging
     console_handler = logging.StreamHandler(sys.stdout)
     console_handler.setLevel(logging.INFO)
     console_formatter = logging.Formatter("%(asctime)s - %(message)s")
@@ -32,58 +74,100 @@ def initialize_logging(config):
     logger.info("Logging initialized.")
     return logger
 
-def load_app_config():
-    """Load configuration from app_config.json."""
-    try:
-        config_path = "./conf/app_config.json"
-        if not os.path.exists(config_path):
-            raise FileNotFoundError(f"Configuration file not found at {config_path}")
-        with open(config_path, "r") as file:
-            return json.load(file)
-    except Exception as e:
-        print(f"Error loading configuration: {e}")
-        sys.exit(1)
 
-if __name__ == "__main__":
-    try:
-        app_config = load_app_config()
-        logger = initialize_logging(app_config)
+# ==================================================
+# PROCESSING CLIPS WITH GSTREAMER
+# ==================================================
+# Ensure the clips directory exists
+def ensure_clips_directory(clips_directory):
+    if not os.path.exists(clips_directory):
+        os.makedirs(clips_directory)
+        logger.info(f"Created clips directory: {clips_directory}")
 
-        # Extract clips from the configuration
-        clips = app_config.get("captions", {}).get("clips", [])
-        logger.info(f"Clips found in configuration: {clips}")
+# PROCESSING CLIPS WITH GSTREAMER
+def process_clips_gstreamer(gstreamer_config, clips, logger):
+    """Processes clips using GStreamer."""
+    input_video = gstreamer_config["input_video_path"]
+    clips_directory = gstreamer_config["clips_directory"]
+    font = gstreamer_config["font"]
+    font_size = gstreamer_config["font_size"]
+    width = gstreamer_config["width"]
+    height = gstreamer_config["height"]
+    text_halign = gstreamer_config["text_halign"]
+    text_valign = gstreamer_config["text_valign"]
+    
+    # Log global config values
+    logger.info(f"Processing video: {input_video}")
+    logger.info(f"Output directory: {clips_directory}")
+    logger.info(f"Font: {font} (Size: {font_size})")
+    logger.info(f"Video Resolution: {width}x{height}")
+    
+    # Ensure the clips directory exists
+    ensure_clips_directory(clips_directory)
+    
+    # Iterate through clips and process each one
+    for clip in clips:
+        start, end, text, name = clip["start"], clip["end"], clip["text"], clip["name"]
+        output_file = os.path.join(clips_directory, f"{name}.mp4")
+        
+        # Text alignment settings based on configuration
+        halignment = text_halign  # left, center, right
+        valignment = text_valign  # top, middle, bottom
 
-        if not clips:
-            logger.warning("No clips found in the configuration.")
-        else:
-            logger.info(f"Clips extracted from configuration: {clips}")
-            logger.debug(f"Detailed clips info: {json.dumps(clips, indent=2)}")
+        # Log the clip-specific values
+        logger.info(f"Clip Name: {name}")
+        logger.info(f"Clip Start Time: {start}")
+        logger.info(f"Clip End Time: {end}")
+        logger.info(f"Text to Overlay: {text}")
+        logger.info(f"Output File: {output_file}")
+        logger.info(f"Font: {font}, Font Size: {font_size}")
+        logger.info(f"Text Alignment: Horizontal - {halignment}, Vertical - {valignment}")
+        logger.info(f"Width: {width}, Height: {height}")
+        
+        # GStreamer command to process the clip
+        gst_command = [
+            "gst-launch-1.0",
+            "filesrc", f"location={input_video}",
+            "!", "decodebin",
+            "!", "videoconvert",
+            "!", "videoscale",
+            "!", f'capsfilter', f'caps="video/x-raw,width={width},height={height}"',
+            "!", "textoverlay",
+            f"text={text}",
+            f"font-desc={font} {font_size}",
+            f"halignment={halignment}",
+            f"valignment={valignment}",
+            "!", gstreamer_config["encoder"],
+            "!", gstreamer_config["container_format"],
+            "!", "filesink", f"location={output_file}"
+        ]
+        
+        # Log the GStreamer command being executed
+        logger.info(f"GStreamer command: {' '.join(gst_command)}")
 
-        if len(sys.argv) < 2:
-            logger.error("Usage: python caller.py <video_file_path>")
-            sys.exit(1)
+        # Run the GStreamer command inside a try-except block
+        try:
+            result = subprocess.run(gst_command, capture_output=True, text=True, check=True)
+            
+            # Print stdout and stderr
+            logger.info("GStreamer command stdout:")
+            logger.info(result.stdout)
+            if result.stderr:
+                logger.error("GStreamer command stderr:")
+                logger.error(result.stderr)
+            
+            logger.info(f"Clip {name} processed successfully.")
+        except subprocess.CalledProcessError as e:
+            logger.error(f"Error occurred while processing clip {name}.")
+            logger.error(f"Return code: {e.returncode}")
+            logger.error(f"stdout: {e.stdout}")
+            logger.error(f"stderr: {e.stderr}")
 
-        input_video_path = sys.argv[1]
-        clips_config = app_config.get("captions", {})
-        clips_config["input_video_path"] = input_video_path
-        clips_config["download_path"] = os.path.dirname(input_video_path)
 
-        # Add the `lib/python_utils` directory to sys.path
-        current_dir = os.path.dirname(os.path.abspath(__file__))
-        lib_path = os.path.join(current_dir, "../lib/python_utils")
-        sys.path.append(lib_path)
-        logger.debug(f"Current sys.path: {sys.path}")
+#main
 
-        from make_clips import process_clips
-        result = process_clips(clips_config, clips)
+# Initialize logger
+logger = initialize_logging()
 
-        if result:
-            logger.info("Process completed successfully")
-        else:
-            logger.error("Process failed.")
-
-    except Exception as e:
-        logger.error(f"An unexpected error occurred: {e}")
-        logger.debug(traceback.format_exc())
-        sys.exit(1)
-
+# Run the GStreamer processing routine
+process_clips_gstreamer(gstreamer_config, clips, logger)

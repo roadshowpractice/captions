@@ -283,6 +283,9 @@ for clip in clips:
         clip["text"] = updated_text
     processed_clips.append(clip)
 
+
+logger.debug(f"Processing video: {moviepy_config.get('input_video')}")
+
 # Process clips using moviepy
 process_clips_moviepy(moviepy_config, processed_clips, logger)
 

@@ -154,6 +154,27 @@ sub make_clips {
     return $output;
 }
 
+sub add_clipped_captions {
+    my ($class, $input_video) = @_;
+    die "Input video file not provided.\n" unless $input_video;
+
+
+    my $script_path = $class->_get_script_path("call_clipped_captions.py");
+    my $python_path = $class->_get_python_path();
+    print "Running command: $python_path $script_path $input_video \n";
+    $DB::single = 1; 
+    my $output;
+    eval {
+        $output = capturex($python_path, $script_path, $input_video);
+    };
+    if ($@) {
+        die "Error adding captions with $script_path: $@\n";
+    }
+
+    chomp($output); # Remove trailing newlines from Python output
+    return $output;
+}
+
 
 
 # Verify the downloaded file
