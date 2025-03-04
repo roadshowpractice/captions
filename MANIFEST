@@ -9,6 +9,7 @@
 ./bin/4.driver.pl
 ./Changes
 ./MANIFEST
+./requirements.txt
 ./t/pod.t
 ./t/14.download.t
 ./t/manifest.t
