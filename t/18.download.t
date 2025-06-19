@@ -8,6 +8,7 @@ use FindBin;
 use Cwd 'abs_path';
 use Log::Log4perl;
 use File::Path 'make_path';
+use JSON qw(decode_json);
 
 # Set log directory and file
 my $log_dir = File::Spec->catdir($FindBin::Bin, '..', 'logs');
@@ -48,7 +49,12 @@ my $frobnitz = Acme::Frobnitz->new();
 #my $test_url = 'https://www.youtube.com/watch?v=ai2KJDqgh7M'; # j m
 
 
-my $test_url = 'https://www.facebook.com/share/v/19G7Jx2x2n/?mibextid=wwXIfr&__cft__[0]=AZWs3WaCFeC33JnjAcnjMQY3QtjFqvbJRzFTrsf8f5rSrAaIJD_vGKwFjnV9z_bDTGhR9vOJo1-e_7dveL6RpZHG2qRLXLxnDAEccB6cF5cOQWj1r6gVfZNbwKi0sffOUKc&__tn__=R]-R'; # fb jun 17
+my $config_file = File::Spec->catfile($FindBin::Bin, '..', 'conf', 'app_config.json');
+open my $cfg_fh, '<', $config_file or die "Cannot open $config_file: $!";
+my $json_text = do { local $/; <$cfg_fh> };
+close $cfg_fh;
+my $config = decode_json($json_text);
+my $test_url = $config->{test_url} // die "test_url not found in $config_file";
 
 # BEGIN TESTS
 $logger->info("Starting test suite for Acme::Frobnitz");

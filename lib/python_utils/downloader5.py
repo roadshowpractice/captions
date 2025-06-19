@@ -71,6 +71,26 @@ def extract_metadata(params):
     cookie_path = params.get("cookie_path")
     metadata_path = params.get("metadata_path")
 
+    # Determine metadata save path
+    if not metadata_path:
+        try:
+            current_dir = os.path.dirname(os.path.abspath(__file__))
+            base_dir = os.path.join(current_dir, "../../")
+            config_path = os.path.join(base_dir, "conf/app_config.json")
+            with open(config_path, "r") as f:
+                app_config = json.load(f)
+            metadata_dir = app_config.get("metadata_dir", "./metadata/fb_tb")
+        except Exception as e:
+            logger.warning(f"Could not read app_config.json: {e}")
+            metadata_dir = "./metadata/fb_tb"
+
+        if not os.path.exists(metadata_dir):
+            os.makedirs(metadata_dir, exist_ok=True)
+
+        filename = f"{int(time.time())}.json"
+        metadata_path = unique_output_path(metadata_dir, filename)
+        params["metadata_path"] = metadata_path
+
     try:
         # Set up yt-dlp options for extracting metadata
         ydl_opts = {

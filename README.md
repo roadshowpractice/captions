@@ -130,12 +130,14 @@ This file contains environment-specific settings for different operating systems
 - **base_dir**: Base directory where the project is located.
 - **log_dir**: Directory for log files.
 - **image_dir**: Directory where images are stored (used for watermarks).
+- **metadata_dir**: Directory to store extracted metadata files (defaults to `./metadata/fb_tb`).
+- **test_url**: Sample URL used by the test suite for download verification.
 - **logging**: Log settings, including logging level, log file paths, and console output.
 
 ### Customizable Values
 
 - **Paths**: Many scripts rely on specific paths for input and output files. These can be adjusted in the `config.json` and `app_config.json` files.
-  - Example: `source_path`, `cookie_path`, `image_dir`.
+  - Example: `source_path`, `cookie_path`, `image_dir`, `metadata_dir`, `test_url`.
 - **Logging**: Customize log levels (DEBUG, INFO, etc.) and log file paths for debugging and monitoring.
 - **Watermark Settings**: Adjust watermark options such as `font`, `font_size`, and `position` in `watermark_config`.
 
