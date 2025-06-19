@@ -1,0 +1,43 @@
+Hello, Rodrigo. You don’t know me. I’m Alan Mortensen’s ride-or-die friend from 40—well, I guess 50—years ago. Anyway, we’ve gotten into this fight, and you’ve joined us in it. Now I’d like to pass the baton to you for one of the parts I’ve been handling. I want to focus on getting Timmy’s ass kicked on Facebook.
+
+Hola, Rodrigo. No me conoces. Soy el amigo incondicional de Alan Mortensen desde hace 40—bueno, supongo que 50—años. En fin, nos hemos metido en esta lucha, y tú te has unido a nosotros en ella. Ahora me gustaría pasarte la antorcha en una de las partes que yo he estado llevando. Quiero enfocarme en patearle el trasero a Timmy en Facebook.
+
+I’ve seen you repost Timmy’s videos onto your feed, probably because you see how incriminating they are. However, you don’t have a watermarking tool, and that’s what I’m presenting to you today. This tool is something I’ve been working on since I found out that Alan was going to be the lawyer for the complainants. I’ve been using AI to develop its capabilities. It’s written in Python, and it has a Perl test framework, so you can "make" it like a Perl distribution, just like we’re all familiar with.
+
+He visto que vuelves a publicar los videos de Timmy en tu perfil, probablemente porque ves lo incriminatorios que son. Sin embargo, no cuentas con una herramienta para poner marcas de agua, y eso es lo que hoy quiero presentarte. Esta herramienta es algo en lo que he estado trabajando desde que supe que Alan iba a ser el abogado de los demandantes. He estado utilizando inteligencia artificial para desarrollar sus capacidades. Está escrita en Python y tiene un marco de pruebas en Perl, así que puedes "make" como a una distribución de Perl, tal como todos conocemos.
+
+Fraudo is the most prodigious fraud in Utah history. He was already an old fraud five years ago. Lynn Packer has 34 episodes about him. I recommend staying away from that topic because he has it thoroughly documented, and you’d just waste your time trying to sort out the difference between Mormon this and Mormon that.
+
+Fraudo es el fraude más descomunal en la historia de Utah. Ya era un viejo fraude hace cinco años. Lynn Packer tiene 34 episodios sobre él. Te recomiendo mantenerte al margen de ese tema porque él lo tiene muy bien documentado, y solo perderías el tiempo tratando de entender la diferencia entre un mormón y otro.
+
+He will fill up any device you use to capture his criminality. So it’s definitely a data problem, and we have so much of it that it’s actually part of his attack. This software stores the large binaries on a USB drive, separate from your main machine. That’s how you keep your system from getting clogged up with all of Timmy’s trash.
+
+Él llenará cualquier dispositivo que uses para capturar su criminalidad. Así que definitivamente es un problema de datos, y tenemos tanto material que en realidad forma parte de su ataque. Este software guarda los binarios grandes en una unidad USB, separada de tu máquina principal. Así es como evitas que tu sistema se atasque con toda la basura de Timmy.
+
+When it downloads and watermarks, it also records all of the forensic data in JSON form, so you’ll have that data, along with a forensic breadcrumb trail showing how the software downloaded and watermarked the video.
+
+Cuando descarga y pone marcas de agua, también registra todos los datos forenses en formato JSON, así que tendrás esos datos, junto con un rastro forense de migas de pan que muestra cómo el software descargó y marcó con agua el video.
+
+Mr. Disgusting always puts out videos that are 10 minutes long when they could be just 30 seconds. That’s part of his method, and it’s hard to excerpt them because he’s so prodigious in his fraud. So this software also clips the videos, and I’ve made an example of that for you.
+
+El señor Disgusting siempre publica videos de 10 minutos cuando podrían durar solo 30 segundos. Esa es parte de su estrategia, y es difícil hacer extractos porque su fraude es tan descomunal. Por eso, este software también recorta los videos, y te he preparado un ejemplo de eso.
+
+I’m going to warn you candidly: don’t try to reinvent the wheel. Don’t try to replicate what Lynn Packer has done, what Nuance Ho has done, or what Xmojo has done. This guy has worn out twenty different people who have tracked his prodigious fraud. What we need from you is to keep track of what he’s doing now — especially in Spanish.
+
+Te lo digo con franqueza: no intentes reinventar la rueda. No trates de replicar lo que ya han hecho Lynn Packer, Nuance Ho o Xmojo. Este tipo ha agotado a una veintena de personas que han seguido su fraude descomunal. Lo que necesitamos de ti es que lleves un seguimiento de lo que está haciendo ahora, y en particular, en español.
+
+The circumstances of this legal battle and bizarre Facebook fight boggle my imagination. I wouldn’t be on Facebook at all if it weren’t for my accidental friendship with Alan Mortensen. And I knew that Timmy and his fake factory of accusations and fabrications were going to come after us. Timmy alleges that Alan Mortensen is some kind of trafficker and great criminal. I’ll say this plainly: anything involving Alan — cars, girls, money, maybe a little alcohol — he was going to do with me. So anything Alan Mortensen was going to do, Meryl Jensen was going to do. And anything Alan is guilty of, I am guilty of in equal measure. So if Timmy manages to take down Alan, then he’s taking me down too.
+
+Las circunstancias de esta batalla legal y esta extraña pelea en Facebook superan mi comprensión. No estaría en Facebook en absoluto si no fuera por mi amistad accidental con Alan Mortensen. Y sabía que Timmy y su fábrica falsa de acusaciones y fabricaciones vendrían por nosotros. Timmy alega que Alan Mortensen es una especie de traficante y gran criminal. Yo lo digo sin rodeos: cualquier cosa que involucrara a Alan — autos, chicas, dinero, tal vez un poco de alcohol — él la iba a hacer conmigo. Así que todo lo que Alan Mortensen iba a hacer, Meryl Jensen también lo iba a hacer. Y cualquier cosa de la que Alan sea culpable, yo también lo soy en la misma medida. Así que si Timmy logra derribar a Alan, entonces también me está derribando a mí.
+
+So this fetcher has put me all in.
+
+Así que este desgraciado me ha hecho apostarlo todo.
+
+But I need to offload some of my tasks right now. And I’d like you, Rodrigo — and your team down there — to take over for me when it comes to downloading and watermarking Timmy Poo’s latest material. I had hoped Patricia Bullrich might have heard my request to shut down his Facebook, but I’m just an ant on Facebook — the aardvarks just step on me.
+
+Pero en este momento necesito soltar algunas de mis tareas. Y me gustaría que tú, Rodrigo, junto con tu equipo allá abajo, se encargaran de descargar y poner marcas de agua en el material más reciente de Timmy Poo. Tenía la esperanza de que Patricia Bullrich hubiera escuchado mi solicitud de cerrar su Facebook, pero yo soy solo una hormiga en Facebook — los osos hormigueros simplemente me pisan.
+
+I’m giving you the tools to do this. It’s good software — kind of from the future, honestly — so I’m also going to ask you to use it responsibly. It’s powerful stuff.
+
+Te estoy entregando las herramientas para hacer esto. Es buen software — casi como si viniera del futuro, la verdad — así que también te pido que lo uses con responsabilidad. Es algo poderoso.
