@@ -1,0 +1,30 @@
+# Include essential docs
+include README.md
+include README_ES.md
+include Changes
+include MANIFEST
+include requirements.txt
+include rodrigo_message.txt
+include readthis
+
+# Include bin scripts
+recursive-include bin *.py
+
+# Include custom libraries
+recursive-include lib *.py
+recursive-include lib *.pm
+recursive-include lib Acme/*
+recursive-include lib python_utils/*
+
+# Include configuration
+recursive-include conf *.json
+
+# Include test files
+recursive-include t *.t
+
+# Include timeline JSONs
+recursive-include timeline *.json
+
+# Include xt test helpers
+recursive-include xt *.t
+
