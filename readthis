@@ -1,0 +1,302 @@
+(new-env) fritz@laptop:~/Desktop/captions$ perl -Ilib t/18.download.t 
+ok 1 - Acme::Frobnitz->can('download')
+Running command: /home/fritz/miniconda3/envs/new-env/bin/python /home/fritz/Desktop/bashful-backup/bin/call_download.py https://www.facebook.com/share/v/19G7Jx2x2n/?mibextid=wwXIfr&__cft__[0]=AZWs3WaCFeC33JnjAcnjMQY3QtjFqvbJRzFTrsf8f5rSrAaIJD_vGKwFjnV9z_bDTGhR9vOJo1-e_7dveL6RpZHG2qRLXLxnDAEccB6cF5cOQWj1r6gVfZNbwKi0sffOUKc&__tn__=R]-R
+2025-06-18 18:33:33,282 - Logging initialized.
+2025-06-18 18:33:33,724 - Download path /media/fritz/9766-DD0B/2025-06-18 does not exist. Creating it now.
+2025-06-18 18:33:33,730 - Download directory confirmed: /media/fritz/9766-DD0B/2025-06-18
+2025-06-18 18:33:33,730 - Clips directory not found: ./clips
+2025-06-18 18:33:33,730 - Entering function: mask_metadata
+2025-06-18 18:33:33,730 - downloader5 - INFO - Masking metadata
+2025-06-18 18:33:33,730 - Masking metadata
+2025-06-18 18:33:33,730 - downloader5 - INFO - Received parameters for metadata extraction:
+2025-06-18 18:33:33,730 - Received parameters for metadata extraction:
+2025-06-18 18:33:33,731 - downloader5 - INFO - download_path: /media/fritz/9766-DD0B/2025-06-18
+2025-06-18 18:33:33,731 - download_path: /media/fritz/9766-DD0B/2025-06-18
+2025-06-18 18:33:33,731 - downloader5 - INFO - cookie_path: /home/fritz/Desktop/cookies.txt
+2025-06-18 18:33:33,731 - cookie_path: /home/fritz/Desktop/cookies.txt
+2025-06-18 18:33:33,731 - downloader5 - INFO - url: https://www.facebook.com/share/v/19G7Jx2x2n/?mibextid=wwXIfr&__cft__[0]=AZWs3WaCFeC33JnjAcnjMQY3QtjFqvbJRzFTrsf8f5rSrAaIJD_vGKwFjnV9z_bDTGhR9vOJo1-e_7dveL6RpZHG2qRLXLxnDAEccB6cF5cOQWj1r6gVfZNbwKi0sffOUKc&__tn__=R]-R
+2025-06-18 18:33:33,731 - url: https://www.facebook.com/share/v/19G7Jx2x2n/?mibextid=wwXIfr&__cft__[0]=AZWs3WaCFeC33JnjAcnjMQY3QtjFqvbJRzFTrsf8f5rSrAaIJD_vGKwFjnV9z_bDTGhR9vOJo1-e_7dveL6RpZHG2qRLXLxnDAEccB6cF5cOQWj1r6gVfZNbwKi0sffOUKc&__tn__=R]-R
+2025-06-18 18:33:39,727 - downloader5 - INFO - Extracted and normalized metadata:
+2025-06-18 18:33:39,727 - Extracted and normalized metadata:
+2025-06-18 18:33:39,750 - downloader5 - INFO - video_title: 2.8K_views_·_205_reactions_|_Thank_you_Moms_for_America_for_all_you_do._And_for_the_opportunity_to_tease_perhaps_the_most_important_project_we_have_ever_accomplished:_The_Hidden..._|_By_Tim_Ballard
+2025-06-18 18:33:39,750 - video_title: 2.8K_views_·_205_reactions_|_Thank_you_Moms_for_America_for_all_you_do._And_for_the_opportunity_to_tease_perhaps_the_most_important_project_we_have_ever_accomplished:_The_Hidden..._|_By_Tim_Ballard
+2025-06-18 18:33:39,751 - downloader5 - INFO - video_date: 20250618
+2025-06-18 18:33:39,751 - video_date: 20250618
+2025-06-18 18:33:39,752 - downloader5 - INFO - uploader: Tim Ballard
+2025-06-18 18:33:39,752 - uploader: Tim Ballard
+2025-06-18 18:33:39,752 - downloader5 - INFO - duration: 266.89
+2025-06-18 18:33:39,752 - duration: 266.89
+2025-06-18 18:33:39,752 - downloader5 - INFO - width: 848
+2025-06-18 18:33:39,752 - width: 848
+2025-06-18 18:33:39,753 - downloader5 - INFO - height: 480
+2025-06-18 18:33:39,753 - height: 480
+2025-06-18 18:33:39,753 - downloader5 - INFO - ext: mp4
+2025-06-18 18:33:39,753 - ext: mp4
+2025-06-18 18:33:39,754 - downloader5 - INFO - resolution: 848x480
+2025-06-18 18:33:39,754 - resolution: 848x480
+2025-06-18 18:33:39,754 - downloader5 - INFO - fps: None
+2025-06-18 18:33:39,754 - fps: None
+2025-06-18 18:33:39,754 - downloader5 - INFO - tbr: 684.532
+2025-06-18 18:33:39,754 - tbr: 684.532
+2025-06-18 18:33:39,755 - downloader5 - INFO - protocol: https+https
+2025-06-18 18:33:39,755 - protocol: https+https
+2025-06-18 18:33:39,755 - downloader5 - INFO - vcodec: vp09.00.30.08.00.01.01.01.00
+2025-06-18 18:33:39,755 - vcodec: vp09.00.30.08.00.01.01.01.00
+2025-06-18 18:33:39,756 - downloader5 - INFO - vbr: 636.095
+2025-06-18 18:33:39,756 - vbr: 636.095
+2025-06-18 18:33:39,756 - downloader5 - INFO - acodec: mp4a.40.5
+2025-06-18 18:33:39,756 - acodec: mp4a.40.5
+2025-06-18 18:33:39,757 - downloader5 - INFO - abr: 48.437
+2025-06-18 18:33:39,757 - abr: 48.437
+2025-06-18 18:33:39,757 - downloader5 - INFO - asr: 44100
+2025-06-18 18:33:39,757 - asr: 44100
+2025-06-18 18:33:39,758 - Entering function: create_original_filename
+2025-06-18 18:33:39,759 - downloader5 - INFO - Generated original filename: /media/fritz/9766-DD0B/2025-06-18/Tim_Ballard_20250618.mp4
+2025-06-18 18:33:39,759 - Generated original filename: /media/fritz/9766-DD0B/2025-06-18/Tim_Ballard_20250618.mp4
+2025-06-18 18:33:39,759 - Entering function: download_video
+2025-06-18 18:33:39,759 - downloader5 - INFO - Received parameters: download_video:
+2025-06-18 18:33:39,759 - Received parameters: download_video:
+2025-06-18 18:33:39,759 - downloader5 - INFO - download_path: /media/fritz/9766-DD0B/2025-06-18
+2025-06-18 18:33:39,759 - download_path: /media/fritz/9766-DD0B/2025-06-18
+2025-06-18 18:33:39,760 - downloader5 - INFO - cookie_path: /home/fritz/Desktop/cookies.txt
+2025-06-18 18:33:39,760 - cookie_path: /home/fritz/Desktop/cookies.txt
+2025-06-18 18:33:39,760 - downloader5 - INFO - url: https://www.facebook.com/share/v/19G7Jx2x2n/?mibextid=wwXIfr&__cft__[0]=AZWs3WaCFeC33JnjAcnjMQY3QtjFqvbJRzFTrsf8f5rSrAaIJD_vGKwFjnV9z_bDTGhR9vOJo1-e_7dveL6RpZHG2qRLXLxnDAEccB6cF5cOQWj1r6gVfZNbwKi0sffOUKc&__tn__=R]-R
+2025-06-18 18:33:39,760 - url: https://www.facebook.com/share/v/19G7Jx2x2n/?mibextid=wwXIfr&__cft__[0]=AZWs3WaCFeC33JnjAcnjMQY3QtjFqvbJRzFTrsf8f5rSrAaIJD_vGKwFjnV9z_bDTGhR9vOJo1-e_7dveL6RpZHG2qRLXLxnDAEccB6cF5cOQWj1r6gVfZNbwKi0sffOUKc&__tn__=R]-R
+2025-06-18 18:33:39,760 - downloader5 - INFO - video_title: 2.8K_views_·_205_reactions_|_Thank_you_Moms_for_America_for_all_you_do._And_for_the_opportunity_to_tease_perhaps_the_most_important_project_we_have_ever_accomplished:_The_Hidden..._|_By_Tim_Ballard
+2025-06-18 18:33:39,760 - video_title: 2.8K_views_·_205_reactions_|_Thank_you_Moms_for_America_for_all_you_do._And_for_the_opportunity_to_tease_perhaps_the_most_important_project_we_have_ever_accomplished:_The_Hidden..._|_By_Tim_Ballard
+2025-06-18 18:33:39,760 - downloader5 - INFO - video_date: 20250618
+2025-06-18 18:33:39,760 - video_date: 20250618
+2025-06-18 18:33:39,760 - downloader5 - INFO - uploader: Tim Ballard
+2025-06-18 18:33:39,760 - uploader: Tim Ballard
+2025-06-18 18:33:39,761 - downloader5 - INFO - duration: 266.89
+2025-06-18 18:33:39,761 - duration: 266.89
+2025-06-18 18:33:39,761 - downloader5 - INFO - width: 848
+2025-06-18 18:33:39,761 - width: 848
+2025-06-18 18:33:39,761 - downloader5 - INFO - height: 480
+2025-06-18 18:33:39,761 - height: 480
+2025-06-18 18:33:39,761 - downloader5 - INFO - ext: mp4
+2025-06-18 18:33:39,761 - ext: mp4
+2025-06-18 18:33:39,762 - downloader5 - INFO - resolution: 848x480
+2025-06-18 18:33:39,762 - resolution: 848x480
+2025-06-18 18:33:39,762 - downloader5 - INFO - fps: None
+2025-06-18 18:33:39,762 - fps: None
+2025-06-18 18:33:39,762 - downloader5 - INFO - tbr: 684.532
+2025-06-18 18:33:39,762 - tbr: 684.532
+2025-06-18 18:33:39,763 - downloader5 - INFO - protocol: https+https
+2025-06-18 18:33:39,763 - protocol: https+https
+2025-06-18 18:33:39,763 - downloader5 - INFO - vcodec: vp09.00.30.08.00.01.01.01.00
+2025-06-18 18:33:39,763 - vcodec: vp09.00.30.08.00.01.01.01.00
+2025-06-18 18:33:39,763 - downloader5 - INFO - vbr: 636.095
+2025-06-18 18:33:39,763 - vbr: 636.095
+2025-06-18 18:33:39,764 - downloader5 - INFO - acodec: mp4a.40.5
+2025-06-18 18:33:39,764 - acodec: mp4a.40.5
+2025-06-18 18:33:39,764 - downloader5 - INFO - abr: 48.437
+2025-06-18 18:33:39,764 - abr: 48.437
+2025-06-18 18:33:39,764 - downloader5 - INFO - asr: 44100
+2025-06-18 18:33:39,764 - asr: 44100
+2025-06-18 18:33:39,764 - downloader5 - INFO - original_filename: /media/fritz/9766-DD0B/2025-06-18/Tim_Ballard_20250618.mp4
+2025-06-18 18:33:39,764 - original_filename: /media/fritz/9766-DD0B/2025-06-18/Tim_Ballard_20250618.mp4
+2025-06-18 18:33:39,765 - downloader5 - INFO - Starting download for URL: https://www.facebook.com/share/v/19G7Jx2x2n/?mibextid=wwXIfr&__cft__[0]=AZWs3WaCFeC33JnjAcnjMQY3QtjFqvbJRzFTrsf8f5rSrAaIJD_vGKwFjnV9z_bDTGhR9vOJo1-e_7dveL6RpZHG2qRLXLxnDAEccB6cF5cOQWj1r6gVfZNbwKi0sffOUKc&__tn__=R]-R
+2025-06-18 18:33:39,765 - Starting download for URL: https://www.facebook.com/share/v/19G7Jx2x2n/?mibextid=wwXIfr&__cft__[0]=AZWs3WaCFeC33JnjAcnjMQY3QtjFqvbJRzFTrsf8f5rSrAaIJD_vGKwFjnV9z_bDTGhR9vOJo1-e_7dveL6RpZHG2qRLXLxnDAEccB6cF5cOQWj1r6gVfZNbwKi0sffOUKc&__tn__=R]-R
+[debug] Encodings: locale UTF-8, fs utf-8, pref UTF-8, out utf-8 (No ANSI), error utf-8, screen utf-8 (No ANSI)
+[debug] yt-dlp version stable@2025.02.19 from yt-dlp/yt-dlp [4985a4041] (pip) API
+[debug] params: {'outtmpl': '/media/fritz/9766-DD0B/2025-06-18/Tim_Ballard_20250618.mp4', 'cookiefile': None, 'format': 'bestvideo+bestaudio/best', 'noplaylist': True, 'verbose': True, 'compat_opts': set(), 'http_headers': {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.19 Safari/537.36', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'Accept-Language': 'en-us,en;q=0.5', 'Sec-Fetch-Mode': 'navigate'}}
+[debug] Python 3.9.18 (CPython x86_64 64bit) - Linux-5.4.0-216-generic-x86_64-with-glibc2.31 (OpenSSL 3.3.2 3 Sep 2024, glibc 2.31)
+[debug] exe versions: ffmpeg 7.1 (setts), ffprobe 7.1
+[debug] Optional libraries: Cryptodome-3.21.0, brotli-1.1.0, certifi-2024.08.30, mutagen-1.47.0, requests-2.32.3, sqlite3-3.45.2, urllib3-2.2.3, websockets-13.1
+[debug] Proxy map: {}
+[debug] Request Handlers: urllib, requests, websockets
+[debug] Loaded 1841 extractors
+2025-06-18 18:33:40,268 - downloader5 - INFO - About to download video.
+2025-06-18 18:33:40,268 - About to download video.
+[debug] Formats sorted by: hasvid, ie_pref, lang, quality, res, fps, hdr:12(7), vcodec, channels, acodec, size, br, asr, proto, vext, aext, hasaud, source, id
+[debug] Invoking http downloader on "https://video-sea1-1.xx.fbcdn.net/o1/v/t2/f2/m69/AQPgi2Kpbs8-pfvYHTEnJM9MWpBD9Be3fbj9fi_J2dGZZUZhFsboVubBk3Wos27Mf8AdCZFgHPQhBuj8_QaNFW_K.mp4?strext=1&_nc_cat=110&_nc_sid=9ca052&_nc_ht=video-sea1-1.xx.fbcdn.net&_nc_ohc=T6CgugiOGpMQ7kNvwHBnjNL&efg=eyJ2ZW5jb2RlX3RhZyI6ImRhc2hfdnA5LWJhc2ljLWdlbjJfNzIwcCIsInZpZGVvX2lkIjo1Nzc3NjA0OTUzNzUxNzMsIm9pbF91cmxnZW5fYXBwX2lkIjowLCJjbGllbnRfbmFtZSI6InVua25vd24iLCJ4cHZfYXNzZXRfaWQiOjYyODQwNDYzMjg0OTI1NSwidmlfdXNlY2FzZV9pZCI6MTAxMjIsImR1cmF0aW9uX3MiOjI2NiwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&_nc_zt=28&oh=00_AfM53VQDId-TLLiR5MmYLwEvN0rJxNLwD20NT7ZE9uREoQ&oe=68591D34"
+[debug] Invoking http downloader on "https://video-sea1-1.xx.fbcdn.net/o1/v/t2/f2/m69/AQNbNdPXou2r25GfjCrkdctLwTAccSrN_uGUmGxfGTwkG7ET0REA4d8IJXPcRbyk1QJjk3CV9E5lJtoOnW5nH4Cn.mp4?strext=1&_nc_cat=100&_nc_sid=9ca052&_nc_ht=video-sea1-1.xx.fbcdn.net&_nc_ohc=uSmReoIh4_QQ7kNvwF-QzH6&efg=eyJ2ZW5jb2RlX3RhZyI6ImRhc2hfbG5faGVhYWNfdmJyM19hdWRpbyIsInZpZGVvX2lkIjo1Nzc3NjA0OTUzNzUxNzMsIm9pbF91cmxnZW5fYXBwX2lkIjowLCJjbGllbnRfbmFtZSI6InVua25vd24iLCJ4cHZfYXNzZXRfaWQiOjYyODQwNDYzMjg0OTI1NSwidmlfdXNlY2FzZV9pZCI6MTAxMjIsImR1cmF0aW9uX3MiOjI2NiwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&_nc_zt=28&oh=00_AfNDxDXO5X7V20wAFu_YZUSCSSsCgb2UwAS5UVowsPV83w&oe=685941BA"
+[debug] ffmpeg command line: ffmpeg -y -loglevel repeat+info -i file:/media/fritz/9766-DD0B/2025-06-18/Tim_Ballard_20250618.f1950004569081480v.mp4 -i file:/media/fritz/9766-DD0B/2025-06-18/Tim_Ballard_20250618.f1051285469888557a.m4a -c copy -map 0:v:0 -map 1:a:0 -movflags +faststart file:/media/fritz/9766-DD0B/2025-06-18/Tim_Ballard_20250618.temp.mp4
+2025-06-18 18:33:49,597 - downloader5 - INFO - Video download completed.
+2025-06-18 18:33:49,597 - Video download completed.
+2025-06-18 18:33:49,630 - downloader5 - INFO - Download completed in 9.87 seconds
+2025-06-18 18:33:49,630 - Download completed in 9.87 seconds
+2025-06-18 18:33:49,631 - Entering function: store_params_as_json
+2025-06-18 18:33:49,746 - utilities1 - INFO - Params saved to JSON file: /media/fritz/9766-DD0B/2025-06-18/Tim_Ballard_20250618.json
+2025-06-18 18:33:49,746 - Params saved to JSON file: /media/fritz/9766-DD0B/2025-06-18/Tim_Ballard_20250618.json
+2025-06-18 18:33:49,747 - Returning original filename: /media/fritz/9766-DD0B/2025-06-18/Tim_Ballard_20250618.mp4
+ok 2 - Download method completed without errors
+File exists: /media/fritz/9766-DD0B/2025-06-18/Tim_Ballard_20250618.mp4
+File size: 15094504 bytes
+File permissions: 0644
+Last modified: 2025-06-18 18:33:44
+Owner UID: 1002, Group GID: 1002
+ok 3 - File verification successful
+Running command: /home/fritz/miniconda3/envs/new-env/bin/python /home/fritz/Desktop/bashful-backup/bin/call_watermark.py /media/fritz/9766-DD0B/2025-06-18/Tim_Ballard_20250618.mp4
+ok 4 - Watermark added: /media/fritz/9766-DD0B/2025-06-18/Tim_Ballard_20250618_watermarked.mp4
+1..4
+(new-env) fritz@laptop:~/Desktop/captions$ git add -u
+(new-env) fritz@laptop:~/Desktop/captions$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   t/18.download.t
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	clips/
+	logs/
+
+(new-env) fritz@laptop:~/Desktop/captions$ 
+(new-env) fritz@laptop:~/Desktop/captions$ mkdir timeline
+(new-env) fritz@laptop:~/Desktop/captions$ git add -u
+(new-env) fritz@laptop:~/Desktop/captions$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   t/18.download.t
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	clips/
+	logs/
+	timeline/
+
+(new-env) fritz@laptop:~/Desktop/captions$ git add timeline/*
+(new-env) fritz@laptop:~/Desktop/captions$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   t/18.download.t
+	new file:   timeline/composed_timeline_final.json
+	new file:   timeline/merged_timeline_with_foreground.json
+	new file:   timeline/rendered_green_white_labels.json
+	new file:   timeline/structured_foreground_tracks.json
+	new file:   timeline/timeline_with_title.json
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	clips/
+	logs/
+
+(new-env) fritz@laptop:~/Desktop/captions$ git commit -m "adding json"
+[main b43b2d8] adding json
+ 6 files changed, 703 insertions(+), 1 deletion(-)
+ create mode 100644 timeline/composed_timeline_final.json
+ create mode 100644 timeline/merged_timeline_with_foreground.json
+ create mode 100644 timeline/rendered_green_white_labels.json
+ create mode 100644 timeline/structured_foreground_tracks.json
+ create mode 100644 timeline/timeline_with_title.json
+(new-env) fritz@laptop:~/Desktop/captions$ git push origin main
+Enumerating objects: 12, done.
+Counting objects: 100% (12/12), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (9/9), 2.62 KiB | 671.00 KiB/s, done.
+Total 9 (delta 5), reused 0 (delta 0)
+remote: Resolving deltas: 100% (5/5), completed with 3 local objects.
+To https://github.com/Perl72/captions.git
+   2c46197..b43b2d8  main -> main
+(new-env) fritz@laptop:~/Desktop/captions$ 
+
+
+
+###############
+
+to make clips
+
+#############
+
+new-env) fritz@laptop:~/Desktop/captions$ python bin/call_captions.py /media/fritz/9766-DD0B/2025-06-18/Tim_Ballard_20250618_watermarked.mp4
+2025-06-18 19:09:38,136 - Logging initialized.
+Vendor: 
+MoviePy - Writing audio in /tmp/tmpehchmgso.wav
+MoviePy - Done.                                                                 
+Audio extracted to /tmp/tmpehchmgso.wav
+Google Speech Recognition could not understand the audio
+2025-06-18 19:09:42,323 - Text overlay (or replacement) for First clip
+Text detected: 'First clip'
+Accept this text? (y/n): y
+MoviePy - Writing audio in /tmp/tmpwva1gn2v.wav
+MoviePy - Done.                                                                 
+Audio extracted to /tmp/tmpwva1gn2v.wav
+Google Speech Recognition could not understand the audio
+2025-06-18 19:09:54,883 - Text overlay (or replacement) for Bollocks
+Text detected: 'Bollocks'
+Accept this text? (y/n): y
+MoviePy - Writing audio in /tmp/tmpqp3852pv.wav
+MoviePy - Done.                                                                 
+Audio extracted to /tmp/tmpqp3852pv.wav
+Google Speech Recognition could not understand the audio
+2025-06-18 19:10:08,837 - Text overlay (or replacement) for Bollocks
+Text detected: 'Bollocks'
+Accept this text? (y/n): y
+MoviePy - Writing audio in /tmp/tmp66ni8vjn.wav
+MoviePy - Done.                                                                 
+Audio extracted to /tmp/tmp66ni8vjn.wav
+Google Speech Recognition could not understand the audio
+2025-06-18 19:10:17,363 - Text overlay (or replacement) for Bollocks
+Text detected: 'Bollocks'
+Accept this text? (y/n): n
+Original text: Bollocks
+Enter new text (or press Enter to keep the original): ola rodrigo
+2025-06-18 19:10:28,077 - Processing video: /media/fritz/9766-DD0B/2025-06-18/Tim_Ballard_20250618_watermarked.mp4
+2025-06-18 19:10:28,078 - Output directory: clips/
+2025-06-18 19:10:28,209 - Clip Name: clip_1
+2025-06-18 19:10:28,210 - Clip Start Time: 3
+2025-06-18 19:10:28,210 - Clip End Time: 10
+2025-06-18 19:10:28,210 - Text to Overlay: First clip
+2025-06-18 19:10:28,210 - Output File: clips/clip_1.mp4
+Moviepy - Building video clips/clip_1.mp4.
+MoviePy - Writing audio in clip_1TEMP_MPY_wvf_snd.mp4
+MoviePy - Done.                                                                 
+Moviepy - Writing video clips/clip_1.mp4
+
+Moviepy - Done !                                                                
+Moviepy - video ready clips/clip_1.mp4
+2025-06-18 19:10:33,887 - Clip clip_1 processed successfully.
+2025-06-18 19:10:33,887 - Clip Name: clip_2
+2025-06-18 19:10:33,887 - Clip Start Time: 20
+2025-06-18 19:10:33,887 - Clip End Time: 50
+2025-06-18 19:10:33,887 - Text to Overlay: Bollocks
+2025-06-18 19:10:33,887 - Output File: clips/clip_2.mp4
+Moviepy - Building video clips/clip_2.mp4.
+MoviePy - Writing audio in clip_2TEMP_MPY_wvf_snd.mp4
+MoviePy - Done.                                                                 
+Moviepy - Writing video clips/clip_2.mp4
+
+Moviepy - Done !                                                                
+Moviepy - video ready clips/clip_2.mp4
+2025-06-18 19:10:49,527 - Clip clip_2 processed successfully.
+2025-06-18 19:10:49,621 - Clip Name: treason_weasal
+2025-06-18 19:10:49,622 - Clip Start Time: 120
+2025-06-18 19:10:49,622 - Clip End Time: 170
+2025-06-18 19:10:49,622 - Text to Overlay: Bollocks
+2025-06-18 19:10:49,622 - Output File: clips/treason_weasal.mp4
+Moviepy - Building video clips/treason_weasal.mp4.
+MoviePy - Writing audio in treason_weasalTEMP_MPY_wvf_snd.mp4
+MoviePy - Done.                                                                 
+Moviepy - Writing video clips/treason_weasal.mp4
+
+Moviepy - Done !                                                                
+Moviepy - video ready clips/treason_weasal.mp4
+2025-06-18 19:11:23,383 - Clip treason_weasal processed successfully.
+2025-06-18 19:11:23,421 - Clip Name: clip_4
+2025-06-18 19:11:23,421 - Clip Start Time: 150.0
+2025-06-18 19:11:23,421 - Clip End Time: 168.0
+2025-06-18 19:11:23,421 - Text to Overlay: ola rodrigo
+2025-06-18 19:11:23,421 - Output File: clips/clip_4.mp4
+Moviepy - Building video clips/clip_4.mp4.
+MoviePy - Writing audio in clip_4TEMP_MPY_wvf_snd.mp4
+MoviePy - Done.                                                                 
+Moviepy - Writing video clips/clip_4.mp4
+
+Moviepy - Done !                                                                
+Moviepy - video ready clips/clip_4.mp4
+2025-06-18 19:11:39,007 - Clip clip_4 processed successfully.
+(new-env) fritz@laptop:~/Desktop/captions$ 
+
+
+
