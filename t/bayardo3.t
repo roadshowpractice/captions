@@ -4,15 +4,32 @@ use strict;
 use warnings;
 use Test::More;
 use FindBin;
+use File::Spec;
+use JSON qw(decode_json encode_json);
 use lib "$FindBin::Bin/../lib";
 use Acme::Frobnitz;
 
 # ---------------------------
-# Setup: Get input URL
+# Setup: Get metadata file and URL
 # ---------------------------
-my $test_url = $ARGV[0] or die "Usage: $0 <Instagram URL>\n";
+my $metadata_arg = shift @ARGV
+  or die "Usage: $0 <metadata.json>\n";
 
-diag("Testing URL: $test_url");
+# If a relative path is given, assume it is in the metadata directory
+my $metadata_file = -f $metadata_arg
+  ? $metadata_arg
+  : File::Spec->catfile( $FindBin::Bin, '..', 'metadata', $metadata_arg );
+
+open my $mfh, '<', $metadata_file
+  or die "Cannot open $metadata_file: $!";
+my $json_text = do { local $/; <$mfh> };
+close $mfh;
+
+my $meta     = decode_json($json_text);
+my $test_url = $meta->{url}
+  or die "No URL field in $metadata_file\n";
+
+diag("Testing URL from $metadata_file: $test_url");
 
 # ---------------------------
 # Step 1: Create Frobnitz object
@@ -35,6 +52,7 @@ sleep(1);
 
 ok($downloaded_file && -e $downloaded_file, "Downloaded file exists: $downloaded_file")
     or bail_out_test("Downloaded file missing: $downloaded_file");
+$meta->{tasks}{perform_download} = $downloaded_file;
 
 diag("Downloaded file path: $downloaded_file");
 
@@ -56,6 +74,7 @@ sleep(1);
 
 ok($watermarked_file && -e $watermarked_file, "Watermarked file exists: $watermarked_file")
     or bail_out_test("Watermarked file missing: $watermarked_file");
+$meta->{tasks}{apply_watermark} = $watermarked_file;
 
 diag("Watermarked file path: $watermarked_file");
 
@@ -71,8 +90,17 @@ sleep(1);
 
 ok($captioned_file && -e $captioned_file, "Captioned file exists: $captioned_file")
     or bail_out_test("Captioned file missing: $captioned_file");
+$meta->{tasks}{add_captions} = $captioned_file;
 
 diag("Captioned file path: $captioned_file");
+
+# ---------------------------
+# Update metadata with results
+# ---------------------------
+open my $out, '>', $metadata_file
+  or die "Cannot write $metadata_file: $!";
+print $out encode_json($meta);
+close $out;
 
 # ---------------------------
 # Done
