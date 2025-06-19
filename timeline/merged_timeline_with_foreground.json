@@ -1,0 +1,164 @@
+{
+  "canvas": {
+    "width": 1200,
+    "height": 800,
+    "background": "landscape",
+    "outer_background": {
+      "x": 0,
+      "y": 0,
+      "width": 1200,
+      "height": 800,
+      "color": "green"
+    },
+    "timeline_box": {
+      "x": 100,
+      "y": 400,
+      "width": 1000,
+      "height": 200,
+      "color": "whitesmoke",
+      "scale_px_per_day": 5.56,
+      "start_date": "2025-01-01",
+      "end_date": "2025-06-30",
+      "event_bars": [
+        {
+          "x": 394.68,
+          "y": 390.0,
+          "width": 5.559999999999945,
+          "height": 20.0,
+          "color": "#AF82A9",
+          "label": "The Canoa Operation"
+        },
+        {
+          "x": 405.79999999999995,
+          "y": 390.0,
+          "width": 0.0,
+          "height": 20.0,
+          "color": "#D5ADD8",
+          "label": "The Mar del Plata Operation"
+        },
+        {
+          "x": 694.92,
+          "y": 390.0,
+          "width": 11.120000000000005,
+          "height": 20.0,
+          "color": "#C0B2EC",
+          "label": "Bullrich Publicly Denounces Tim Ballard"
+        },
+        {
+          "x": 872.8399999999999,
+          "y": 390.0,
+          "width": 5.560000000000059,
+          "height": 20.0,
+          "color": "#EEC5D3",
+          "label": "Senate Hearing on Trafficking in Brazil (Ballard)"
+        },
+        {
+          "x": 900.64,
+          "y": 390.0,
+          "width": 83.39999999999998,
+          "height": 20.0,
+          "color": "#F4E1E2",
+          "label": "Formal Legal Complaint Filed in Argentina"
+        },
+        {
+          "x": 378.0,
+          "y": 390.0,
+          "width": 0.0,
+          "height": 20.0,
+          "color": "#F28DFB",
+          "label": "Mexico Aftercare & Follow\u2011Up"
+        },
+        {
+          "x": 378.0,
+          "y": 390.0,
+          "width": 0.0,
+          "height": 20.0,
+          "color": "#82E2B3",
+          "label": "Press Engagement with US Ambassador in Mexico City"
+        },
+        {
+          "x": 172.28,
+          "y": 390.0,
+          "width": 0.0,
+          "height": 20.0,
+          "color": "#92B3D7",
+          "label": "Mexico Border \u2013 Interview with Children"
+        },
+        {
+          "x": 1000.7199999999999,
+          "y": 390.0,
+          "width": 0.0,
+          "height": 20.0,
+          "color": "#CBDCEE",
+          "label": "FB Video: Restavek Awareness"
+        },
+        {
+          "x": 895.0799999999999,
+          "y": 410.0,
+          "width": 0.0,
+          "height": 20.0,
+          "color": "#D1A6CB",
+          "label": "RATT Conference in Madrid"
+        }
+      ]
+    },
+    "x_axis": {
+      "line": {
+        "start": [
+          100,
+          400
+        ],
+        "end": [
+          1100,
+          400
+        ],
+        "color": "black"
+      },
+      "month_markers": [
+        {
+          "label": "Jan",
+          "x": 100.0,
+          "label_color": "white"
+        },
+        {
+          "label": "Feb",
+          "x": 272.22,
+          "label_color": "white"
+        },
+        {
+          "label": "Mar",
+          "x": 427.78,
+          "label_color": "white"
+        },
+        {
+          "label": "Apr",
+          "x": 600.0,
+          "label_color": "white"
+        },
+        {
+          "label": "May",
+          "x": 766.67,
+          "label_color": "white"
+        },
+        {
+          "label": "Jun",
+          "x": 938.89,
+          "label_color": "white"
+        }
+      ]
+    },
+    "title": {
+      "text": "Joder's 2025 Frauds",
+      "position": {
+        "x": 600.0,
+        "y": 720
+      },
+      "font": {
+        "size": 28,
+        "color": "white",
+        "weight": "bold",
+        "align": "center"
+      }
+    }
+  }
+}

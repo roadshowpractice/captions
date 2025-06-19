@@ -45,7 +45,10 @@ use Acme::Frobnitz;
 my $frobnitz = Acme::Frobnitz->new();
 
 # Test URL for download functionality
-my $test_url = 'https://www.youtube.com/watch?v=uva44yLDOCs'; #Hutchinson...long AF
+#my $test_url = 'https://www.youtube.com/watch?v=ai2KJDqgh7M'; # j m
+
+
+my $test_url = 'https://www.facebook.com/share/v/19G7Jx2x2n/?mibextid=wwXIfr&__cft__[0]=AZWs3WaCFeC33JnjAcnjMQY3QtjFqvbJRzFTrsf8f5rSrAaIJD_vGKwFjnV9z_bDTGhR9vOJo1-e_7dveL6RpZHG2qRLXLxnDAEccB6cF5cOQWj1r6gVfZNbwKi0sffOUKc&__tn__=R]-R'; # fb jun 17
 
 # BEGIN TESTS
 $logger->info("Starting test suite for Acme::Frobnitz");

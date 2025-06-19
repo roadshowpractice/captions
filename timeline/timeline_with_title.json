@@ -1,0 +1,82 @@
+{
+  "canvas": {
+    "width": 1200,
+    "height": 800,
+    "background": "landscape",
+    "outer_background": {
+      "x": 0,
+      "y": 0,
+      "width": 1200,
+      "height": 800,
+      "color": "green"
+    },
+    "timeline_box": {
+      "x": 100,
+      "y": 400,
+      "width": 1000,
+      "height": 200,
+      "color": "whitesmoke",
+      "scale_px_per_day": 5.56,
+      "start_date": "2025-01-01",
+      "end_date": "2025-06-30"
+    },
+    "x_axis": {
+      "line": {
+        "start": [
+          100,
+          400
+        ],
+        "end": [
+          1100,
+          400
+        ],
+        "color": "black"
+      },
+      "month_markers": [
+        {
+          "label": "Jan",
+          "x": 100.0,
+          "label_color": "white"
+        },
+        {
+          "label": "Feb",
+          "x": 272.22,
+          "label_color": "white"
+        },
+        {
+          "label": "Mar",
+          "x": 427.78,
+          "label_color": "white"
+        },
+        {
+          "label": "Apr",
+          "x": 600.0,
+          "label_color": "white"
+        },
+        {
+          "label": "May",
+          "x": 766.67,
+          "label_color": "white"
+        },
+        {
+          "label": "Jun",
+          "x": 938.89,
+          "label_color": "white"
+        }
+      ]
+    },
+    "title": {
+      "text": "Joder's 2025 Frauds",
+      "position": {
+        "x": 600.0,
+        "y": 720
+      },
+      "font": {
+        "size": 28,
+        "color": "white",
+        "weight": "bold",
+        "align": "center"
+      }
+    }
+  }
+}
