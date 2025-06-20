@@ -45,16 +45,30 @@ use Acme::Frobnitz;
 # Instantiate Frobnitz object for watermarking
 my $frobnitz = Acme::Frobnitz->new();
 
-# Test URL for download functionality
-#my $test_url = 'https://www.youtube.com/watch?v=ai2KJDqgh7M'; # j m
+# Optional metadata JSON for URL
+my $metadata_arg = shift @ARGV;
 
+my $test_url;
+if ($metadata_arg) {
+    my $metadata_file = -f $metadata_arg
+      ? $metadata_arg
+      : File::Spec->catfile($FindBin::Bin, '..', 'metadata', $metadata_arg);
 
-my $config_file = File::Spec->catfile($FindBin::Bin, '..', 'conf', 'app_config.json');
-open my $cfg_fh, '<', $config_file or die "Cannot open $config_file: $!";
-my $json_text = do { local $/; <$cfg_fh> };
-close $cfg_fh;
-my $config = decode_json($json_text);
-my $test_url = $config->{test_url} // die "test_url not found in $config_file";
+    open my $mfh, '<', $metadata_file or die "Cannot open $metadata_file: $!";
+    my $meta_json = do { local $/; <$mfh> };
+    close $mfh;
+    my $meta = decode_json($meta_json);
+    $test_url = $meta->{url} or die "No URL in $metadata_file";
+} else {
+    my $config_file =
+      File::Spec->catfile($FindBin::Bin, '..', 'conf', 'app_config.json');
+    open my $cfg_fh, '<', $config_file or die "Cannot open $config_file: $!";
+    my $json_text = do { local $/; <$cfg_fh> };
+    close $cfg_fh;
+    my $config = decode_json($json_text);
+    $test_url = $config->{test_url}
+      // die "test_url not found in $config_file";
+}
 
 # BEGIN TESTS
 $logger->info("Starting test suite for Acme::Frobnitz");
