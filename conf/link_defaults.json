@@ -1,0 +1,19 @@
+{
+    "download_path": "",
+    "url": "",
+    "video_download": {
+        "format": "bestvideo[height<=?1080]+bestaudio/best",
+        "bitrate": "5000k",
+        "noplaylist": true,
+        "cookie_path": "./app/data/cookies.txt"
+    },
+    "clips": [],
+    "tasks": {
+        "perform_download": null,
+        "apply_watermark": null,
+        "make_clips": null,
+        "extract_audio": null,
+        "generate_captions": null,
+        "post_processed": false
+    }
+}
