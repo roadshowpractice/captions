@@ -41,5 +41,11 @@ foreach my $file (@json_files) {
             unless defined $data->{tasks}{apply_watermark} && length $data->{tasks}{apply_watermark};
         pass("$file has apply_watermark");
     }
+
+    SKIP: {
+        skip "$file: make_clips missing", 1
+            unless defined $data->{tasks}{make_clips} && length $data->{tasks}{make_clips};
+        pass("$file has make_clips");
+    }
 }
 
