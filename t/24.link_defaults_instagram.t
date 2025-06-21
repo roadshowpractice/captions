@@ -4,16 +4,15 @@ use warnings;
 use Test::More;
 use FindBin;
 use File::Spec;
-use JSON::PP qw(decode_json encode_json);
+use JSON::PP qw(encode_json);
+use lib "$FindBin::Bin/../lib";
+use LinkDefaults qw(load_defaults);
 use File::Temp qw(tempfile);
 
 my $defaults_path = File::Spec->catfile($FindBin::Bin, '..', 'conf', 'link_defaults.json');
-open my $fh, '<', $defaults_path or die "Cannot open $defaults_path: $!";
-my $json_text = do { local $/; <$fh> };
-close $fh;
-my $data = decode_json($json_text);
+my $data = load_defaults($defaults_path);
 
-my $insta_link = 'https://www.instagram.com/p/EXAMPLE/';
+my $insta_link = $data->{url};
 $data->{url} = $insta_link;
 
 ok($data->{url} eq $insta_link, 'url field updated with instagram link');
