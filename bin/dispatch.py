@@ -4,6 +4,7 @@ import json
 import os
 import subprocess
 import sys
+import logging
 
 TASK_SCRIPTS = {
     "perform_download": "bin/call_download.py",
@@ -12,17 +13,31 @@ TASK_SCRIPTS = {
 }
 
 
-def run_script(script, arg):
+def setup_logging(verbose: bool = False) -> None:
+    """Configure basic logging."""
+    level = logging.DEBUG if verbose else logging.INFO
+    logging.basicConfig(level=level, format="%(message)s")
+
+
+def run_script(script: str, arg: str, verbose: bool = False) -> str:
     """Execute a Python script with the given argument and return its output."""
     cmd = [sys.executable, script, arg]
+    if verbose:
+        logging.info("Running: %s", " ".join(cmd))
     result = subprocess.run(cmd, capture_output=True, text=True)
+    if verbose and result.stdout:
+        logging.info(result.stdout.strip())
+    if verbose and result.stderr:
+        logging.warning(result.stderr.strip())
     if result.returncode != 0:
         raise RuntimeError(result.stderr)
     lines = [line for line in result.stdout.splitlines() if line.strip()]
     return lines[-1] if lines else ""
 
 
-def main(path):
+def main(path: str, verbose: bool = False) -> None:
+    setup_logging(verbose)
+    logging.info("Reading metadata from %s", path)
     with open(path, "r") as fh:
         data = json.load(fh)
 
@@ -34,24 +49,33 @@ def main(path):
         state = tasks.get(task)
         if state is True:
             if task != "perform_download" and not last:
-                print(f"Skipping {task}: missing input file")
+                logging.info("Skipping %s: missing input file", task)
                 continue
             script = os.path.join(os.path.dirname(__file__), os.pardir, TASK_SCRIPTS[task])
             script = os.path.normpath(script)
             arg = url if task == "perform_download" else last
-            result_path = run_script(script, arg)
+            logging.info("Running task %s", task)
+            result_path = run_script(script, arg, verbose)
             tasks[task] = result_path
             last = result_path or last
+            logging.info("%s result: %s", task, result_path)
         elif isinstance(state, str):
+            logging.info("Using existing result for %s: %s", task, state)
             last = state
+        else:
+            logging.info("Skipping %s", task)
 
     with open(path, "w") as fh:
         json.dump(data, fh, indent=4)
-    print(f"Updated tasks in {path}")
+    logging.info("Updated tasks in %s", path)
 
 
 if __name__ == "__main__":
-    if len(sys.argv) < 2:
-        print("Usage: dispatch.py <metadata.json>")
-        sys.exit(1)
-    main(sys.argv[1])
+    import argparse
+
+    parser = argparse.ArgumentParser(description="Run tasks defined in a metadata JSON file")
+    parser.add_argument("metadata", help="Path to metadata JSON")
+    parser.add_argument("-v", "--verbose", action="store_true", help="Increase output verbosity")
+    args = parser.parse_args()
+
+    main(args.metadata, verbose=args.verbose)
