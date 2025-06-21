@@ -13,7 +13,9 @@ my $json_text = do { local $/; <$fh> };
 close $fh;
 my $data = decode_json($json_text);
 
-my $insta_link = 'https://www.instagram.com/reel/EXAMPLE/';
+#my $insta_link = 'https://www.instagram.com/p/DLIHkVBx90h/'; #insta jun 20 actualidad
+
+my $insta_link = 'https://www.instagram.com/p/C8voUWAMmBK/'; # silvia viera/ soledad etchegoyen talk on youtube
 $data->{url} = $insta_link;
 
 ok($data->{url} eq $insta_link, 'url field updated with instagram link');
