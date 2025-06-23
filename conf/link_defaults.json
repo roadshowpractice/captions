@@ -9,9 +9,9 @@
     },
     "clips": [],
     "tasks": {
-        "perform_download": null,
-        "apply_watermark": null,
-        "make_clips": null,
+        "perform_download": true,
+        "apply_watermark": true,
+        "make_clips": true,
         "extract_audio": false,
         "generate_captions": false,
         "post_processed": false
