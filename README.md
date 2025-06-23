@@ -167,6 +167,35 @@ git push origin main
 
 ---
 
+## Creating a Timeline Composite Image
+
+The `bin/composite_timeline.py` script renders a timeline defined in a JSON
+file and overlays optional images for specific events. Use it to create a single
+PNG that combines your timeline data with custom graphics.
+
+1. **Prepare a mapping file** that links event labels to image paths. An example
+   mapping is provided in `timeline/image_mapping_example.json`:
+
+   ```json
+   {
+     "The Canoa Operation": "path/to/canoa.png",
+     "The Mar del Plata Operation": "path/to/mardel.png"
+   }
+   ```
+
+2. **Run the script** with the timeline JSON, the mapping file, and the desired
+   output filename:
+
+   ```bash
+   python bin/composite_timeline.py timeline/composed_timeline_final.json \
+       timeline/image_mapping_example.json output.png
+   ```
+
+The resulting `output.png` will contain the timeline bars with your images
+positioned above the relevant events.
+
+---
+
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
