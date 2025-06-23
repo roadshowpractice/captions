@@ -5,8 +5,17 @@ import os
 import sys
 import subprocess
 import tempfile
+import logging
 
 import requests
+
+# Add lib directory to Python path for shared utilities
+current_dir = os.path.dirname(os.path.abspath(__file__))
+root_dir = os.path.dirname(current_dir)
+lib_path = os.path.join(root_dir, "lib")
+sys.path.append(lib_path)
+
+from teton_utils import initialize_logging
 
 
 def download_file(url: str, dest: str) -> str:
@@ -46,14 +55,20 @@ def main() -> None:
     download_path = data.get("download_path", "downloads")
     os.makedirs(download_path, exist_ok=True)
 
+    logger = initialize_logging("call_untar_and_sort.log")
+    logger.info("Starting tar download and extraction")
+
     tmp_fd, tmp_tar = tempfile.mkstemp(suffix=".tar")
     os.close(tmp_fd)
+    logger.info(f"Downloading tar from {url}")
     download_file(url, tmp_tar)
 
     output_dir = os.path.join(download_path, "untarred")
     os.makedirs(output_dir, exist_ok=True)
+    logger.info(f"Extracting tar to {output_dir}")
 
     json_list = run_untar_and_list(tmp_tar, output_dir)
+    logger.info(f"File list generated at {json_list}")
     print(json_list)
 
 
