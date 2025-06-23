@@ -194,6 +194,19 @@ PNG that combines your timeline data with custom graphics.
 The resulting `output.png` will contain the timeline bars with your images
 positioned above the relevant events.
 
+### Downloading Image Assets
+
+Some image assets are provided via Google Drive links stored in
+`timeline/image_source_link.json`. Use the helper script
+`bin/download_images.py` to retrieve them:
+
+```bash
+python bin/download_images.py timeline/image_source_link.json downloaded_images
+```
+
+The script downloads each listed file into the specified directory so it can be
+used in your timeline composites.
+
 ---
 
 ## License
