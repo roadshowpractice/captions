@@ -207,6 +207,15 @@ python bin/download_images.py timeline/image_source_link.json downloaded_images
 The script downloads each listed file into the specified directory so it can be
 used in your timeline composites.
 
+### Extracting Tar Archives
+
+Use `conf/untar_config.json` to download a tar archive from Google Drive and
+extract a sorted list of its contents. Run the dispatcher with this config:
+
+```bash
+python bin/dispatch.py conf/untar_config.json
+```
+
 ---
 
 ## License
