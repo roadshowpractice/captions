@@ -9,6 +9,7 @@ TASK_SCRIPTS = {
     "perform_download": "bin/call_download.py",
     "apply_watermark": "bin/call_watermark.py",
     "make_clips": "bin/call_clips.py",
+    "untar_and_sort": "bin/call_untar_and_sort.py",
 }
 
 
@@ -30,7 +31,7 @@ def main(path):
     tasks = data.get("tasks", {})
     last = tasks.get("perform_download") if isinstance(tasks.get("perform_download"), str) else None
 
-    for task in ["perform_download", "apply_watermark", "make_clips"]:
+    for task in ["perform_download", "apply_watermark", "make_clips", "untar_and_sort"]:
         state = tasks.get(task)
         if state is True:
             if task != "perform_download" and not last:
@@ -38,7 +39,12 @@ def main(path):
                 continue
             script = os.path.join(os.path.dirname(__file__), os.pardir, TASK_SCRIPTS[task])
             script = os.path.normpath(script)
-            arg = url if task == "perform_download" else last
+            if task == "perform_download":
+                arg = url
+            elif task == "untar_and_sort":
+                arg = path
+            else:
+                arg = last
             result_path = run_script(script, arg)
             tasks[task] = result_path
             last = result_path or last
