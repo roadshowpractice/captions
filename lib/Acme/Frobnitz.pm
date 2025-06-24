@@ -44,24 +44,52 @@ sub _get_os_config {
 # Determine the Python interpreter path dynamically
 sub _get_python_path {
     my ($class) = @_;
-    my $os_config = _get_os_config();
-    my $python_path = $os_config->{python_path};
 
-    unless (-x $python_path) {
-        die "Python interpreter not found or not executable at: $python_path\n";
+    # 1. Allow override via environment variable
+    if ( my $env_path = $ENV{CAPTIONS_PYTHON_PATH} ) {
+        return $env_path if -x $env_path;
+        warn "Python path specified in CAPTIONS_PYTHON_PATH is not executable: $env_path\n";
     }
 
-    return $python_path;
+    # 2. Try configuration file if present
+    my $python_path;
+    eval {
+        my $os_config = _get_os_config();
+        $python_path = $os_config->{python_path} if $os_config;
+    };
+
+    if ( defined $python_path && -x $python_path ) {
+        return $python_path;
+    }
+
+    # 3. Fallback to python3 in PATH
+    chomp( $python_path = `which python3 2>/dev/null` );
+    $python_path ||= 'python3';
+    if ( system("which $python_path > /dev/null 2>&1") == 0 ) {
+        return $python_path;
+    }
+
+    die "Python interpreter not found. Set CAPTIONS_PYTHON_PATH or update config.json\n";
 }
 
 # Find the Python script path dynamically
 sub _get_script_path {
     my ($class, $script_name) = @_;
-    my $os_config = _get_os_config();
-    my $base_dir = $os_config->{base_dir};
-    my $script_path = File::Spec->catfile($base_dir, 'bin', $script_name);
 
-    unless (-f $script_path) {
+    my $base_dir = $ENV{CAPTIONS_BASE_DIR};
+
+    unless ($base_dir) {
+        eval {
+            my $os_config = _get_os_config();
+            $base_dir = $os_config->{base_dir} if $os_config;
+        };
+    }
+
+    $base_dir ||= File::Spec->catdir( $FindBin::Bin, '..' );
+
+    my $script_path = File::Spec->catfile( $base_dir, 'bin', $script_name );
+
+    unless ( -f $script_path ) {
         die "Python script $script_path does not exist.\n";
     }
 
