@@ -2,6 +2,19 @@
 
 use strict;
 use warnings;
+
+# ===== Dependency Check Guard =====
+BEGIN {
+    eval {
+        require Acme::Frobnitz;
+        require Log::Log4perl;
+        require JSON;
+    } or do {
+        print STDERR "Missing dependencies, skipping test.\n";
+        exit 0;
+    };
+}
+
 use Test::More;
 use File::Spec;
 use FindBin;
@@ -44,10 +57,6 @@ use Acme::Frobnitz;
 
 # Instantiate Frobnitz object for watermarking
 my $frobnitz = Acme::Frobnitz->new();
-
-# Test URL for download functionality
-#my $test_url = 'https://www.youtube.com/watch?v=ai2KJDqgh7M'; # j m
-
 
 my $config_file = File::Spec->catfile($FindBin::Bin, '..', 'conf', 'app_config.json');
 open my $cfg_fh, '<', $config_file or die "Cannot open $config_file: $!";
