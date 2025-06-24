@@ -1,0 +1,17 @@
+[
+  {
+    "filename": "frame001.png",
+    "timestamp": "2025-06-23 09:15:00",
+    "timestamp_utc": "2025-06-23T16:15:00Z"
+  },
+  {
+    "filename": "frame002.png",
+    "timestamp": "2025-06-23 09:30:00",
+    "timestamp_utc": "2025-06-23T16:30:00Z"
+  },
+  {
+    "filename": "frame003.png",
+    "timestamp": "2025-06-23 10:00:00",
+    "timestamp_utc": "2025-06-23T17:00:00Z"
+  }
+]

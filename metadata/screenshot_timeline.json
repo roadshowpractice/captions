@@ -1,0 +1,22 @@
+{
+  "canvas": {
+    "width": 1200,
+    "height": 800
+  },
+  "events": [
+    {
+      "label": "frame001.png",
+      "timestamp": "2025-06-23T16:15:00Z"
+    },
+    {
+      "label": "frame002.png",
+      "timestamp": "2025-06-23T16:30:00Z"
+    },
+    {
+      "label": "frame003.png",
+      "timestamp": "2025-06-23T17:00:00Z"
+    }
+  ]
+}
+
+
