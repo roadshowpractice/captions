@@ -33,9 +33,48 @@ def save_screenshots(data: List[Dict], path: str) -> None:
 
 
 def build_timeline(screens: List[Dict], width: int = 1200, height: int = 800) -> Dict:
-    """Create a simple timeline JSON structure from ordered screenshots."""
-    events = [
-        {"label": s.get("filename"), "timestamp": s.get("timestamp_utc", s.get("timestamp"))}
-        for s in screens
-    ]
-    return {"canvas": {"width": width, "height": height}, "events": events}
+    """Create a timeline JSON compatible with ``timeline_compositor``.
+
+    Each screenshot becomes a bar in a single track called ``screenshots``. The
+    ``x`` positions are pre-calculated using the timestamps so that the timeline
+    box spans from the first to the last screenshot.
+    """
+
+    if not screens:
+        return {"canvas": {"width": width, "height": height}, "timeline_box": {"event_tracks": []}}
+
+    # Parse timestamps in UTC and determine overall range
+    fmt = "%Y-%m-%dT%H:%M:%SZ"
+    ordered = sorted(screens, key=lambda s: s.get("timestamp_utc", s.get("timestamp")))
+    start_dt = datetime.strptime(ordered[0]["timestamp_utc"], fmt)
+    end_dt = datetime.strptime(ordered[-1]["timestamp_utc"], fmt)
+    total_seconds = max((end_dt - start_dt).total_seconds(), 1)
+
+    box = {"x": 100, "y": 400, "width": width - 200, "height": 200, "color": "whitesmoke"}
+    px_per_second = box["width"] / total_seconds
+
+    bars = []
+    for entry in ordered:
+        dt = datetime.strptime(entry["timestamp_utc"], fmt)
+        delta = (dt - start_dt).total_seconds()
+        bars.append({
+            "label": entry.get("filename"),
+            "start": entry["timestamp_utc"],
+            "end": entry["timestamp_utc"],
+            "x": box["x"] + delta * px_per_second,
+            "width": 2,
+            "color": "#888888",
+        })
+
+    track = {
+        "track": "screenshots",
+        "label": "Screenshots",
+        "y_axis": 0.5,
+        "bar_height": 20,
+        "bars": bars,
+    }
+
+    box["event_tracks"] = [track]
+    canvas = {"width": width, "height": height, "timeline_box": box}
+    return {"canvas": canvas}
+
