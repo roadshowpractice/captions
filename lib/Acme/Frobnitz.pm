@@ -159,7 +159,8 @@ sub add_clipped_captions {
     die "Input video file not provided.\n" unless $input_video;
 
 
-    my $script_path = $class->_get_script_path("call_clipped_captions.py");
+    # use the current captioning script
+    my $script_path = $class->_get_script_path("call_captions.py");
     my $python_path = $class->_get_python_path();
     print "Running command: $python_path $script_path $input_video \n";
     $DB::single = 1; 
