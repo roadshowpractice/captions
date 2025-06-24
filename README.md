@@ -215,6 +215,17 @@ extract a sorted list of its contents. Run the dispatcher with this config:
 ```bash
 python bin/dispatch.py conf/untar_config.json
 ```
+## Creating a Screenshot Timeline Image
+
+Use `bin/screenshots_to_image.py` to convert screenshot metadata into a complete timeline and PNG image.
+The script expects a JSON list of screenshots recorded in Mountain Standard Time and the directory containing those image files.
+
+```bash
+python bin/screenshots_to_image.py metadata/screenshot_times_mst.json /path/to/screens output_dir
+```
+
+The command outputs the converted UTC metadata, a timeline JSON and the final `screenshot_timeline.png` in `output_dir`.
+
 
 ---
 
