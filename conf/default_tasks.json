@@ -1,0 +1,11 @@
+{
+  "default_tasks": {
+    "perform_download": true,
+    "apply_watermark": true,
+    "make_clips": false,
+    "extract_audio": false,
+    "generate_captions": false,
+    "post_processed": false
+  }
+}
+
