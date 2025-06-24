@@ -15,7 +15,7 @@ sys.path.append(lib_path)
 
 # Import utilities
 from teton_utils import initialize_logging, load_config, load_app_config
-from tasks_lib import find_url_json
+from python_utils.tasks_lib import find_url_json
 
 # Map tasks to their respective scripts
 TASK_DISPATCH = {
