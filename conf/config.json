@@ -8,7 +8,7 @@
             "log_to_file": true,
             "log_filename": "/Users/mymac/Desktop/logs/dl.log",
             "log_to_console": true,
-            "console_level": "INFO",
+            "console_level": "INFO"
         },
     },
     "Linux": {
@@ -19,7 +19,7 @@
             "log_to_file": true,
             "log_filename": "/home/fritz/Desktop/logs/dl.log",
             "log_to_console": true,
-            "console_level": "INFO",
+            "console_level": "INFO"
         },
     },
 }
