@@ -12,6 +12,14 @@ setup(
     scripts=[
         'bin/call_captions.py',
         'bin/call_clips.py',
-        'bin/call_watermark.py'
+        'bin/call_download.py',
+        'bin/call_router.py',
+        'bin/call_untar_and_sort.py',
+        'bin/call_watermark.py',
+        'bin/composite_timeline.py',
+        'bin/convert_screenshots.py',
+        'bin/dispatch.py',
+        'bin/download_images.py',
+        'bin/untar_and_list.py'
     ],
 )
