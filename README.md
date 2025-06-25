@@ -209,8 +209,10 @@ used in your timeline composites.
 
 ### Extracting Tar Archives
 
-Use `conf/untar_config.json` to download a tar archive from Google Drive and
-extract a sorted list of its contents. Run the dispatcher with this config:
+Use `conf/untar_config.json` to extract a tar archive previously downloaded
+from Google Drive. The config specifies the `.tar` file path in the
+`perform_download` field and then runs the `untar_and_sort` task. Invoke the
+dispatcher with:
 
 ```bash
 python bin/dispatch.py conf/untar_config.json

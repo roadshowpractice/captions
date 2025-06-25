@@ -1,8 +1,8 @@
 {
-    "download_path": "/home/fritz/Desktop/downloads",
     "url": "https://drive.google.com/uc?id=183ApztBuVowAg4ITbLypUo7XcXBD64sw",
     "clips": [],
     "tasks": {
+        "perform_download": "/home/fritz/Desktop/captions/resources/183ApztBuVowAg4ITbLypUo7XcXBD64sw.tar",
         "untar_and_sort": true
     }
 }
