@@ -6,6 +6,15 @@ import traceback
 import platform
 from datetime import datetime
 
+# Ensure we can import shared utilities
+current_dir = os.path.dirname(os.path.abspath(__file__))
+root_dir = os.path.dirname(current_dir)
+lib_path = os.path.join(root_dir, "lib")
+if lib_path not in sys.path:
+    sys.path.append(lib_path)
+
+from teton_utils import load_app_config
+
 # Load Platform-Specific Configuration
 def load_config():
     """Load configuration based on the operating system."""
@@ -53,12 +62,44 @@ def init_logging(logging_config):
     logger.info("Logging initialized.")
     return logger
 
+
+def detect_target_usb(config):
+    """Attempt to locate a writable USB mount point."""
+    if isinstance(config, dict) and config.get("target_usb"):
+        return config["target_usb"]
+
+    os_name = platform.system()
+
+    if os_name == "Darwin":
+        volumes_dir = "/Volumes"
+        if os.path.isdir(volumes_dir):
+            for item in os.listdir(volumes_dir):
+                path = os.path.join(volumes_dir, item)
+                if os.path.ismount(path) and os.access(path, os.W_OK):
+                    return path
+    elif os_name == "Linux":
+        user = os.getenv("USER") or os.getenv("USERNAME")
+        candidates = []
+        if user:
+            candidates.append(os.path.join("/media", user))
+        candidates.extend(["/media", "/mnt"])
+
+        for base in candidates:
+            if os.path.isdir(base):
+                for item in os.listdir(base):
+                    path = os.path.join(base, item)
+                    if os.path.ismount(path) and os.access(path, os.W_OK):
+                        return path
+
+    return None
+
 # Main Function
 def main():
     try:
         # Load configurations
         platform_config = load_config()
-        logger = init_logging(platform_config["logging"])
+        app_config = load_app_config()
+        logger = init_logging(app_config.get("logging", {}))
 
         # Add the `lib/python_utils` directory to sys.path
         current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -75,7 +116,11 @@ def main():
             sys.exit(1)
 
         # Set up paths
-        target_usb = platform_config["target_usb"]
+        target_usb = detect_target_usb(platform_config)
+        if not target_usb:
+            logger.error("Unable to locate a writable USB drive.")
+            sys.exit(1)
+
         download_date = datetime.now().strftime("%Y-%m-%d")
         download_path = os.path.join(target_usb, download_date)
 
