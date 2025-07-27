@@ -1,0 +1,995 @@
+[
+  {
+    "timestamp": 1752356824,
+    "datetime": "2025-07-12T21:47:04Z",
+    "filename": "1752356824_611A11A1-29A4-454C-AEE1-D08EFA4DE21F.png",
+    "filepath": "tests/stamped3/1752356824_611A11A1-29A4-454C-AEE1-D08EFA4DE21F.png"
+  }
+,
+  {
+    "timestamp": 1752419502,
+    "datetime": "2025-07-13T15:11:42Z",
+    "filename": "1752419502_7D1AA956-3B14-499D-B5C7-A496B46C23A0.png",
+    "filepath": "tests/stamped3/1752419502_7D1AA956-3B14-499D-B5C7-A496B46C23A0.png"
+  }
+,
+  {
+    "timestamp": 1752419589,
+    "datetime": "2025-07-13T15:13:09Z",
+    "filename": "1752419589_B0DAA709-6A4E-474C-96B7-0A343F9E4568.png",
+    "filepath": "tests/stamped3/1752419589_B0DAA709-6A4E-474C-96B7-0A343F9E4568.png"
+  }
+,
+  {
+    "timestamp": 1752436212,
+    "datetime": "2025-07-13T19:50:12Z",
+    "filename": "1752436212_C19EF2DC-E7AA-4983-AD49-078342B52FAE.png",
+    "filepath": "tests/stamped3/1752436212_C19EF2DC-E7AA-4983-AD49-078342B52FAE.png"
+  }
+,
+  {
+    "timestamp": 1752511363,
+    "datetime": "2025-07-14T16:42:43Z",
+    "filename": "1752511363_EB1E2F2F-A317-4275-9F9F-EF7E9FF799FD.png",
+    "filepath": "tests/stamped3/1752511363_EB1E2F2F-A317-4275-9F9F-EF7E9FF799FD.png"
+  }
+,
+  {
+    "timestamp": 1752511405,
+    "datetime": "2025-07-14T16:43:25Z",
+    "filename": "1752511405_500E305E-D6D2-4B2B-88C7-1BA0EFF7CD15.png",
+    "filepath": "tests/stamped3/1752511405_500E305E-D6D2-4B2B-88C7-1BA0EFF7CD15.png"
+  }
+,
+  {
+    "timestamp": 1752511415,
+    "datetime": "2025-07-14T16:43:35Z",
+    "filename": "1752511415_5167C50D-2804-44EF-8688-A7ADF27BF121.png",
+    "filepath": "tests/stamped3/1752511415_5167C50D-2804-44EF-8688-A7ADF27BF121.png"
+  }
+,
+  {
+    "timestamp": 1752574899,
+    "datetime": "2025-07-15T10:21:39Z",
+    "filename": "1752574899_92571136-D62D-4E4F-B118-21F4C464EE84.png",
+    "filepath": "tests/stamped3/1752574899_92571136-D62D-4E4F-B118-21F4C464EE84.png"
+  }
+,
+  {
+    "timestamp": 1752574978,
+    "datetime": "2025-07-15T10:22:58Z",
+    "filename": "1752574978_2CA5D8E7-F822-4758-9538-2357FC705ACF.png",
+    "filepath": "tests/stamped3/1752574978_2CA5D8E7-F822-4758-9538-2357FC705ACF.png"
+  }
+,
+  {
+    "timestamp": 1752575131,
+    "datetime": "2025-07-15T10:25:31Z",
+    "filename": "1752575131_851812A9-1544-4852-8B69-174164235428.png",
+    "filepath": "tests/stamped3/1752575131_851812A9-1544-4852-8B69-174164235428.png"
+  }
+,
+  {
+    "timestamp": 1752575523,
+    "datetime": "2025-07-15T10:32:03Z",
+    "filename": "1752575523_517A4681-2591-49DE-A8E6-73BAC3F374F6.png",
+    "filepath": "tests/stamped3/1752575523_517A4681-2591-49DE-A8E6-73BAC3F374F6.png"
+  }
+,
+  {
+    "timestamp": 1752575616,
+    "datetime": "2025-07-15T10:33:36Z",
+    "filename": "1752575616_75D74975-F546-4317-A23F-3CA348A17110.png",
+    "filepath": "tests/stamped3/1752575616_75D74975-F546-4317-A23F-3CA348A17110.png"
+  }
+,
+  {
+    "timestamp": 1752575642,
+    "datetime": "2025-07-15T10:34:02Z",
+    "filename": "1752575642_42D0AD8D-6003-426F-A483-9E064A85547C.png",
+    "filepath": "tests/stamped3/1752575642_42D0AD8D-6003-426F-A483-9E064A85547C.png"
+  }
+,
+  {
+    "timestamp": 1752575992,
+    "datetime": "2025-07-15T10:39:52Z",
+    "filename": "1752575992_E94F9FCF-BDA7-4799-9968-C32F0ADF208D.png",
+    "filepath": "tests/stamped3/1752575992_E94F9FCF-BDA7-4799-9968-C32F0ADF208D.png"
+  }
+,
+  {
+    "timestamp": 1752576173,
+    "datetime": "2025-07-15T10:42:53Z",
+    "filename": "1752576173_E8EA4098-ABB4-4393-8081-8A08633AAC8F.png",
+    "filepath": "tests/stamped3/1752576173_E8EA4098-ABB4-4393-8081-8A08633AAC8F.png"
+  }
+,
+  {
+    "timestamp": 1752576203,
+    "datetime": "2025-07-15T10:43:23Z",
+    "filename": "1752576203_B0E88EB5-52DD-4C27-9A17-DA6881E4B954.png",
+    "filepath": "tests/stamped3/1752576203_B0E88EB5-52DD-4C27-9A17-DA6881E4B954.png"
+  }
+,
+  {
+    "timestamp": 1752596021,
+    "datetime": "2025-07-15T16:13:41Z",
+    "filename": "1752596021_8693E8ED-D002-40F7-AB22-4E6F8A4EF958.png",
+    "filepath": "tests/stamped3/1752596021_8693E8ED-D002-40F7-AB22-4E6F8A4EF958.png"
+  }
+,
+  {
+    "timestamp": 1752596104,
+    "datetime": "2025-07-15T16:15:04Z",
+    "filename": "1752596104_8A6D318A-55D8-4660-998A-D27A33FADC67.png",
+    "filepath": "tests/stamped3/1752596104_8A6D318A-55D8-4660-998A-D27A33FADC67.png"
+  }
+,
+  {
+    "timestamp": 1752596116,
+    "datetime": "2025-07-15T16:15:16Z",
+    "filename": "1752596116_1D85B334-2240-4F9C-B7E5-3FA81EEA3A7F.png",
+    "filepath": "tests/stamped3/1752596116_1D85B334-2240-4F9C-B7E5-3FA81EEA3A7F.png"
+  }
+,
+  {
+    "timestamp": 1752596207,
+    "datetime": "2025-07-15T16:16:47Z",
+    "filename": "1752596207_99082D2A-F088-4057-BA97-3CBC5BACE4C4.png",
+    "filepath": "tests/stamped3/1752596207_99082D2A-F088-4057-BA97-3CBC5BACE4C4.png"
+  }
+,
+  {
+    "timestamp": 1752596263,
+    "datetime": "2025-07-15T16:17:43Z",
+    "filename": "1752596263_05C3BF0A-29B7-4036-92D0-FB3B333B41F9.png",
+    "filepath": "tests/stamped3/1752596263_05C3BF0A-29B7-4036-92D0-FB3B333B41F9.png"
+  }
+,
+  {
+    "timestamp": 1752596349,
+    "datetime": "2025-07-15T16:19:09Z",
+    "filename": "1752596349_8456F301-6392-47CA-905C-DE4DC289FB3E.png",
+    "filepath": "tests/stamped3/1752596349_8456F301-6392-47CA-905C-DE4DC289FB3E.png"
+  }
+,
+  {
+    "timestamp": 1752596356,
+    "datetime": "2025-07-15T16:19:16Z",
+    "filename": "1752596356_EE1309B0-0855-41E5-9A08-237841D68A20.png",
+    "filepath": "tests/stamped3/1752596356_EE1309B0-0855-41E5-9A08-237841D68A20.png"
+  }
+,
+  {
+    "timestamp": 1752596401,
+    "datetime": "2025-07-15T16:20:01Z",
+    "filename": "1752596401_88C1AE66-A20D-4188-88E9-4471CCBEBD66.png",
+    "filepath": "tests/stamped3/1752596401_88C1AE66-A20D-4188-88E9-4471CCBEBD66.png"
+  }
+,
+  {
+    "timestamp": 1752596449,
+    "datetime": "2025-07-15T16:20:49Z",
+    "filename": "1752596449_4952EE99-6A82-4FE6-B01B-DDC2AA68D297.png",
+    "filepath": "tests/stamped3/1752596449_4952EE99-6A82-4FE6-B01B-DDC2AA68D297.png"
+  }
+,
+  {
+    "timestamp": 1752596457,
+    "datetime": "2025-07-15T16:20:57Z",
+    "filename": "1752596457_C40629FA-68B7-4F78-975A-4779D8960C9A.png",
+    "filepath": "tests/stamped3/1752596457_C40629FA-68B7-4F78-975A-4779D8960C9A.png"
+  }
+,
+  {
+    "timestamp": 1752596654,
+    "datetime": "2025-07-15T16:24:14Z",
+    "filename": "1752596654_B82EF933-1EF9-4BF3-AD9B-4E698AB70DA0.png",
+    "filepath": "tests/stamped3/1752596654_B82EF933-1EF9-4BF3-AD9B-4E698AB70DA0.png"
+  }
+,
+  {
+    "timestamp": 1752596733,
+    "datetime": "2025-07-15T16:25:33Z",
+    "filename": "1752596733_86E8010B-5B46-4A1C-B417-EBD2EE18CA61.png",
+    "filepath": "tests/stamped3/1752596733_86E8010B-5B46-4A1C-B417-EBD2EE18CA61.png"
+  }
+,
+  {
+    "timestamp": 1752596744,
+    "datetime": "2025-07-15T16:25:44Z",
+    "filename": "1752596744_537DC3D0-D787-43B9-A7B9-985AF8A36E94.png",
+    "filepath": "tests/stamped3/1752596744_537DC3D0-D787-43B9-A7B9-985AF8A36E94.png"
+  }
+,
+  {
+    "timestamp": 1752597049,
+    "datetime": "2025-07-15T16:30:49Z",
+    "filename": "1752597049_6650D590-D04C-484E-9F53-5E05A89E945F.png",
+    "filepath": "tests/stamped3/1752597049_6650D590-D04C-484E-9F53-5E05A89E945F.png"
+  }
+,
+  {
+    "timestamp": 1752597286,
+    "datetime": "2025-07-15T16:34:46Z",
+    "filename": "1752597286_D5AA141A-A24A-4848-83AB-C7DB5982A7DF.png",
+    "filepath": "tests/stamped3/1752597286_D5AA141A-A24A-4848-83AB-C7DB5982A7DF.png"
+  }
+,
+  {
+    "timestamp": 1752597299,
+    "datetime": "2025-07-15T16:34:59Z",
+    "filename": "1752597299_9A3CCE16-C842-469F-AAF9-6173B8F6C3D8.png",
+    "filepath": "tests/stamped3/1752597299_9A3CCE16-C842-469F-AAF9-6173B8F6C3D8.png"
+  }
+,
+  {
+    "timestamp": 1752603663,
+    "datetime": "2025-07-15T18:21:03Z",
+    "filename": "1752603663_7E86D0B7-A238-4D53-846F-06D1E640268F.png",
+    "filepath": "tests/stamped3/1752603663_7E86D0B7-A238-4D53-846F-06D1E640268F.png"
+  }
+,
+  {
+    "timestamp": 1753581874,
+    "datetime": "2025-07-27T02:04:34Z",
+    "filename": "1753581874_CAC12D62-C845-4E87-A7A2-ECD4918326D4.png",
+    "filepath": "tests/stamped3/1753581874_CAC12D62-C845-4E87-A7A2-ECD4918326D4.png"
+  }
+,
+  {
+    "timestamp": 1753581884,
+    "datetime": "2025-07-27T02:04:44Z",
+    "filename": "1753581884_ABE15B28-0DA3-43F8-BB0C-B42059A2F01B.png",
+    "filepath": "tests/stamped3/1753581884_ABE15B28-0DA3-43F8-BB0C-B42059A2F01B.png"
+  }
+,
+  {
+    "timestamp": 1753581900,
+    "datetime": "2025-07-27T02:05:00Z",
+    "filename": "1753581900_D83E75B9-D396-4255-986A-7191E1C92AEB.png",
+    "filepath": "tests/stamped3/1753581900_D83E75B9-D396-4255-986A-7191E1C92AEB.png"
+  }
+,
+  {
+    "timestamp": 1753581973,
+    "datetime": "2025-07-27T02:06:13Z",
+    "filename": "1753581973_90909838-2A3D-487E-B0DD-ADD958D63C34.png",
+    "filepath": "tests/stamped3/1753581973_90909838-2A3D-487E-B0DD-ADD958D63C34.png"
+  }
+,
+  {
+    "timestamp": 1753582010,
+    "datetime": "2025-07-27T02:06:50Z",
+    "filename": "1753582010_4139E457-5706-4509-BB22-DE516C3DF457.png",
+    "filepath": "tests/stamped3/1753582010_4139E457-5706-4509-BB22-DE516C3DF457.png"
+  }
+,
+  {
+    "timestamp": 1753582013,
+    "datetime": "2025-07-27T02:06:53Z",
+    "filename": "1753582013_8315CF3A-C6FB-4585-A8BA-5C6AA57B0A02.png",
+    "filepath": "tests/stamped3/1753582013_8315CF3A-C6FB-4585-A8BA-5C6AA57B0A02.png"
+  }
+,
+  {
+    "timestamp": 1753582020,
+    "datetime": "2025-07-27T02:07:00Z",
+    "filename": "1753582020_67CF345C-D47F-4902-98CE-B1B8CAAED443.png",
+    "filepath": "tests/stamped3/1753582020_67CF345C-D47F-4902-98CE-B1B8CAAED443.png"
+  }
+,
+  {
+    "timestamp": 1753582027,
+    "datetime": "2025-07-27T02:07:07Z",
+    "filename": "1753582027_BCF8542E-25C4-4506-9F55-E75CC6D8E587.png",
+    "filepath": "tests/stamped3/1753582027_BCF8542E-25C4-4506-9F55-E75CC6D8E587.png"
+  }
+,
+  {
+    "timestamp": 1753582046,
+    "datetime": "2025-07-27T02:07:26Z",
+    "filename": "1753582046_B1FCBB19-E8A1-417D-B885-05E21844061F.png",
+    "filepath": "tests/stamped3/1753582046_B1FCBB19-E8A1-417D-B885-05E21844061F.png"
+  }
+,
+  {
+    "timestamp": 1753582296,
+    "datetime": "2025-07-27T02:11:36Z",
+    "filename": "1753582296_0829DD44-83D2-4D2F-B40C-FB8DD5024691.png",
+    "filepath": "tests/stamped3/1753582296_0829DD44-83D2-4D2F-B40C-FB8DD5024691.png"
+  }
+,
+  {
+    "timestamp": 1753582306,
+    "datetime": "2025-07-27T02:11:46Z",
+    "filename": "1753582306_63068A30-CE71-4097-93A5-E1D46995B956.png",
+    "filepath": "tests/stamped3/1753582306_63068A30-CE71-4097-93A5-E1D46995B956.png"
+  }
+,
+  {
+    "timestamp": 1753582311,
+    "datetime": "2025-07-27T02:11:51Z",
+    "filename": "1753582311_90FF0028-DD9F-45EF-B8EF-C77ABD3606C9.png",
+    "filepath": "tests/stamped3/1753582311_90FF0028-DD9F-45EF-B8EF-C77ABD3606C9.png"
+  }
+,
+  {
+    "timestamp": 1753582316,
+    "datetime": "2025-07-27T02:11:56Z",
+    "filename": "1753582316_06580428-F674-488D-B67E-3D089F4E6492.png",
+    "filepath": "tests/stamped3/1753582316_06580428-F674-488D-B67E-3D089F4E6492.png"
+  }
+,
+  {
+    "timestamp": 1753582323,
+    "datetime": "2025-07-27T02:12:03Z",
+    "filename": "1753582323_96F2F6AA-872D-4FDC-B476-77480CB280C2.png",
+    "filepath": "tests/stamped3/1753582323_96F2F6AA-872D-4FDC-B476-77480CB280C2.png"
+  }
+,
+  {
+    "timestamp": 1753582327,
+    "datetime": "2025-07-27T02:12:07Z",
+    "filename": "1753582327_7061A616-68C6-4D5F-B684-C8C8A06569E7.png",
+    "filepath": "tests/stamped3/1753582327_7061A616-68C6-4D5F-B684-C8C8A06569E7.png"
+  }
+,
+  {
+    "timestamp": 1753582334,
+    "datetime": "2025-07-27T02:12:14Z",
+    "filename": "1753582334_B620C64E-C6F6-40BE-AF04-EB7E191AA652.png",
+    "filepath": "tests/stamped3/1753582334_B620C64E-C6F6-40BE-AF04-EB7E191AA652.png"
+  }
+,
+  {
+    "timestamp": 1753582339,
+    "datetime": "2025-07-27T02:12:19Z",
+    "filename": "1753582339_6304DE8C-4903-40B8-AF31-1383CD184222.png",
+    "filepath": "tests/stamped3/1753582339_6304DE8C-4903-40B8-AF31-1383CD184222.png"
+  }
+,
+  {
+    "timestamp": 1753582344,
+    "datetime": "2025-07-27T02:12:24Z",
+    "filename": "1753582344_8557AEBA-0D65-4368-935A-C68A133B8693.png",
+    "filepath": "tests/stamped3/1753582344_8557AEBA-0D65-4368-935A-C68A133B8693.png"
+  }
+,
+  {
+    "timestamp": 1753582348,
+    "datetime": "2025-07-27T02:12:28Z",
+    "filename": "1753582348_70410C5F-110A-4DBE-9179-DE55F4769496.png",
+    "filepath": "tests/stamped3/1753582348_70410C5F-110A-4DBE-9179-DE55F4769496.png"
+  }
+,
+  {
+    "timestamp": 1753582352,
+    "datetime": "2025-07-27T02:12:32Z",
+    "filename": "1753582352_4DC40AF7-BDBC-43C1-93BC-812809FA8FA7.png",
+    "filepath": "tests/stamped3/1753582352_4DC40AF7-BDBC-43C1-93BC-812809FA8FA7.png"
+  }
+,
+  {
+    "timestamp": 1753582357,
+    "datetime": "2025-07-27T02:12:37Z",
+    "filename": "1753582357_DDE23C23-93A1-4461-A69E-1C75A5813ED6.png",
+    "filepath": "tests/stamped3/1753582357_DDE23C23-93A1-4461-A69E-1C75A5813ED6.png"
+  }
+,
+  {
+    "timestamp": 1753582362,
+    "datetime": "2025-07-27T02:12:42Z",
+    "filename": "1753582362_0BA5A7AC-CAFB-4BBC-BCDA-C501B45A4B89.png",
+    "filepath": "tests/stamped3/1753582362_0BA5A7AC-CAFB-4BBC-BCDA-C501B45A4B89.png"
+  }
+,
+  {
+    "timestamp": 1753582374,
+    "datetime": "2025-07-27T02:12:54Z",
+    "filename": "1753582374_2681CDFD-28B3-46CD-AFD2-F75BFE91082D.png",
+    "filepath": "tests/stamped3/1753582374_2681CDFD-28B3-46CD-AFD2-F75BFE91082D.png"
+  }
+,
+  {
+    "timestamp": 1753582383,
+    "datetime": "2025-07-27T02:13:03Z",
+    "filename": "1753582383_27DDF777-F063-4307-9BC8-8CB8DA024257.png",
+    "filepath": "tests/stamped3/1753582383_27DDF777-F063-4307-9BC8-8CB8DA024257.png"
+  }
+,
+  {
+    "timestamp": 1753582387,
+    "datetime": "2025-07-27T02:13:07Z",
+    "filename": "1753582387_58E270EE-B9A2-4EDC-89D8-805FA9EC7C23.png",
+    "filepath": "tests/stamped3/1753582387_58E270EE-B9A2-4EDC-89D8-805FA9EC7C23.png"
+  }
+,
+  {
+    "timestamp": 1753582393,
+    "datetime": "2025-07-27T02:13:13Z",
+    "filename": "1753582393_839D207C-F76F-4520-81B1-BA530BA8E5C2.png",
+    "filepath": "tests/stamped3/1753582393_839D207C-F76F-4520-81B1-BA530BA8E5C2.png"
+  }
+,
+  {
+    "timestamp": 1753582396,
+    "datetime": "2025-07-27T02:13:16Z",
+    "filename": "1753582396_FF8F97FB-35D1-4A2D-A688-EB0379F5B112.png",
+    "filepath": "tests/stamped3/1753582396_FF8F97FB-35D1-4A2D-A688-EB0379F5B112.png"
+  }
+,
+  {
+    "timestamp": 1753582403,
+    "datetime": "2025-07-27T02:13:23Z",
+    "filename": "1753582403_43D86C8F-5283-407B-B245-948512303796.png",
+    "filepath": "tests/stamped3/1753582403_43D86C8F-5283-407B-B245-948512303796.png"
+  }
+,
+  {
+    "timestamp": 1753583341,
+    "datetime": "2025-07-27T02:29:01Z",
+    "filename": "1753583341_D643FA57-12AF-4A8C-80CD-C4D719A0A02F.png",
+    "filepath": "tests/stamped3/1753583341_D643FA57-12AF-4A8C-80CD-C4D719A0A02F.png"
+  }
+,
+  {
+    "timestamp": 1753583356,
+    "datetime": "2025-07-27T02:29:16Z",
+    "filename": "1753583356_4F0FD2D2-4F06-499E-A0D7-98543F0427BA.png",
+    "filepath": "tests/stamped3/1753583356_4F0FD2D2-4F06-499E-A0D7-98543F0427BA.png"
+  }
+,
+  {
+    "timestamp": 1753583395,
+    "datetime": "2025-07-27T02:29:55Z",
+    "filename": "1753583395_2D00B240-8A25-4E8F-984F-FA91EB1C1325.png",
+    "filepath": "tests/stamped3/1753583395_2D00B240-8A25-4E8F-984F-FA91EB1C1325.png"
+  }
+,
+  {
+    "timestamp": 1753583428,
+    "datetime": "2025-07-27T02:30:28Z",
+    "filename": "1753583428_98E1843E-DADF-4696-A0BF-DDF054EEC664.png",
+    "filepath": "tests/stamped3/1753583428_98E1843E-DADF-4696-A0BF-DDF054EEC664.png"
+  }
+,
+  {
+    "timestamp": 1753583492,
+    "datetime": "2025-07-27T02:31:32Z",
+    "filename": "1753583492_D83F1426-2714-405B-BD30-E715BE6F8D5F.png",
+    "filepath": "tests/stamped3/1753583492_D83F1426-2714-405B-BD30-E715BE6F8D5F.png"
+  }
+,
+  {
+    "timestamp": 1753583578,
+    "datetime": "2025-07-27T02:32:58Z",
+    "filename": "1753583578_E5601CF3-D4D6-40CF-9811-1C64AB0E46CE.png",
+    "filepath": "tests/stamped3/1753583578_E5601CF3-D4D6-40CF-9811-1C64AB0E46CE.png"
+  }
+,
+  {
+    "timestamp": 1753583584,
+    "datetime": "2025-07-27T02:33:04Z",
+    "filename": "1753583584_4C58B699-94AB-4366-8166-93AFCE3C808D.png",
+    "filepath": "tests/stamped3/1753583584_4C58B699-94AB-4366-8166-93AFCE3C808D.png"
+  }
+,
+  {
+    "timestamp": 1753583596,
+    "datetime": "2025-07-27T02:33:16Z",
+    "filename": "1753583596_3C10B9BA-25EA-4EB8-A7CE-C4E482C98FC7.png",
+    "filepath": "tests/stamped3/1753583596_3C10B9BA-25EA-4EB8-A7CE-C4E482C98FC7.png"
+  }
+,
+  {
+    "timestamp": 1753583607,
+    "datetime": "2025-07-27T02:33:27Z",
+    "filename": "1753583607_6E4134A1-74AB-413A-B54A-89383584FB33.png",
+    "filepath": "tests/stamped3/1753583607_6E4134A1-74AB-413A-B54A-89383584FB33.png"
+  }
+,
+  {
+    "timestamp": 1753583613,
+    "datetime": "2025-07-27T02:33:33Z",
+    "filename": "1753583613_36836647-4BEE-44CA-9BC2-4B9A829682EC.png",
+    "filepath": "tests/stamped3/1753583613_36836647-4BEE-44CA-9BC2-4B9A829682EC.png"
+  }
+,
+  {
+    "timestamp": 1753583620,
+    "datetime": "2025-07-27T02:33:40Z",
+    "filename": "1753583620_EA51BB64-3337-4DCE-B3FB-07CEB32D70FB.png",
+    "filepath": "tests/stamped3/1753583620_EA51BB64-3337-4DCE-B3FB-07CEB32D70FB.png"
+  }
+,
+  {
+    "timestamp": 1753583627,
+    "datetime": "2025-07-27T02:33:47Z",
+    "filename": "1753583627_A4E1406A-D19E-4E1E-93E0-034210093668.png",
+    "filepath": "tests/stamped3/1753583627_A4E1406A-D19E-4E1E-93E0-034210093668.png"
+  }
+,
+  {
+    "timestamp": 1753583632,
+    "datetime": "2025-07-27T02:33:52Z",
+    "filename": "1753583632_E6AC3323-A522-4DE3-AD99-A2D1B02A8448.png",
+    "filepath": "tests/stamped3/1753583632_E6AC3323-A522-4DE3-AD99-A2D1B02A8448.png"
+  }
+,
+  {
+    "timestamp": 1753583637,
+    "datetime": "2025-07-27T02:33:57Z",
+    "filename": "1753583637_2CB1C453-9C39-4699-9154-D1CE88677BBA.png",
+    "filepath": "tests/stamped3/1753583637_2CB1C453-9C39-4699-9154-D1CE88677BBA.png"
+  }
+,
+  {
+    "timestamp": 1753583656,
+    "datetime": "2025-07-27T02:34:16Z",
+    "filename": "1753583656_74490DAD-56A4-4B81-8CA5-1EB181771AAD.png",
+    "filepath": "tests/stamped3/1753583656_74490DAD-56A4-4B81-8CA5-1EB181771AAD.png"
+  }
+,
+  {
+    "timestamp": 1753583807,
+    "datetime": "2025-07-27T02:36:47Z",
+    "filename": "1753583807_90BC9A25-58EC-43A3-8F47-BA99BB435EA3.png",
+    "filepath": "tests/stamped3/1753583807_90BC9A25-58EC-43A3-8F47-BA99BB435EA3.png"
+  }
+,
+  {
+    "timestamp": 1753584846,
+    "datetime": "2025-07-27T02:54:06Z",
+    "filename": "1753584846_8D8EC8E2-E601-4273-9E21-01ED0DF089EA.png",
+    "filepath": "tests/stamped3/1753584846_8D8EC8E2-E601-4273-9E21-01ED0DF089EA.png"
+  }
+,
+  {
+    "timestamp": 1753585161,
+    "datetime": "2025-07-27T02:59:21Z",
+    "filename": "1753585161_0322737F-B1CE-4BE1-B112-8A4EF0EE0815.png",
+    "filepath": "tests/stamped3/1753585161_0322737F-B1CE-4BE1-B112-8A4EF0EE0815.png"
+  }
+,
+  {
+    "timestamp": 1753585166,
+    "datetime": "2025-07-27T02:59:26Z",
+    "filename": "1753585166_E94465F5-7C8B-4430-A25F-A48B9B9BE269.png",
+    "filepath": "tests/stamped3/1753585166_E94465F5-7C8B-4430-A25F-A48B9B9BE269.png"
+  }
+,
+  {
+    "timestamp": 1753585177,
+    "datetime": "2025-07-27T02:59:37Z",
+    "filename": "1753585177_6C5C4D47-B017-4AE4-B31C-986543D54626.png",
+    "filepath": "tests/stamped3/1753585177_6C5C4D47-B017-4AE4-B31C-986543D54626.png"
+  }
+,
+  {
+    "timestamp": 1753585210,
+    "datetime": "2025-07-27T03:00:10Z",
+    "filename": "1753585210_2CAC4EC7-E960-4D3D-B1BD-481CE28FA278.png",
+    "filepath": "tests/stamped3/1753585210_2CAC4EC7-E960-4D3D-B1BD-481CE28FA278.png"
+  }
+,
+  {
+    "timestamp": 1753585539,
+    "datetime": "2025-07-27T03:05:39Z",
+    "filename": "1753585539_F63977A3-BB57-4E8C-9BF1-44B606C9BD10.png",
+    "filepath": "tests/stamped3/1753585539_F63977A3-BB57-4E8C-9BF1-44B606C9BD10.png"
+  }
+,
+  {
+    "timestamp": 1753586373,
+    "datetime": "2025-07-27T03:19:33Z",
+    "filename": "1753586373_E8911DBE-7198-48BF-9290-28EB53322C55.png",
+    "filepath": "tests/stamped3/1753586373_E8911DBE-7198-48BF-9290-28EB53322C55.png"
+  }
+,
+  {
+    "timestamp": 1753587709,
+    "datetime": "2025-07-27T03:41:49Z",
+    "filename": "1753587709_037DBCA0-3926-4529-87E9-0164BE041EFC.png",
+    "filepath": "tests/stamped3/1753587709_037DBCA0-3926-4529-87E9-0164BE041EFC.png"
+  }
+,
+  {
+    "timestamp": 1753592042,
+    "datetime": "2025-07-27T04:54:02Z",
+    "filename": "1753592042_E28C279D-E3F1-4937-BBB6-2441E32BCFCB.png",
+    "filepath": "tests/stamped3/1753592042_E28C279D-E3F1-4937-BBB6-2441E32BCFCB.png"
+  }
+,
+  {
+    "timestamp": 1753592959,
+    "datetime": "2025-07-27T05:09:19Z",
+    "filename": "1753592959_6DEF29A4-975F-4738-A984-537E7E63E817.png",
+    "filepath": "tests/stamped3/1753592959_6DEF29A4-975F-4738-A984-537E7E63E817.png"
+  }
+,
+  {
+    "timestamp": 1753593032,
+    "datetime": "2025-07-27T05:10:32Z",
+    "filename": "1753593032_085E9FCA-B6B5-4755-AC83-5E29B05FAACB.png",
+    "filepath": "tests/stamped3/1753593032_085E9FCA-B6B5-4755-AC83-5E29B05FAACB.png"
+  }
+,
+  {
+    "timestamp": 1753593105,
+    "datetime": "2025-07-27T05:11:45Z",
+    "filename": "1753593105_5A65B53B-657A-4B4E-B3C2-0A53D63CA804.png",
+    "filepath": "tests/stamped3/1753593105_5A65B53B-657A-4B4E-B3C2-0A53D63CA804.png"
+  }
+,
+  {
+    "timestamp": 1753633195,
+    "datetime": "2025-07-27T16:19:55Z",
+    "filename": "1753633195_A9711427-C9B1-4B61-B87F-8A800DC79F3B.png",
+    "filepath": "tests/stamped3/1753633195_A9711427-C9B1-4B61-B87F-8A800DC79F3B.png"
+  }
+,
+  {
+    "timestamp": 1753633202,
+    "datetime": "2025-07-27T16:20:02Z",
+    "filename": "1753633202_F354A854-F1CF-4F96-A415-BAC25C0C62D7.png",
+    "filepath": "tests/stamped3/1753633202_F354A854-F1CF-4F96-A415-BAC25C0C62D7.png"
+  }
+,
+  {
+    "timestamp": 1753633208,
+    "datetime": "2025-07-27T16:20:08Z",
+    "filename": "1753633208_86674270-EAA4-4F51-9F86-E724FCCF9AC2.png",
+    "filepath": "tests/stamped3/1753633208_86674270-EAA4-4F51-9F86-E724FCCF9AC2.png"
+  }
+,
+  {
+    "timestamp": 1753633213,
+    "datetime": "2025-07-27T16:20:13Z",
+    "filename": "1753633213_72A1AFAB-845C-469D-9CE7-FB715AB66A04.png",
+    "filepath": "tests/stamped3/1753633213_72A1AFAB-845C-469D-9CE7-FB715AB66A04.png"
+  }
+,
+  {
+    "timestamp": 1753634102,
+    "datetime": "2025-07-27T16:35:02Z",
+    "filename": "1753634102_BFAF9A1E-F7C5-4EBF-AD73-19DF97AFC336.png",
+    "filepath": "tests/stamped3/1753634102_BFAF9A1E-F7C5-4EBF-AD73-19DF97AFC336.png"
+  }
+,
+  {
+    "timestamp": 1753659986,
+    "datetime": "2025-07-27T23:46:26Z",
+    "filename": "Screenshot_2025-07-15-18-59-55-330.jpg",
+    "filepath": "tests/stamped3/Screenshot_2025-07-15-18-59-55-330.jpg"
+  }
+,
+  {
+    "timestamp": 1753659986,
+    "datetime": "2025-07-27T23:46:26Z",
+    "filename": "Screenshot_2025-07-15-19-00-06-594.jpg",
+    "filepath": "tests/stamped3/Screenshot_2025-07-15-19-00-06-594.jpg"
+  }
+,
+  {
+    "timestamp": 1753659986,
+    "datetime": "2025-07-27T23:46:26Z",
+    "filename": "Screenshot_2025-07-15-19-00-12-582.jpg",
+    "filepath": "tests/stamped3/Screenshot_2025-07-15-19-00-12-582.jpg"
+  }
+,
+  {
+    "timestamp": 1753659986,
+    "datetime": "2025-07-27T23:46:26Z",
+    "filename": "Screenshot_2025-07-15-19-00-22-525.jpg",
+    "filepath": "tests/stamped3/Screenshot_2025-07-15-19-00-22-525.jpg"
+  }
+,
+  {
+    "timestamp": 1753659986,
+    "datetime": "2025-07-27T23:46:26Z",
+    "filename": "Screenshot_2025-07-15-19-00-33-510.jpg",
+    "filepath": "tests/stamped3/Screenshot_2025-07-15-19-00-33-510.jpg"
+  }
+,
+  {
+    "timestamp": 1753659986,
+    "datetime": "2025-07-27T23:46:26Z",
+    "filename": "Screenshot_2025-07-15-23-50-58-993.jpg",
+    "filepath": "tests/stamped3/Screenshot_2025-07-15-23-50-58-993.jpg"
+  }
+,
+  {
+    "timestamp": 1753659986,
+    "datetime": "2025-07-27T23:46:26Z",
+    "filename": "Screenshot_2025-07-15-23-53-14-025.jpg",
+    "filepath": "tests/stamped3/Screenshot_2025-07-15-23-53-14-025.jpg"
+  }
+,
+  {
+    "timestamp": 1753659986,
+    "datetime": "2025-07-27T23:46:26Z",
+    "filename": "Screenshot_2025-07-15-23-55-02-982.jpg",
+    "filepath": "tests/stamped3/Screenshot_2025-07-15-23-55-02-982.jpg"
+  }
+,
+  {
+    "timestamp": 1753659986,
+    "datetime": "2025-07-27T23:46:26Z",
+    "filename": "Screenshot_2025-07-15-23-57-37-095.jpg",
+    "filepath": "tests/stamped3/Screenshot_2025-07-15-23-57-37-095.jpg"
+  }
+,
+  {
+    "timestamp": 1753659986,
+    "datetime": "2025-07-27T23:46:26Z",
+    "filename": "Screenshot_2025-07-16-00-00-17-757.jpg",
+    "filepath": "tests/stamped3/Screenshot_2025-07-16-00-00-17-757.jpg"
+  }
+,
+  {
+    "timestamp": 1753659986,
+    "datetime": "2025-07-27T23:46:26Z",
+    "filename": "Screenshot_2025-07-16-00-00-58-813.jpg",
+    "filepath": "tests/stamped3/Screenshot_2025-07-16-00-00-58-813.jpg"
+  }
+,
+  {
+    "timestamp": 1753659986,
+    "datetime": "2025-07-27T23:46:26Z",
+    "filename": "Screenshot_2025-07-16-00-18-22-718.jpg",
+    "filepath": "tests/stamped3/Screenshot_2025-07-16-00-18-22-718.jpg"
+  }
+,
+  {
+    "timestamp": 1753659986,
+    "datetime": "2025-07-27T23:46:26Z",
+    "filename": "Screenshot_2025-07-16-00-23-34-253.jpg",
+    "filepath": "tests/stamped3/Screenshot_2025-07-16-00-23-34-253.jpg"
+  }
+,
+  {
+    "timestamp": 1753659986,
+    "datetime": "2025-07-27T23:46:26Z",
+    "filename": "Screenshot_2025-07-16-00-25-39-806.jpg",
+    "filepath": "tests/stamped3/Screenshot_2025-07-16-00-25-39-806.jpg"
+  }
+,
+  {
+    "timestamp": 1753659986,
+    "datetime": "2025-07-27T23:46:26Z",
+    "filename": "Screenshot_2025-07-16-12-24-59-295.jpg",
+    "filepath": "tests/stamped3/Screenshot_2025-07-16-12-24-59-295.jpg"
+  }
+,
+  {
+    "timestamp": 1753659986,
+    "datetime": "2025-07-27T23:46:26Z",
+    "filename": "Screenshot_2025-07-16-12-27-55-688.jpg",
+    "filepath": "tests/stamped3/Screenshot_2025-07-16-12-27-55-688.jpg"
+  }
+,
+  {
+    "timestamp": 1753659986,
+    "datetime": "2025-07-27T23:46:26Z",
+    "filename": "Screenshot_2025-07-16-12-51-15-199.jpg",
+    "filepath": "tests/stamped3/Screenshot_2025-07-16-12-51-15-199.jpg"
+  }
+,
+  {
+    "timestamp": 1753659986,
+    "datetime": "2025-07-27T23:46:26Z",
+    "filename": "Screenshot_2025-07-16-12-59-54-124.jpg",
+    "filepath": "tests/stamped3/Screenshot_2025-07-16-12-59-54-124.jpg"
+  }
+,
+  {
+    "timestamp": 1753659986,
+    "datetime": "2025-07-27T23:46:26Z",
+    "filename": "Screenshot_2025-07-17-11-08-08-162.jpg",
+    "filepath": "tests/stamped3/Screenshot_2025-07-17-11-08-08-162.jpg"
+  }
+,
+  {
+    "timestamp": 1753659986,
+    "datetime": "2025-07-27T23:46:26Z",
+    "filename": "Screenshot_2025-07-21-15-06-16-561.jpg",
+    "filepath": "tests/stamped3/Screenshot_2025-07-21-15-06-16-561.jpg"
+  }
+,
+  {
+    "timestamp": 1753659986,
+    "datetime": "2025-07-27T23:46:26Z",
+    "filename": "Screenshot_2025-07-22-18-11-36-881.jpg",
+    "filepath": "tests/stamped3/Screenshot_2025-07-22-18-11-36-881.jpg"
+  }
+,
+  {
+    "timestamp": 1753659986,
+    "datetime": "2025-07-27T23:46:26Z",
+    "filename": "Screenshot_2025-07-22-18-15-50-007.jpg",
+    "filepath": "tests/stamped3/Screenshot_2025-07-22-18-15-50-007.jpg"
+  }
+,
+  {
+    "timestamp": 1753659986,
+    "datetime": "2025-07-27T23:46:26Z",
+    "filename": "Screenshot_2025-07-23-10-52-38-247.jpg",
+    "filepath": "tests/stamped3/Screenshot_2025-07-23-10-52-38-247.jpg"
+  }
+,
+  {
+    "timestamp": 1753659986,
+    "datetime": "2025-07-27T23:46:26Z",
+    "filename": "Screenshot_2025-07-23-10-53-39-102.jpg",
+    "filepath": "tests/stamped3/Screenshot_2025-07-23-10-53-39-102.jpg"
+  }
+,
+  {
+    "timestamp": 1753659986,
+    "datetime": "2025-07-27T23:46:26Z",
+    "filename": "Screenshot_2025-07-23-11-00-15-543.jpg",
+    "filepath": "tests/stamped3/Screenshot_2025-07-23-11-00-15-543.jpg"
+  }
+,
+  {
+    "timestamp": 1753659986,
+    "datetime": "2025-07-27T23:46:26Z",
+    "filename": "Screenshot_2025-07-23-11-00-37-859.jpg",
+    "filepath": "tests/stamped3/Screenshot_2025-07-23-11-00-37-859.jpg"
+  }
+,
+  {
+    "timestamp": 1753659986,
+    "datetime": "2025-07-27T23:46:26Z",
+    "filename": "Screenshot_2025-07-23-11-01-22-752.jpg",
+    "filepath": "tests/stamped3/Screenshot_2025-07-23-11-01-22-752.jpg"
+  }
+,
+  {
+    "timestamp": 1753659986,
+    "datetime": "2025-07-27T23:46:26Z",
+    "filename": "Screenshot_2025-07-23-11-01-43-497.jpg",
+    "filepath": "tests/stamped3/Screenshot_2025-07-23-11-01-43-497.jpg"
+  }
+,
+  {
+    "timestamp": 1753659986,
+    "datetime": "2025-07-27T23:46:26Z",
+    "filename": "Screenshot_2025-07-23-11-02-00-163.jpg",
+    "filepath": "tests/stamped3/Screenshot_2025-07-23-11-02-00-163.jpg"
+  }
+,
+  {
+    "timestamp": 1753659986,
+    "datetime": "2025-07-27T23:46:26Z",
+    "filename": "Screenshot_2025-07-26-11-42-55-296.jpg",
+    "filepath": "tests/stamped3/Screenshot_2025-07-26-11-42-55-296.jpg"
+  }
+,
+  {
+    "timestamp": 1753659986,
+    "datetime": "2025-07-27T23:46:26Z",
+    "filename": "Screenshot_2025-07-26-14-55-46-412.jpg",
+    "filepath": "tests/stamped3/Screenshot_2025-07-26-14-55-46-412.jpg"
+  }
+,
+  {
+    "timestamp": 1753659986,
+    "datetime": "2025-07-27T23:46:26Z",
+    "filename": "Screenshot_2025-07-26-14-55-54-826.jpg",
+    "filepath": "tests/stamped3/Screenshot_2025-07-26-14-55-54-826.jpg"
+  }
+,
+  {
+    "timestamp": 1753659986,
+    "datetime": "2025-07-27T23:46:26Z",
+    "filename": "Screenshot_2025-07-26-14-57-16-725.jpg",
+    "filepath": "tests/stamped3/Screenshot_2025-07-26-14-57-16-725.jpg"
+  }
+,
+  {
+    "timestamp": 1753659986,
+    "datetime": "2025-07-27T23:46:26Z",
+    "filename": "Screenshot_2025-07-26-19-30-03-529.jpg",
+    "filepath": "tests/stamped3/Screenshot_2025-07-26-19-30-03-529.jpg"
+  }
+,
+  {
+    "timestamp": 1753659986,
+    "datetime": "2025-07-27T23:46:26Z",
+    "filename": "Screenshot_2025-07-26-19-30-39-649.jpg",
+    "filepath": "tests/stamped3/Screenshot_2025-07-26-19-30-39-649.jpg"
+  }
+,
+  {
+    "timestamp": 1753659986,
+    "datetime": "2025-07-27T23:46:26Z",
+    "filename": "Screenshot_2025-07-26-19-30-47-440.jpg",
+    "filepath": "tests/stamped3/Screenshot_2025-07-26-19-30-47-440.jpg"
+  }
+,
+  {
+    "timestamp": 1753659986,
+    "datetime": "2025-07-27T23:46:26Z",
+    "filename": "Screenshot_2025-07-26-19-30-51-237.jpg",
+    "filepath": "tests/stamped3/Screenshot_2025-07-26-19-30-51-237.jpg"
+  }
+,
+  {
+    "timestamp": 1753659986,
+    "datetime": "2025-07-27T23:46:26Z",
+    "filename": "Screenshot_2025-07-26-19-30-53-997.jpg",
+    "filepath": "tests/stamped3/Screenshot_2025-07-26-19-30-53-997.jpg"
+  }
+,
+  {
+    "timestamp": 1753659986,
+    "datetime": "2025-07-27T23:46:26Z",
+    "filename": "Screenshot_2025-07-26-19-30-58-103.jpg",
+    "filepath": "tests/stamped3/Screenshot_2025-07-26-19-30-58-103.jpg"
+  }
+,
+  {
+    "timestamp": 1753659986,
+    "datetime": "2025-07-27T23:46:26Z",
+    "filename": "Screenshot_2025-07-26-19-31-01-475.jpg",
+    "filepath": "tests/stamped3/Screenshot_2025-07-26-19-31-01-475.jpg"
+  }
+,
+  {
+    "timestamp": 1753659986,
+    "datetime": "2025-07-27T23:46:26Z",
+    "filename": "Screenshot_2025-07-26-19-31-05-290.jpg",
+    "filepath": "tests/stamped3/Screenshot_2025-07-26-19-31-05-290.jpg"
+  }
+,
+  {
+    "timestamp": 1753659986,
+    "datetime": "2025-07-27T23:46:26Z",
+    "filename": "Screenshot_2025-07-26-19-31-24-298.jpg",
+    "filepath": "tests/stamped3/Screenshot_2025-07-26-19-31-24-298.jpg"
+  }
+,
+  {
+    "timestamp": 1753659986,
+    "datetime": "2025-07-27T23:46:26Z",
+    "filename": "Screenshot_2025-07-26-19-31-35-018.jpg",
+    "filepath": "tests/stamped3/Screenshot_2025-07-26-19-31-35-018.jpg"
+  }
+,
+  {
+    "timestamp": 1753659986,
+    "datetime": "2025-07-27T23:46:26Z",
+    "filename": "Screenshot_2025-07-26-19-31-39-546.jpg",
+    "filepath": "tests/stamped3/Screenshot_2025-07-26-19-31-39-546.jpg"
+  }
+,
+  {
+    "timestamp": 1753659986,
+    "datetime": "2025-07-27T23:46:26Z",
+    "filename": "Screenshot_2025-07-26-19-31-41-901.jpg",
+    "filepath": "tests/stamped3/Screenshot_2025-07-26-19-31-41-901.jpg"
+  }
+,
+  {
+    "timestamp": 1753659986,
+    "datetime": "2025-07-27T23:46:26Z",
+    "filename": "Screenshot_2025-07-26-19-31-44-271.jpg",
+    "filepath": "tests/stamped3/Screenshot_2025-07-26-19-31-44-271.jpg"
+  }
+,
+  {
+    "timestamp": 1753659986,
+    "datetime": "2025-07-27T23:46:26Z",
+    "filename": "Screenshot_2025-07-26-19-31-46-569.jpg",
+    "filepath": "tests/stamped3/Screenshot_2025-07-26-19-31-46-569.jpg"
+  }
+,
+  {
+    "timestamp": 1753659986,
+    "datetime": "2025-07-27T23:46:26Z",
+    "filename": "Screenshot_2025-07-26-19-31-48-808.jpg",
+    "filepath": "tests/stamped3/Screenshot_2025-07-26-19-31-48-808.jpg"
+  }
+]
