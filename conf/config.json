@@ -9,17 +9,18 @@
             "log_filename": "/Users/mymac/Desktop/logs/dl.log",
             "log_to_console": true,
             "console_level": "INFO"
-        },
+        }
     },
     "Linux": {
         "python_path": "/home/fritz/miniconda3/envs/new-env/bin/python",
-        "target_usb": "/media/fritz/E4B0-3FC21",
+        "target_usb": "/home/fritz/Desktop/captions_out",
         "logging": {
             "level": "DEBUG",
             "log_to_file": true,
             "log_filename": "/home/fritz/Desktop/logs/dl.log",
             "log_to_console": true,
             "console_level": "INFO"
-        },
-    },
+        }
+    }
 }
+
