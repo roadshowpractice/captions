@@ -47,6 +47,7 @@ import os
 import json
 import logging
 import shutil
+import traceback
 
 # Initialize the logger
 logger = logging.getLogger(__name__)
@@ -323,6 +324,95 @@ def add_default_tasks_to_metadata(
         return {"updated_metadata": metadata_path}
     except Exception as e:
         logger.error(f"❌ Failed to save updated metadata: {e}")
+        return {"updated_metadata": None}
+
+
+def write_masked_metadata_with_tasks(
+    params: dict, config_path="conf/default_tasks.json"
+) -> dict:
+    """
+    Writes masked metadata fields and default task flags into the metadata JSON file.
+
+    Args:
+        params (dict): Parameters including masked metadata fields and paths.
+        config_path (str): Path to the default_tasks JSON file.
+
+    Returns:
+        dict: The updated metadata file path, or None if failed.
+    """
+    metadata_path = params.get("metadata_path") or params.get("config_json")
+    if not metadata_path:
+        logger.warning("⚠️ No metadata_path or config_json found in params.")
+        return {"updated_metadata": None}
+
+    metadata_dir = os.path.dirname(metadata_path)
+    if metadata_dir:
+        os.makedirs(metadata_dir, exist_ok=True)
+
+    try:
+        if os.path.exists(metadata_path):
+            with open(metadata_path, "r", encoding="utf-8") as f:
+                metadata = json.load(f)
+        else:
+            metadata = {}
+    except (json.JSONDecodeError, OSError) as e:
+        logger.error(f"❌ Failed to read metadata file: {e}")
+        metadata = {}
+
+    masked_keys = [
+        "video_title",
+        "video_date",
+        "uploader",
+        "file_path",
+        "duration",
+        "width",
+        "height",
+        "id",
+        "ext",
+        "resolution",
+        "fps",
+        "channels",
+        "filesize",
+        "tbr",
+        "protocol",
+        "vcodec",
+        "vbr",
+        "acodec",
+        "abr",
+        "asr",
+    ]
+
+    for key in masked_keys:
+        if key in params:
+            metadata[key] = params[key]
+
+    if params.get("url"):
+        metadata["url"] = params["url"]
+
+    try:
+        default_tasks = load_default_tasks(config_path)
+    except FileNotFoundError as e:
+        logger.error(f"❌ {e}")
+        default_tasks = {}
+
+    if "default_tasks" not in metadata:
+        metadata["default_tasks"] = {}
+
+    for task, status in default_tasks.items():
+        metadata["default_tasks"].setdefault(task, status)
+
+    output_path = params.get("to_process") or params.get("original_filename")
+    if output_path:
+        metadata["default_tasks"]["perform_download"] = output_path
+
+    try:
+        with open(metadata_path, "w", encoding="utf-8") as f:
+            json.dump(metadata, f, indent=4)
+        logger.info(f"✅ Masked metadata updated at: {metadata_path}")
+        return {"updated_metadata": metadata_path}
+    except OSError as e:
+        logger.error(f"❌ Failed to save metadata: {e}")
+        logger.debug(traceback.format_exc())
         return {"updated_metadata": None}
 
 

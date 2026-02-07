@@ -111,6 +111,7 @@ def main():
         try:
             import downloader5
             import utilities1
+            import tasks_lib
         except ImportError as e:
             logger.error(f"Failed to import modules: {e}")
             sys.exit(1)
@@ -164,6 +165,7 @@ def main():
             downloader5.create_original_filename,
             downloader5.download_video,
             utilities1.store_params_as_json,
+            tasks_lib.write_masked_metadata_with_tasks,
         ]
 
         for func in function_calls:

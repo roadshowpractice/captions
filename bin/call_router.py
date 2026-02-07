@@ -83,9 +83,10 @@ def main():
         config = load_config()
         logger = initialize_logging()
         app_config = load_app_config()
+        metadata_dir = app_config.get("metadata_dir", "./metadata")
         logger.info("🔁 Task Router Started")
 
-        found_file, found_data = find_url_json(url, metadata_dir="./metadata")
+        found_file, found_data = find_url_json(url, metadata_dir=metadata_dir)
 
         perform_download_done = (
             found_data.get("default_tasks", {}).get("perform_download")
@@ -96,7 +97,7 @@ def main():
         if not found_file or not perform_download_done:
             logger.info("📥 No completed download or metadata found — running downloader...")
             run_my_existing_downloader(url, logger)
-            found_file, found_data = find_url_json(url, metadata_dir="./metadata")
+            found_file, found_data = find_url_json(url, metadata_dir=metadata_dir)
             perform_download_done = (
                 found_data.get("default_tasks", {}).get("perform_download")
                 if found_data
