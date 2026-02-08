@@ -17,7 +17,7 @@ moviepy_config = {
     "width": 1280,  # Video width
     "height": 720,  # Video height
     "font": "Arial",  # Font file for text overlay
-    "font_size": 64,  # Font size for overlay text
+    "font_size": 32,  # Font size for overlay text
     "text_halign": "left",  # Horizontal alignment for overlay text (centered)
     "text_valign": "center",  # Vertical alignment for overlay text (centered)
     "output_format": "mp4",  # Output format
@@ -285,6 +285,5 @@ for clip in clips:
 
 # Process clips using moviepy
 process_clips_moviepy(moviepy_config, processed_clips, logger)
-
 
 

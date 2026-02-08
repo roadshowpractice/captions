@@ -20,7 +20,7 @@ gstreamer_config = {
     "width": 1280,  # Video width
     "height": 720,  # Video height
     "font": "Arial",  # Font used for overlay text
-    "font_size": 64,  # Font size for overlay text
+    "font_size": 32,  # Font size for overlay text
     "alignment": {"horizontal": 1, "vertical": 1},  # Text alignment settings (1 = center)
     "encoder": "x264enc",  # GStreamer encoder
     "container_format": "mp4mux",  # Output format (e.g., MP4)
