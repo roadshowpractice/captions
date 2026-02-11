@@ -56,6 +56,41 @@ This will initiate the video processing and captioning process.
 ### Python
 The Python environment handles caption generation and video watermarking. You will need to set up the Python environment and install necessary dependencies.
 
+#### Ubuntu quick setup (Python 3.9, env name `new-env`, download + watermark)
+
+If you're on a fresh Ubuntu machine and primarily want to run the download and
+watermark flow, use these commands from the repository root:
+
+```bash
+sudo apt update
+sudo apt install -y python3.9 python3.9-venv python3.9-dev ffmpeg build-essential
+
+python3.9 -m venv new-env
+source new-env/bin/activate
+
+python -m pip install --upgrade pip setuptools wheel
+python -m pip install yt-dlp moviepy pillow numpy opencv-python imageio imageio-ffmpeg pydub requests
+```
+
+Quick verification commands:
+
+```bash
+python --version
+python -c "import yt_dlp, moviepy, PIL, cv2; print('download + watermark deps OK')"
+ffmpeg -version
+```
+
+Then run:
+
+```bash
+python bin/call_download.py "<video-url>"
+python bin/call_watermark.py /path/to/video.mp4
+```
+
+> Note: `requirements.txt` currently contains many macOS-only packages
+> (`pyobjc-*`). On Ubuntu, use the minimal install above unless you specifically
+> need the full cross-platform/development dependency set.
+
 #### Setting up the Python environment
 
 1. **Create a virtual environment**:
