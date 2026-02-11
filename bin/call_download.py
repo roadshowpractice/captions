@@ -63,35 +63,17 @@ def init_logging(logging_config):
     return logger
 
 
+def detect_output_dir(config):
+    """Resolve output directory with backward compatibility for legacy key names."""
+    if not isinstance(config, dict):
+        return None
+    # Prefer modern key and fall back to legacy target_usb for compatibility.
+    return config.get("output_dir") or config.get("target_usb")
+
+
 def detect_target_usb(config):
-    """Attempt to locate a writable USB mount point."""
-    if isinstance(config, dict) and config.get("target_usb"):
-        return config["target_usb"]
-
-    os_name = platform.system()
-
-    if os_name == "Darwin":
-        volumes_dir = "/Volumes"
-        if os.path.isdir(volumes_dir):
-            for item in os.listdir(volumes_dir):
-                path = os.path.join(volumes_dir, item)
-                if os.path.ismount(path) and os.access(path, os.W_OK):
-                    return path
-    elif os_name == "Linux":
-        user = os.getenv("USER") or os.getenv("USERNAME")
-        candidates = []
-        if user:
-            candidates.append(os.path.join("/media", user))
-        candidates.extend(["/media", "/mnt"])
-
-        for base in candidates:
-            if os.path.isdir(base):
-                for item in os.listdir(base):
-                    path = os.path.join(base, item)
-                    if os.path.ismount(path) and os.access(path, os.W_OK):
-                        return path
-
-    return None
+    """Backward-compatible alias for older callers/tests."""
+    return detect_output_dir(config)
 
 # Main Function
 def main():
@@ -117,18 +99,18 @@ def main():
             sys.exit(1)
 
         # Set up paths
-        target_usb = detect_target_usb(platform_config)
-        if not target_usb:
-            logger.error("Unable to locate a writable USB drive.")
+        output_dir = detect_output_dir(platform_config)
+        if not output_dir:
+            logger.error("No output directory configured. Set 'output_dir' in conf/config.json.")
             sys.exit(1)
 
         download_date = datetime.now().strftime("%Y-%m-%d")
-        download_path = os.path.join(target_usb, download_date)
+        download_path = os.path.join(output_dir, download_date)
 
-        # Check if the USB is mounted and writable
-        if not os.path.exists(target_usb):
-            logger.error(f"Error: USB drive {target_usb} is not mounted.")
-            sys.exit(1)
+        # Standard directory handling for fresh installs: create missing directories.
+        if not os.path.exists(output_dir):
+            logger.warning(f"Output directory {output_dir} does not exist. Creating it now.")
+            os.makedirs(output_dir, exist_ok=True)
         
         if not os.path.exists(download_path):
             logger.warning(f"Download path {download_path} does not exist. Creating it now.")

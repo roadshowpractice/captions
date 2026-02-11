@@ -157,7 +157,7 @@ def extend_metadata_with_task_output(params: dict) -> dict:
 
 def find_url_json(url, metadata_dir="./metadata"):
     """
-    Search for a JSON file in the metadata directory that contains the given URL.
+    Find metadata for a URL using the metadata index for O(1)-ish lookup.
     """
     logger.info(f"🔍 Searching for URL '{url}' in {metadata_dir}")
 
@@ -165,20 +165,86 @@ def find_url_json(url, metadata_dir="./metadata"):
         logger.warning(f"Metadata directory not found: {metadata_dir}")
         return None, None
 
-    for filename in os.listdir(metadata_dir):
-        if filename.endswith(".json"):
-            json_path = os.path.join(metadata_dir, filename)
+    index_path = os.path.join(metadata_dir, "index.jsonl")
+    if not os.path.exists(index_path):
+        logger.warning(f"Metadata index not found: {index_path}")
+        return None, None
+
+    metadata_file = None
+    try:
+        with open(index_path, "r", encoding="utf-8") as index_file:
+            for line in index_file:
+                line = line.strip()
+                if not line:
+                    continue
+                try:
+                    record = json.loads(line)
+                except json.JSONDecodeError:
+                    logger.warning("Skipping malformed index record.")
+                    continue
+
+                if record.get("url") == url:
+                    metadata_file = record.get("metadata_file")
+    except OSError as e:
+        logger.error(f"Error reading metadata index: {e}")
+        return None, None
+
+    if metadata_file:
+        json_path = os.path.join(metadata_dir, metadata_file)
+        if os.path.exists(json_path):
             try:
                 with open(json_path, "r", encoding="utf-8") as file:
                     data = json.load(file)
-                    if isinstance(data, dict) and "url" in data and data["url"] == url:
-                        logger.info(f"✅ URL found in: {json_path}")
-                        return json_path, data
-            except (json.JSONDecodeError, IOError) as e:
+                logger.info(f"✅ URL found in: {json_path}")
+                return json_path, data
+            except (json.JSONDecodeError, OSError) as e:
                 logger.error(f"Error reading {json_path}: {e}")
 
     logger.warning(f"⚠️ URL not found in metadata directory.")
     return None, None
+
+
+def upsert_metadata_index(metadata_path: str, metadata: dict) -> None:
+    """Keep index.jsonl updated without scanning all metadata files."""
+    metadata_dir = os.path.dirname(metadata_path)
+    if not metadata_dir:
+        return
+
+    os.makedirs(metadata_dir, exist_ok=True)
+    index_path = os.path.join(metadata_dir, "index.jsonl")
+    url = metadata.get("url")
+    if not url:
+        return
+
+    filename = os.path.basename(metadata_path)
+    new_record = {
+        "url": url,
+        "metadata_file": filename,
+        "id": metadata.get("id"),
+        "shortcode": metadata.get("shortcode") or metadata.get("display_id"),
+    }
+
+    records = []
+    if os.path.exists(index_path):
+        try:
+            with open(index_path, "r", encoding="utf-8") as index_file:
+                for line in index_file:
+                    line = line.strip()
+                    if not line:
+                        continue
+                    try:
+                        record = json.loads(line)
+                    except json.JSONDecodeError:
+                        continue
+                    if record.get("url") != url:
+                        records.append(record)
+        except OSError as e:
+            logger.warning(f"Could not read existing index file: {e}")
+
+    records.append(new_record)
+    with open(index_path, "w", encoding="utf-8") as index_file:
+        for record in records:
+            index_file.write(json.dumps(record, ensure_ascii=False) + "\n")
 
 
 # def get_existing_task_output(task: str, task_config: dict) -> str | None:
@@ -408,6 +474,7 @@ def write_masked_metadata_with_tasks(
     try:
         with open(metadata_path, "w", encoding="utf-8") as f:
             json.dump(metadata, f, indent=4)
+        upsert_metadata_index(metadata_path, metadata)
         logger.info(f"✅ Masked metadata updated at: {metadata_path}")
         return {"updated_metadata": metadata_path}
     except OSError as e:

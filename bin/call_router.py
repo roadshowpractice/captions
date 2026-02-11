@@ -84,6 +84,8 @@ def main():
         logger = initialize_logging()
         app_config = load_app_config()
         metadata_dir = app_config.get("metadata_dir", "./metadata")
+        # Ensure metadata directory exists before searching index/files.
+        os.makedirs(metadata_dir, exist_ok=True)
         logger.info("🔁 Task Router Started")
 
         found_file, found_data = find_url_json(url, metadata_dir=metadata_dir)
