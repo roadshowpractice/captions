@@ -93,6 +93,34 @@ python bin/call_watermark.py /path/to/video.mp4
 
 #### Setting up the Python environment
 
+##### Option: setup with Miniconda
+
+If you prefer using Conda instead of `venv`, run:
+
+```bash
+# Download installer
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+
+# Run installer
+bash Miniconda3-latest-Linux-x86_64.sh
+
+# Initialize conda for bash
+~/miniconda3/bin/conda init bash
+
+# Reload shell
+source ~/.bashrc
+
+# Update conda
+conda update -n base -c defaults conda -y
+
+# (Optional) Disable auto base activation
+conda config --set auto_activate_base false
+
+# Create and activate environment
+conda create -n my-env python=3.11 -y
+conda activate my-env
+```
+
 1. **Create a virtual environment**:
    
    Create a new virtual environment to isolate the Python dependencies:
