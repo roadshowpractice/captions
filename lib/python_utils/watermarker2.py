@@ -1,9 +1,13 @@
 import os
-from moviepy.video.io.VideoFileClip import VideoFileClip
-from moviepy.video.VideoClip import TextClip
-from moviepy.video.compositing.CompositeVideoClip import CompositeVideoClip
 import logging
 import traceback
+
+try:
+    # MoviePy v2 style imports
+    from moviepy import VideoFileClip, TextClip, CompositeVideoClip
+except ImportError:
+    # MoviePy v1 style fallback
+    from moviepy.editor import VideoFileClip, TextClip, CompositeVideoClip
 
 # Use the logger configured in the caller
 logger = logging.getLogger(__name__)
@@ -27,6 +31,33 @@ def _build_text_clip(text, params, color):
         return TextClip(text=text, font_size=params["font_size"], **common_kwargs)
     except TypeError:
         return TextClip(text, fontsize=params["font_size"], **common_kwargs)
+
+
+def mp_call(obj, old, new, *args, **kwargs):
+    """Call a MoviePy method across v1 (old) and v2 (new) APIs."""
+    if hasattr(obj, new):
+        return getattr(obj, new)(*args, **kwargs)
+    if hasattr(obj, old):
+        return getattr(obj, old)(*args, **kwargs)
+    raise AttributeError(
+        f"Object of type {type(obj).__name__} has neither '{new}' nor '{old}'"
+    )
+
+
+def mp_with_position(clip, position):
+    return mp_call(clip, "set_position", "with_position", position)
+
+
+def mp_with_duration(clip, duration):
+    return mp_call(clip, "set_duration", "with_duration", duration)
+
+
+def mp_with_start(clip, start):
+    return mp_call(clip, "set_start", "with_start", start)
+
+
+def mp_with_audio(clip, audio):
+    return mp_call(clip, "set_audio", "with_audio", audio)
 
 
 def add_watermark(params):
@@ -67,11 +98,15 @@ def add_watermark(params):
         # Create watermark text clips
         username_clip = _build_text_clip(
             params["username"], params, params["username_color"]
-        ).set_position(params["username_position"]).set_duration(video.duration)
+        )
+        username_clip = mp_with_position(username_clip, params["username_position"])
+        username_clip = mp_with_duration(username_clip, video.duration)
 
         date_clip = _build_text_clip(
             params["video_date"], params, params["date_color"]
-        ).set_position(params["date_position"]).set_duration(video.duration)
+        )
+        date_clip = mp_with_position(date_clip, params["date_position"])
+        date_clip = mp_with_duration(date_clip, video.duration)
 
         # Generate timestamp clips
         timestamp_clips = []
@@ -79,11 +114,16 @@ def add_watermark(params):
             timestamp = f"{t // 3600:02}:{(t % 3600) // 60:02}:{t % 60:02}"
             timestamp_clip = _build_text_clip(
                 timestamp, params, params["timestamp_color"]
-            ).set_position(params["timestamp_position"]).set_start(t).set_duration(1)
+            )
+            timestamp_clip = mp_with_position(
+                timestamp_clip, params["timestamp_position"]
+            )
+            timestamp_clip = mp_with_start(timestamp_clip, t)
+            timestamp_clip = mp_with_duration(timestamp_clip, 1)
             timestamp_clips.append(timestamp_clip)
 
         final = CompositeVideoClip([video, username_clip, date_clip] + timestamp_clips)
-        final = final.set_audio(video.audio)
+        final = mp_with_audio(final, video.audio)
 
         # Save the watermarked video
         filename, ext = os.path.splitext(os.path.basename(input_video_path))
