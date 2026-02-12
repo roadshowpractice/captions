@@ -3,22 +3,63 @@ set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 FONT_DIR="${ROOT_DIR}/fonts"
-FONT_PATH="${FONT_DIR}/Inter-Bold.ttf"
-FONT_URL="https://cdn.jsdelivr.net/gh/rsms/inter@master/docs/font-files/Inter-Bold.ttf"
-EXPECTED_SHA256="5c1247acef7f2b8522a31742c76d6adcb5569bacc0be7ceaa4dc39dd252ce895"
+FONT_NAME="Inter-Bold.ttf"
+FONT_PATH="${FONT_DIR}/${FONT_NAME}"
+RELEASE_API_URL="https://api.github.com/repos/rsms/inter/releases/latest"
+TMP_DIR="$(mktemp -d)"
+TMP_ZIP="${TMP_DIR}/inter_latest.zip"
+
+cleanup() {
+  rm -rf "${TMP_DIR}"
+}
+trap cleanup EXIT
 
 mkdir -p "${FONT_DIR}"
 
-echo "Downloading Inter-Bold.ttf ..."
-curl -fsSL "${FONT_URL}" -o "${FONT_PATH}"
+echo "Installing Inter Bold font..."
+echo "Resolving latest Inter release archive..."
 
-echo "Verifying checksum ..."
-ACTUAL_SHA256="$(sha256sum "${FONT_PATH}" | awk '{print $1}')"
-if [[ "${ACTUAL_SHA256}" != "${EXPECTED_SHA256}" ]]; then
-  echo "Checksum mismatch for ${FONT_PATH}" >&2
-  echo "Expected: ${EXPECTED_SHA256}" >&2
-  echo "Actual:   ${ACTUAL_SHA256}" >&2
+ZIP_URL="$(python3 - <<'PY'
+import json
+import re
+import sys
+import urllib.request
+
+url = "https://api.github.com/repos/rsms/inter/releases/latest"
+req = urllib.request.Request(url, headers={"Accept": "application/vnd.github+json"})
+
+try:
+    with urllib.request.urlopen(req, timeout=20) as resp:
+        data = json.load(resp)
+except Exception:
+    print("", end="")
+    sys.exit(0)
+
+for asset in data.get("assets", []):
+    name = asset.get("name", "")
+    download_url = asset.get("browser_download_url", "")
+    if re.fullmatch(r"Inter-[0-9]+\.[0-9]+(\.[0-9]+)?\.zip", name):
+        print(download_url)
+        sys.exit(0)
+
+print("", end="")
+PY
+)"
+
+if [[ -z "${ZIP_URL}" ]]; then
+  echo "ERROR: Could not find an Inter-<version>.zip asset in latest release metadata (${RELEASE_API_URL})." >&2
   exit 1
 fi
 
-echo "Installed ${FONT_PATH}"
+echo "Downloading: ${ZIP_URL}"
+curl --retry 3 --retry-delay 2 -fSL -o "${TMP_ZIP}" "${ZIP_URL}"
+
+echo "Extracting ${FONT_NAME}..."
+unzip -jo "${TMP_ZIP}" "Inter-*/ttf/${FONT_NAME}" -d "${FONT_DIR}" >/dev/null
+
+if [[ -f "${FONT_PATH}" ]]; then
+  echo "Installed: ${FONT_PATH}"
+else
+  echo "ERROR: ${FONT_PATH} not found after extraction" >&2
+  exit 1
+fi
