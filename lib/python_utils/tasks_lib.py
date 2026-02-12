@@ -415,15 +415,21 @@ def write_masked_metadata_with_tasks(
     if metadata_dir:
         os.makedirs(metadata_dir, exist_ok=True)
 
+    existing_metadata = {}
     try:
         if os.path.exists(metadata_path):
             with open(metadata_path, "r", encoding="utf-8") as f:
-                metadata = json.load(f)
-        else:
-            metadata = {}
+                existing_metadata = json.load(f)
     except (json.JSONDecodeError, OSError) as e:
         logger.error(f"❌ Failed to read metadata file: {e}")
-        metadata = {}
+
+    # Rebuild metadata from an allowlist so stale raw extractor fields are removed.
+    metadata = {}
+    if isinstance(existing_metadata, dict):
+        if "default_tasks" in existing_metadata and isinstance(existing_metadata["default_tasks"], dict):
+            metadata["default_tasks"] = existing_metadata["default_tasks"]
+        if "url" in existing_metadata:
+            metadata["url"] = existing_metadata["url"]
 
     masked_keys = [
         "video_title",

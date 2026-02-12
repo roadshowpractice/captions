@@ -111,7 +111,14 @@ def main():
             return
 
         print(f"Found in: {found_file}")
-        print(json.dumps(found_data, indent=2))
+        visible_fields = {
+            "video_title": found_data.get("video_title"),
+            "video_date": found_data.get("video_date"),
+            "uploader": found_data.get("uploader"),
+            "url": found_data.get("url"),
+            "default_tasks": found_data.get("default_tasks", {}),
+        }
+        print(json.dumps(visible_fields, indent=2))
 
         if isinstance(perform_download_done, str):
             to_process = perform_download_done
