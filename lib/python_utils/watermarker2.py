@@ -23,14 +23,26 @@ def get_codecs_by_extension(extension):
     return codecs.get(extension, {"video_codec": "libx264", "audio_codec": "aac"})
 
 def _build_text_clip(text, params, color):
-    """Build TextClip across moviepy v1/v2 API differences."""
+    # Build TextClip with padding to prevent font clipping
     common_kwargs = {"color": color, "font": params["font"]}
 
-    # MoviePy v2 prefers text=/font_size=; v1 typically uses positional + fontsize.
     try:
-        return TextClip(text=text, font_size=params["font_size"], **common_kwargs)
+        # MoviePy v2 API
+        clip = TextClip(text=text, font_size=params["font_size"], **common_kwargs)
     except TypeError:
-        return TextClip(text, fontsize=params["font_size"], **common_kwargs)
+        # Older MoviePy API
+        clip = TextClip(text, fontsize=params["font_size"], **common_kwargs)
+
+    # Transparent padding (fixes clipped ascenders)
+    pad = int(params.get("text_pad", 8))
+
+    # v1 uses .margin(), v2 uses .with_margin()
+    if hasattr(clip, "margin"):
+        clip = clip.margin(top=pad, bottom=pad, left=pad, right=pad, opacity=0)
+    else:
+        clip = clip.with_margin(top=pad, bottom=pad, left=pad, right=pad, opacity=0)
+
+    return clip
 
 
 def mp_call(obj, old, new, *args, **kwargs):

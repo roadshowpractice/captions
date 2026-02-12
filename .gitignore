@@ -43,3 +43,6 @@ Acme-Frobnitz-*.tar.gz
 __pycache__/
 
 
+
+# Local binary fonts (install via bin/install_inter_font.sh)
+fonts/*.ttf
