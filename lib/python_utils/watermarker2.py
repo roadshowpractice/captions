@@ -36,11 +36,22 @@ def _build_text_clip(text, params, color):
     # Transparent padding (fixes clipped ascenders)
     pad = int(params.get("text_pad", 8))
 
-    # v1 uses .margin(), v2 uses .with_margin()
-    if hasattr(clip, "margin"):
-        clip = clip.margin(top=pad, bottom=pad, left=pad, right=pad, opacity=0)
-    else:
-        clip = clip.with_margin(top=pad, bottom=pad, left=pad, right=pad, opacity=0)
+    if pad > 0:
+        # Prefer built-in margin helpers when available.
+        if hasattr(clip, "margin"):
+            clip = clip.margin(top=pad, bottom=pad, left=pad, right=pad, opacity=0)
+        elif hasattr(clip, "with_margin"):
+            clip = clip.with_margin(top=pad, bottom=pad, left=pad, right=pad, opacity=0)
+        else:
+            # MoviePy 2.1.x can expose TextClip without margin helpers.
+            # Fall back to wrapping in a transparent canvas to emulate padding.
+            width, height = clip.size
+            clip = clip.on_color(
+                size=(width + 2 * pad, height + 2 * pad),
+                color=(0, 0, 0),
+                col_opacity=0,
+                pos=("center", "center"),
+            )
 
     return clip
 
