@@ -18,6 +18,17 @@ def get_codecs_by_extension(extension):
     }
     return codecs.get(extension, {"video_codec": "libx264", "audio_codec": "aac"})
 
+def _build_text_clip(text, params, color):
+    """Build TextClip across moviepy v1/v2 API differences."""
+    common_kwargs = {"color": color, "font": params["font"]}
+
+    # MoviePy v2 prefers text=/font_size=; v1 typically uses positional + fontsize.
+    try:
+        return TextClip(text=text, font_size=params["font_size"], **common_kwargs)
+    except TypeError:
+        return TextClip(text, fontsize=params["font_size"], **common_kwargs)
+
+
 def add_watermark(params):
     """
     Adds watermark text overlays to a video file.
@@ -54,29 +65,20 @@ def add_watermark(params):
         video = VideoFileClip(input_video_path)
 
         # Create watermark text clips
-        username_clip = TextClip(
-            params["username"],
-            fontsize=params["font_size"],
-            color=params["username_color"],
-            font=params["font"],
+        username_clip = _build_text_clip(
+            params["username"], params, params["username_color"]
         ).set_position(params["username_position"]).set_duration(video.duration)
 
-        date_clip = TextClip(
-            params["video_date"],
-            fontsize=params["font_size"],
-            color=params["date_color"],
-            font=params["font"],
+        date_clip = _build_text_clip(
+            params["video_date"], params, params["date_color"]
         ).set_position(params["date_position"]).set_duration(video.duration)
 
         # Generate timestamp clips
         timestamp_clips = []
         for t in range(int(video.duration)):
             timestamp = f"{t // 3600:02}:{(t % 3600) // 60:02}:{t % 60:02}"
-            timestamp_clip = TextClip(
-                timestamp,
-                fontsize=params["font_size"],
-                color=params["timestamp_color"],
-                font=params["font"],
+            timestamp_clip = _build_text_clip(
+                timestamp, params, params["timestamp_color"]
             ).set_position(params["timestamp_position"]).set_start(t).set_duration(1)
             timestamp_clips.append(timestamp_clip)
 
@@ -101,4 +103,3 @@ def add_watermark(params):
         logger.error(f"Error in add_watermark: {e}")
         logger.debug(traceback.format_exc())
         return None
-
