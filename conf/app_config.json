@@ -10,21 +10,35 @@
     "raw_metadata_mode": "gzip",
     "test_url": "https://www.facebook.com/share/v/19G7Jx2x2n/?mibextid=wwXIfr&__cft__[0]=AZWs3WaCFeC33JnjAcnjMQY3QtjFqvbJRzFTrsf8f5rSrAaIJD_vGKwFjnV9z_bDTGhR9vOJo1-e_7dveL6RpZHG2qRLXLxnDAEccB6cF5cOQWj1r6gVfZNbwKi0sffOUKc&__tn__=R]-R",
     "watermark_config": {
-        "font": "Arial Bold",
+        "font": "fonts/Inter-Bold.ttf",
         "font_size": 32,
         "username_color": "yellow",
         "date_color": "cyan",
         "timestamp_color": "red",
-        "username_position": ["left", "top"],
-        "date_position": ["left", "bottom"],
-        "timestamp_position": ["right", "bottom"]
+        "username_position": [
+            "left",
+            "top"
+        ],
+        "date_position": [
+            "left",
+            "bottom"
+        ],
+        "timestamp_position": [
+            "right",
+            "bottom"
+        ],
+        "text_pad": 8
     },
     "ken_burns": {
         "brightness": 1.3,
         "slide_length": 9,
         "border": 0.03,
         "source_path": "./data/4.source.txt",
-        "languages": ["en", "es", "fr"],
+        "languages": [
+            "en",
+            "es",
+            "fr"
+        ],
         "style": {
             "font": "Arial",
             "font_size": 24,
@@ -36,7 +50,7 @@
         }
     },
     "captions": {
-        "font": "Arial Bold",
+        "font": "fonts/Inter-Bold.ttf",
         "font_size": 32,
         "username_color": "yellow",
         "source_path": "./data/4.source.txt",

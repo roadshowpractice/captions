@@ -20,6 +20,13 @@ def convert_newlines_to_spaces(text):
     return text.replace("\n", "                      ")
 
 
+
+
+def add_transparent_margin(clip, pad=6):
+    if hasattr(clip, "margin"):
+        return clip.margin(top=pad, bottom=pad, left=pad, right=pad, opacity=0)
+    return clip.with_margin(top=pad, bottom=pad, left=pad, right=pad, opacity=0)
+
 # Captioning Function
 def add_captions(params, logger=None):
     try:
@@ -69,13 +76,17 @@ def add_captions(params, logger=None):
             if end_time > video_clip.duration:
                 end_time = video_clip.duration
 
-            shadow_clip = (
+            shadow_clip = add_transparent_margin(
                 TextClip(
                     line,
                     fontsize=params["font_size"],
                     color=params.get("shadow", {}).get("color", "black"),
                     font=params["font"],
-                )
+                ),
+                pad=int(params.get("text_pad", 6)),
+            )
+            shadow_clip = (
+                shadow_clip
                 .set_position((
                     current_hor_offset + params.get("shadow", {}).get("offset", 5),
                     current_top_position + params.get("shadow", {}).get("offset", 5),
@@ -86,13 +97,17 @@ def add_captions(params, logger=None):
             )
             caption_clips.append(shadow_clip)
 
-            caption_clip = (
+            caption_clip = add_transparent_margin(
                 TextClip(
                     line,
                     fontsize=params["font_size"],
                     color=params["username_color"],
                     font=params["font"],
-                )
+                ),
+                pad=int(params.get("text_pad", 6)),
+            )
+            caption_clip = (
+                caption_clip
                 .set_position((current_hor_offset, current_top_position))
                 .set_start(start_time)
                 .set_duration(end_time - start_time)
