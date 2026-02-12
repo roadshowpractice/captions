@@ -3,22 +3,30 @@ set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 FONT_DIR="${ROOT_DIR}/fonts"
-FONT_PATH="${FONT_DIR}/Inter-Bold.ttf"
-FONT_URL="https://cdn.jsdelivr.net/gh/rsms/inter@master/docs/font-files/Inter-Bold.ttf"
-EXPECTED_SHA256="5c1247acef7f2b8522a31742c76d6adcb5569bacc0be7ceaa4dc39dd252ce895"
+FONT_NAME="Inter-Bold.ttf"
+FONT_PATH="${FONT_DIR}/${FONT_NAME}"
+TMP_DIR="$(mktemp -d)"
+TMP_ZIP="${TMP_DIR}/Inter.zip"
+
+cleanup() {
+  rm -rf "${TMP_DIR}"
+}
+trap cleanup EXIT
 
 mkdir -p "${FONT_DIR}"
 
-echo "Downloading Inter-Bold.ttf ..."
-curl -fsSL "${FONT_URL}" -o "${FONT_PATH}"
+echo "Installing Inter Bold font..."
+echo "Downloading official Inter release archive..."
+curl --retry 3 --retry-delay 2 -fSL \
+  -o "${TMP_ZIP}" \
+  "https://github.com/rsms/inter/releases/latest/download/Inter.zip"
 
-echo "Verifying checksum ..."
-ACTUAL_SHA256="$(sha256sum "${FONT_PATH}" | awk '{print $1}')"
-if [[ "${ACTUAL_SHA256}" != "${EXPECTED_SHA256}" ]]; then
-  echo "Checksum mismatch for ${FONT_PATH}" >&2
-  echo "Expected: ${EXPECTED_SHA256}" >&2
-  echo "Actual:   ${ACTUAL_SHA256}" >&2
+echo "Extracting ${FONT_NAME}..."
+unzip -jo "${TMP_ZIP}" "Inter-*/ttf/${FONT_NAME}" -d "${FONT_DIR}"
+
+if [[ -f "${FONT_PATH}" ]]; then
+  echo "Installed: ${FONT_PATH}"
+else
+  echo "ERROR: ${FONT_PATH} not found after install" >&2
   exit 1
 fi
-
-echo "Installed ${FONT_PATH}"
