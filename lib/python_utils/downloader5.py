@@ -10,6 +10,7 @@ import json
 import traceback
 import time
 import logging
+import gzip
 
 ####################
 # Logger setup
@@ -71,25 +72,18 @@ def extract_metadata(params):
     cookie_path = params.get("cookie_path")
     metadata_path = params.get("metadata_path")
 
-    # Determine metadata save path
-    if not metadata_path:
-        try:
-            current_dir = os.path.dirname(os.path.abspath(__file__))
-            base_dir = os.path.join(current_dir, "../../")
-            config_path = os.path.join(base_dir, "conf/app_config.json")
-            with open(config_path, "r") as f:
-                app_config = json.load(f)
-            metadata_dir = app_config.get("metadata_dir", "./metadata/fb_tb")
-        except Exception as e:
-            logger.warning(f"Could not read app_config.json: {e}")
-            metadata_dir = "./metadata/fb_tb"
+    try:
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        base_dir = os.path.join(current_dir, "../../")
+        config_path = os.path.join(base_dir, "conf/app_config.json")
+        with open(config_path, "r", encoding="utf-8") as f:
+            app_config = json.load(f)
+    except Exception as e:
+        logger.warning(f"Could not read app_config.json: {e}")
+        app_config = {}
 
-        if not os.path.exists(metadata_dir):
-            os.makedirs(metadata_dir, exist_ok=True)
-
-        filename = f"{int(time.time())}.json"
-        metadata_path = unique_output_path(metadata_dir, filename)
-        params["metadata_path"] = metadata_path
+    metadata_dir = app_config.get("metadata_dir", "./metadata")
+    os.makedirs(metadata_dir, exist_ok=True)
 
     try:
         # Set up yt-dlp options for extracting metadata
@@ -105,6 +99,44 @@ def extract_metadata(params):
             info_dict = ydl.extract_info(
                 url, download=False
             )  # Extract metadata without downloading
+
+            video_identifier = (
+                info_dict.get("id")
+                or info_dict.get("display_id")
+                or info_dict.get("webpage_url_basename")
+                or str(int(time.time()))
+            )
+
+            if not metadata_path:
+                # Use video ID/shortcode naming instead of timestamp-based filenames.
+                filename = f"{video_identifier}.json"
+                metadata_path = unique_output_path(metadata_dir, filename)
+                params["metadata_path"] = metadata_path
+
+            index_record = {
+                "url": url,
+                "metadata_file": os.path.basename(metadata_path),
+                "id": info_dict.get("id"),
+                "shortcode": info_dict.get("display_id") or info_dict.get("webpage_url_basename"),
+            }
+
+            index_path = os.path.join(metadata_dir, "index.jsonl")
+            with open(index_path, "a", encoding="utf-8") as index_file:
+                index_file.write(json.dumps(index_record, ensure_ascii=False) + "\n")
+
+            raw_mode = app_config.get("raw_metadata_mode", "gzip")
+            if raw_mode in {"gzip", "json"}:
+                raw_dir = os.path.join(metadata_dir, "raw")
+                os.makedirs(raw_dir, exist_ok=True)
+                if raw_mode == "gzip":
+                    raw_path = os.path.join(raw_dir, f"{video_identifier}.json.gz")
+                    with gzip.open(raw_path, "wt", encoding="utf-8") as raw_file:
+                        json.dump(info_dict, raw_file, indent=2, ensure_ascii=False)
+                else:
+                    raw_path = os.path.join(raw_dir, f"{video_identifier}.json")
+                    with open(raw_path, "w", encoding="utf-8") as raw_file:
+                        json.dump(info_dict, raw_file, indent=2, ensure_ascii=False)
+                params["raw_metadata_path"] = raw_path
 
             # Save metadata to file
             if metadata_path:
@@ -327,6 +359,5 @@ def save_params_to_json(params):
     except Exception as e:
         logger.error(f"Failed to save parameters to JSON: {e}")
         logger.debug(traceback.format_exc())
-
 
 

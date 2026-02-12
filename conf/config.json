@@ -1,8 +1,9 @@
 {
+    "_comment": "Platform-specific runtime paths. output_dir is the base folder for dated download subfolders.",
     "Darwin": {
         "python_path": "/Users/mymac/miniconda3/envs/new-env/bin/python",
         "base_dir": "/Users/mymac/Desktop/bashful-backup",
-        "target_usb": "/Volumes/BallardT1",
+        "output_dir": "./outputs/",
         "logging": {
             "level": "DEBUG",
             "log_to_file": true,
@@ -13,7 +14,7 @@
     },
     "Linux": {
         "python_path": "/home/fritz/miniconda3/envs/new-env/bin/python",
-        "target_usb": "/home/fritz/Desktop/captions_out",
+        "output_dir": "./outputs/",
         "logging": {
             "level": "DEBUG",
             "log_to_file": true,
@@ -23,4 +24,3 @@
         }
     }
 }
-

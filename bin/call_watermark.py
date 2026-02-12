@@ -112,13 +112,15 @@ if __name__ == "__main__":
             logger.error(f"Failed to parse JSON metadata from {json_path}: {e}")
             sys.exit(1)
 
-        # Prepare parameters for watermarking
+        # Prepare parameters for watermarking.
+        # Use a copied config and apply explicit overrides once to avoid duplicate keys.
+        merged_watermark_config = dict(watermark_config)
         params = {
+            **merged_watermark_config,
             "input_video_path": input_video_path,
             "download_path": os.path.dirname(input_video_path),
             "username": username,
             "video_date": video_date,
-            **watermark_config,
         }
 
         # Debugging appconfig
@@ -144,4 +146,3 @@ if __name__ == "__main__":
             print(f"Unexpected error: {e}")
             print(traceback.format_exc())
         sys.exit(1)
-
