@@ -5,6 +5,7 @@ import json
 import logging
 import traceback
 import subprocess
+import time
 from datetime import datetime
 
 # Add lib path to sys.path
@@ -69,6 +70,39 @@ def run_my_existing_downloader(url, logger):
     else:
         logger.info(f"Download stdout:\n{result.stdout}")
 
+
+def wait_for_download_file(to_process, logger, timeout_seconds=90, poll_interval=3):
+    """Wait briefly for downloader finalization when a temporary .part file exists."""
+    if os.path.exists(to_process):
+        return True
+
+    directory = os.path.dirname(to_process) or "."
+    base_name = os.path.splitext(os.path.basename(to_process))[0]
+    candidates = [
+        name
+        for name in os.listdir(directory)
+        if name.startswith(base_name) and name.endswith(".part")
+    ] if os.path.isdir(directory) else []
+
+    if not candidates:
+        return False
+
+    logger.info(
+        f"⏳ Found partial download(s) for {base_name}; waiting up to {timeout_seconds}s for final file..."
+    )
+    deadline = time.time() + timeout_seconds
+    while time.time() < deadline:
+        if os.path.exists(to_process):
+            logger.info(f"✅ Finalized download detected: {to_process}")
+            return True
+        time.sleep(poll_interval)
+
+    logger.warning(
+        "⚠️ Download is still incomplete (.part file present). "
+        "Wait for download to finish, then rerun call_router."
+    )
+    return False
+
 def main():
     try:
         dry_run = "--dry-run" in sys.argv
@@ -126,7 +160,7 @@ def main():
             logger.error("Download task not completed and no output path recorded.")
             return
 
-        if not os.path.exists(to_process):
+        if not wait_for_download_file(to_process, logger):
             logger.error(f"Input file does not exist: {to_process}")
             return
 
