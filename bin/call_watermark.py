@@ -59,6 +59,17 @@ def init_logging(logging_config):
     logger.info("Logging initialized.")
     return logger
 
+
+def looks_like_filename(value):
+    if not value:
+        return False
+    text = str(value)
+    return (
+        "/" in text
+        or "\\" in text
+        or text.lower().endswith((".mp4", ".mov", ".mkv", ".webm", ".avi"))
+    )
+
 if __name__ == "__main__":
     try:
         # Load app configuration
@@ -104,7 +115,10 @@ if __name__ == "__main__":
             with open(json_path, "r") as file:
                 data = json.load(file)
             logger.info(f"Loaded metadata from: {json_path}")
-            username = data.get("uploader", "UnknownUploader")
+            username = data.get("uploader", "")
+            if looks_like_filename(username):
+                logger.warning("Metadata uploader looks like a filename; skipping username watermark.")
+                username = ""
             # this field changes insta uses upload_date ; yt uses upload_date
             video_date = data.get("video_date", datetime.now().strftime("%Y-%m-%d"))
             #video_date = data.get("upload_date", datetime.now().strftime("%Y-%m-%d"))

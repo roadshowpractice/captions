@@ -27,7 +27,8 @@
             "right",
             "bottom"
         ],
-        "text_pad": 8
+        "text_pad": 10,
+        "watermark_target_width": 0
     },
     "ken_burns": {
         "brightness": 1.3,

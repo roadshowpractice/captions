@@ -4,10 +4,10 @@ import traceback
 
 try:
     # MoviePy v2 style imports
-    from moviepy import VideoFileClip, TextClip, CompositeVideoClip
+    from moviepy import VideoFileClip, TextClip, CompositeVideoClip, ColorClip
 except ImportError:
     # MoviePy v1 style fallback
-    from moviepy.editor import VideoFileClip, TextClip, CompositeVideoClip
+    from moviepy.editor import VideoFileClip, TextClip, CompositeVideoClip, ColorClip
 
 # Use the logger configured in the caller
 logger = logging.getLogger(__name__)
@@ -23,7 +23,6 @@ def get_codecs_by_extension(extension):
     return codecs.get(extension, {"video_codec": "libx264", "audio_codec": "aac"})
 
 def _build_text_clip(text, params, color):
-    # Build TextClip with padding to prevent font clipping
     common_kwargs = {"color": color, "font": params["font"]}
 
     try:
@@ -33,25 +32,27 @@ def _build_text_clip(text, params, color):
         # Older MoviePy API
         clip = TextClip(text, fontsize=params["font_size"], **common_kwargs)
 
-    # Transparent padding (fixes clipped ascenders)
-    pad = int(params.get("text_pad", 8))
+    video_w = int(params.get("video_w", 0) or 0)
+    if video_w > 0:
+        quarter = video_w * 0.25
+        half = video_w * 0.50
+        target = int((quarter + half) / 2)
+        target = int(params.get("watermark_target_width", target) or target)
+        if clip.w > target and clip.w > 0:
+            factor = target / clip.w
+            clip = mp_resized(clip, factor=factor)
 
+    pad = int(params.get("text_pad", 8))
     if pad > 0:
-        # Prefer built-in margin helpers when available.
-        if hasattr(clip, "margin"):
-            clip = clip.margin(top=pad, bottom=pad, left=pad, right=pad, opacity=0)
-        elif hasattr(clip, "with_margin"):
-            clip = clip.with_margin(top=pad, bottom=pad, left=pad, right=pad, opacity=0)
+        width, height = clip.size
+        canvas = ColorClip(size=(width + 2 * pad, height + 2 * pad), color=(0, 0, 0))
+        if hasattr(canvas, "with_opacity"):
+            canvas = canvas.with_opacity(0)
         else:
-            # MoviePy 2.1.x can expose TextClip without margin helpers.
-            # Fall back to wrapping in a transparent canvas to emulate padding.
-            width, height = clip.size
-            clip = clip.on_color(
-                size=(width + 2 * pad, height + 2 * pad),
-                color=(0, 0, 0),
-                col_opacity=0,
-                pos=("center", "center"),
-            )
+            canvas = canvas.set_opacity(0)
+
+        centered = mp_with_position(clip, ("center", "center"))
+        clip = CompositeVideoClip([canvas, centered], size=canvas.size)
 
     return clip
 
@@ -81,6 +82,32 @@ def mp_with_start(clip, start):
 
 def mp_with_audio(clip, audio):
     return mp_call(clip, "set_audio", "with_audio", audio)
+
+
+def mp_resized(clip, factor=None, width=None, height=None):
+    """Resize clips across MoviePy v1/v2 naming differences."""
+    if hasattr(clip, "resized"):
+        return clip.resized(factor=factor, width=width, height=height)
+    if hasattr(clip, "resize"):
+        if factor is not None:
+            return clip.resize(factor)
+        if width is not None and height is None:
+            return clip.resize(width=width)
+        if height is not None and width is None:
+            return clip.resize(height=height)
+        return clip.resize(newsize=(width, height))
+    raise AttributeError(f"{type(clip).__name__} has neither resized nor resize")
+
+
+def looks_like_filename(value):
+    if not value:
+        return False
+    text = str(value)
+    return (
+        "/" in text
+        or "\\" in text
+        or text.lower().endswith((".mp4", ".mov", ".mkv", ".webm", ".avi"))
+    )
 
 
 def add_watermark(params):
@@ -117,13 +144,18 @@ def add_watermark(params):
     try:
         logger.info(f"Processing video: {input_video_path}")
         video = VideoFileClip(input_video_path)
+        params["video_w"] = int(getattr(video, "w", 0) or 0)
 
         # Create watermark text clips
-        username_clip = _build_text_clip(
-            params["username"], params, params["username_color"]
-        )
-        username_clip = mp_with_position(username_clip, params["username_position"])
-        username_clip = mp_with_duration(username_clip, video.duration)
+        username_text = params.get("username", "")
+        if username_text and not looks_like_filename(username_text):
+            username_clip = _build_text_clip(
+                username_text, params, params["username_color"]
+            )
+            username_clip = mp_with_position(username_clip, params["username_position"])
+            username_clip = mp_with_duration(username_clip, video.duration)
+        else:
+            username_clip = None
 
         date_clip = _build_text_clip(
             params["video_date"], params, params["date_color"]
@@ -145,7 +177,13 @@ def add_watermark(params):
             timestamp_clip = mp_with_duration(timestamp_clip, 1)
             timestamp_clips.append(timestamp_clip)
 
-        final = CompositeVideoClip([video, username_clip, date_clip] + timestamp_clips)
+        layers = [video]
+        if username_clip is not None:
+            layers.append(username_clip)
+        layers.append(date_clip)
+        layers.extend(timestamp_clips)
+
+        final = CompositeVideoClip(layers)
         final = mp_with_audio(final, video.audio)
 
         # Save the watermarked video
