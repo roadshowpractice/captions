@@ -221,7 +221,12 @@ def _build_dynamic_timestamp_clip(params, video, video_size, edge_padding, safe_
             cache[second] = text_clip.get_frame(0)
         return cache[second]
 
-    timestamp_clip = VideoClip(make_frame=lambda t: _clip_for_second(int(t)))
+    try:
+        # MoviePy v1 API
+        timestamp_clip = VideoClip(make_frame=lambda t: _clip_for_second(int(t)))
+    except TypeError:
+        # MoviePy v2 API renamed the constructor arg.
+        timestamp_clip = VideoClip(frame_function=lambda t: _clip_for_second(int(t)))
     timestamp_clip = mp_with_duration(timestamp_clip, video.duration)
     return timestamp_clip
 
