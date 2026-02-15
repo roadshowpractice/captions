@@ -6,8 +6,14 @@ try:
     # MoviePy v2 style imports
     from moviepy import VideoFileClip, TextClip, CompositeVideoClip, ColorClip
 except ImportError:
-    # MoviePy v1 style fallback
-    from moviepy.editor import VideoFileClip, TextClip, CompositeVideoClip, ColorClip
+    try:
+        # MoviePy v1 style fallback
+        from moviepy.editor import VideoFileClip, TextClip, CompositeVideoClip, ColorClip
+    except ImportError:
+        VideoFileClip = None
+        TextClip = None
+        CompositeVideoClip = None
+        ColorClip = None
 
 # Use the logger configured in the caller
 logger = logging.getLogger(__name__)
@@ -110,6 +116,38 @@ def looks_like_filename(value):
     )
 
 
+def _normalize_axis_position(value, clip_size, video_size, edge_padding):
+    """Resolve a MoviePy position token/number into a clamped pixel coordinate."""
+    max_position = max(video_size - clip_size, 0)
+
+    if isinstance(value, str):
+        token = value.lower().strip()
+        if token in {"left", "top"}:
+            return edge_padding
+        if token in {"right", "bottom"}:
+            return max(max_position - edge_padding, 0)
+        if token in {"center", "middle"}:
+            return max((video_size - clip_size) / 2, 0)
+
+    try:
+        numeric = float(value)
+    except (TypeError, ValueError):
+        # Fallback to a safe default rather than risking off-frame clipping.
+        numeric = edge_padding
+
+    return min(max(numeric, 0), max_position)
+
+
+def _resolve_position(position, clip_size, video_size, edge_padding):
+    """Convert configured position into explicit coordinates to avoid edge clipping."""
+    if not isinstance(position, (list, tuple)) or len(position) != 2:
+        position = ("left", "top")
+
+    x = _normalize_axis_position(position[0], clip_size[0], video_size[0], edge_padding)
+    y = _normalize_axis_position(position[1], clip_size[1], video_size[1], edge_padding)
+    return (x, y)
+
+
 def add_watermark(params):
     """
     Adds watermark text overlays to a video file.
@@ -134,6 +172,10 @@ def add_watermark(params):
               or None if an error occurs.
     """
     logger.debug("Received parameters for watermarking.")
+
+    if VideoFileClip is None:
+        raise RuntimeError("moviepy is required to add watermarks")
+
     for key, value in params.items():
         logger.debug(f"{key}: {value}")
 
@@ -145,6 +187,8 @@ def add_watermark(params):
         logger.info(f"Processing video: {input_video_path}")
         video = VideoFileClip(input_video_path)
         params["video_w"] = int(getattr(video, "w", 0) or 0)
+        video_size = (int(getattr(video, "w", 0) or 0), int(getattr(video, "h", 0) or 0))
+        edge_padding = int(params.get("screen_edge_padding", 8) or 0)
 
         # Create watermark text clips
         username_text = params.get("username", "")
@@ -152,7 +196,10 @@ def add_watermark(params):
             username_clip = _build_text_clip(
                 username_text, params, params["username_color"]
             )
-            username_clip = mp_with_position(username_clip, params["username_position"])
+            username_position = _resolve_position(
+                params["username_position"], username_clip.size, video_size, edge_padding
+            )
+            username_clip = mp_with_position(username_clip, username_position)
             username_clip = mp_with_duration(username_clip, video.duration)
         else:
             username_clip = None
@@ -160,7 +207,10 @@ def add_watermark(params):
         date_clip = _build_text_clip(
             params["video_date"], params, params["date_color"]
         )
-        date_clip = mp_with_position(date_clip, params["date_position"])
+        date_position = _resolve_position(
+            params["date_position"], date_clip.size, video_size, edge_padding
+        )
+        date_clip = mp_with_position(date_clip, date_position)
         date_clip = mp_with_duration(date_clip, video.duration)
 
         # Generate timestamp clips
@@ -170,9 +220,13 @@ def add_watermark(params):
             timestamp_clip = _build_text_clip(
                 timestamp, params, params["timestamp_color"]
             )
-            timestamp_clip = mp_with_position(
-                timestamp_clip, params["timestamp_position"]
+            timestamp_position = _resolve_position(
+                params["timestamp_position"],
+                timestamp_clip.size,
+                video_size,
+                edge_padding,
             )
+            timestamp_clip = mp_with_position(timestamp_clip, timestamp_position)
             timestamp_clip = mp_with_start(timestamp_clip, t)
             timestamp_clip = mp_with_duration(timestamp_clip, 1)
             timestamp_clips.append(timestamp_clip)
