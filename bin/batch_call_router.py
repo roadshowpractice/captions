@@ -4,7 +4,6 @@
 import argparse
 import subprocess
 import sys
-import time
 from pathlib import Path
 
 
@@ -19,19 +18,12 @@ def load_urls(path: Path) -> list[str]:
     return urls
 
 
-def run_batch(
-    urls: list[str],
-    dry_run: bool,
-    stop_on_error: bool,
-    heartbeat_seconds: int,
-) -> int:
+def run_batch(urls: list[str], dry_run: bool, stop_on_error: bool) -> int:
     """Run call_router.py for each URL and return final exit code."""
     repo_root = Path(__file__).resolve().parent.parent
     call_router = repo_root / "bin" / "call_router.py"
 
     failures = 0
-
-    print(f"Heartbeat: every {heartbeat_seconds}s while each URL is running")
 
     for index, url in enumerate(urls, start=1):
         cmd = [sys.executable, str(call_router), url]
@@ -39,31 +31,13 @@ def run_batch(
             cmd.append("--dry-run")
 
         print(f"[{index}/{len(urls)}] Running: {' '.join(cmd)}")
-        process = subprocess.Popen(cmd)
-        started_at = time.time()
-        next_heartbeat = started_at + heartbeat_seconds
+        result = subprocess.run(cmd)
 
-        while True:
-            returncode = process.poll()
-            if returncode is not None:
-                break
-
-            now = time.time()
-            if now >= next_heartbeat:
-                elapsed = int(now - started_at)
-                print(
-                    f"  🔄 Still processing URL {index}/{len(urls)} "
-                    f"({elapsed}s elapsed)"
-                )
-                next_heartbeat = now + heartbeat_seconds
-
-            time.sleep(1)
-
-        if returncode != 0:
+        if result.returncode != 0:
             failures += 1
-            print(f"  ❌ Failed for URL: {url} (exit {returncode})")
+            print(f"  ❌ Failed for URL: {url} (exit {result.returncode})")
             if stop_on_error:
-                return returncode
+                return result.returncode
         else:
             print(f"  ✅ Completed for URL: {url}")
 
@@ -95,18 +69,6 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help="Stop immediately if any URL processing fails.",
     )
-    parser.add_argument(
-        "--heartbeat-seconds",
-        "--heartbeat",
-        "--chirp-seconds",
-        dest="heartbeat_seconds",
-        type=int,
-        default=60,
-        help=(
-            "Emit a keepalive status line every N seconds while processing "
-            "(default: 60)."
-        ),
-    )
     return parser.parse_args()
 
 
@@ -123,16 +85,7 @@ def main() -> int:
         print(f"No valid URLs found in: {url_file}", file=sys.stderr)
         return 1
 
-    if args.heartbeat_seconds < 1:
-        print("--heartbeat-seconds must be >= 1", file=sys.stderr)
-        return 1
-
-    return run_batch(
-        urls,
-        dry_run=args.dry_run,
-        stop_on_error=args.stop_on_error,
-        heartbeat_seconds=args.heartbeat_seconds,
-    )
+    return run_batch(urls, dry_run=args.dry_run, stop_on_error=args.stop_on_error)
 
 
 if __name__ == "__main__":
